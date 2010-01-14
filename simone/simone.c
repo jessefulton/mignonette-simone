@@ -19,8 +19,8 @@
  *
  *	revision history:
  *
- *	- Jan 10, 20010 - jesse
- *		created.
+ *	- Jan 13, 20010 - jesse
+ *		created. (Used "Munch" as a template)
  *
  *
  */

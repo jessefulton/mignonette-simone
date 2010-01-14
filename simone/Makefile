@@ -8,7 +8,7 @@
 #
 # revision history:
 #
-# - Jan 10, 2010 - jesse
+# - Jan 13, 2010 - jesse
 #		adapted for "simone"
 #
 # - may 24, 2008 - rolf
