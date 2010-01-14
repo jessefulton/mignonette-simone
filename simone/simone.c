@@ -81,7 +81,7 @@ N_END,
 
 
 
-static byte arrows[100];
+static byte arrows[100] = {DIRECTION_B};
 //static byte[100] colors;
 //static byte[100] sounds;
 
@@ -135,9 +135,10 @@ delay_sec(uint8_t sec)
 #define YMAX (YSCREEN-1)
 
 
-
 void draw_arrow(byte dir, byte clr) {
-		setcolor(clr);
+	setcolor(clr);
+	if (dir == DIRECTION_A) {
+		//POINTS UP AND LEFT
 		drawpoint(0, 0);
 		drawpoint(0, 1);
 		drawpoint(0, 2);
@@ -147,16 +148,82 @@ void draw_arrow(byte dir, byte clr) {
 		drawpoint(2, 2);
 		drawpoint(3, 3);
 		drawpoint(4, 4);
-		drawpoint(5, 5);
+		//drawpoint(5, 5);
+	}
+	else if (dir == DIRECTION_B) {
+		//POINTS DOWN AND LEFT
+		drawpoint(0, 4);
+		drawpoint(0, 3);
+		drawpoint(0, 2);
+		drawpoint(1, 4);
+		drawpoint(2, 4);
+		drawpoint(1, 3);
+		drawpoint(2, 2);
+		drawpoint(3, 1);
+		drawpoint(4, 0);
+		//drawpoint(0, 5);
+	}
+	else if (dir == DIRECTION_C) {
+		//POINTS DOWN AND RIGHT
+		drawpoint(6, 4);
+		drawpoint(6, 3);
+		drawpoint(6, 2);
+		drawpoint(5, 4);
+		drawpoint(4, 4);
+		drawpoint(5, 3);
+		drawpoint(4, 2);
+		drawpoint(3, 1);
+		drawpoint(2, 0);
+		//drawpoint(0, 5);
+
+	}
+	else if (dir == DIRECTION_D) {
+
+		//POINTS UP AND RIGHT
+		drawpoint(6, 0);
+		drawpoint(6, 1);
+		drawpoint(6, 2);
+		drawpoint(5, 0);
+		drawpoint(4, 0);
+		drawpoint(5, 1);
+		drawpoint(4, 2);
+		drawpoint(3, 3);
+		drawpoint(2, 4);
+		//drawpoint(0, 5);
+	}
 }
 
 
+
+void startup_screen() {
+	draw_arrow(DIRECTION_A, GREEN);
+	delay_ms(200);
+	delay_ms(200);
+	delay_ms(200);
+	cleardisplay();
+	draw_arrow(DIRECTION_B, GREEN);
+	delay_ms(200);
+	delay_ms(200);
+	delay_ms(200);
+	cleardisplay();
+	draw_arrow(DIRECTION_C, GREEN);
+	delay_ms(200);
+	delay_ms(200);
+	delay_ms(200);
+	cleardisplay();
+	draw_arrow(DIRECTION_D, GREEN);
+	delay_ms(200);
+	delay_ms(200);
+	delay_ms(200);
+	cleardisplay();
+}
 
 
 int
 main(void)
 {
 	int cnt;
+	byte btnDown = 0;
 	byte level = 1;
 
     avrinit();
@@ -174,6 +241,8 @@ main(void)
 	//setwavetable(WT_SINE);
 	playsong(ClassicalIntroSong);	// test audio
 
+	startup_screen();
+
 	delay_sec(1);
 
 
@@ -181,15 +250,98 @@ main(void)
 	// and now, the game
 	//
 nextlevel:
-
-
-    for(cnt=0; cnt < level; cnt++) {
-	    draw_arrow(DIRECTION_A, GREEN);
+    cleardisplay();
+    for(cnt=0; cnt<level; cnt++) {
+	    draw_arrow(arrows[cnt], GREEN);
 	    delay_ms(200);
+	    delay_ms(200);
+	    delay_ms(200);
+	    cleardisplay();		
+    }
+    
+    cnt = 0;
+
+	while(1) {
+
+		cleardisplay();
+		handlebuttons();
+		
+		
+		if (!btnDown) {
+
+			if (ButtonA || ButtonB || ButtonC || ButtonD) {
+				btnDown = 1;			
+			}
+
+	
+			if (ButtonA) {
+				draw_arrow(DIRECTION_A, RED);
+				delay_ms(100);
+				if (arrows[cnt] == DIRECTION_A) {
+					cnt++;
+				}
+				else {
+					goto gameover;
+				}
+	
+			}
+			if (ButtonB) {
+				draw_arrow(DIRECTION_B, RED);
+				delay_ms(100);
+				if (arrows[cnt] == DIRECTION_B) {
+					cnt++;
+				}
+				else {
+					goto gameover;
+				}
+	
+			}
+	
+			if (ButtonC) {
+				draw_arrow(DIRECTION_C, RED);
+				delay_ms(100);
+				if (arrows[cnt] == DIRECTION_C) {
+					cnt++;
+				}
+				else {
+					goto gameover;
+				}
+	
+			}
+			if (ButtonD) {
+				draw_arrow(DIRECTION_D, RED);
+				delay_ms(100);
+				if (arrows[cnt] == DIRECTION_D) {
+					cnt++;
+				}
+				else {
+					goto gameover;
+				}
+			
+			}
+			
+
+		
+			if (cnt == level) {
+				level++;
+				arrows[cnt] = DIRECTION_D;
+				delay_ms(200);
+				goto nextlevel;
+			}
+
+		}
+		else {
+			if (!ButtonA && !ButtonB && !ButtonC && !ButtonD) {
+				btnDown = 0;
+			}
+		}
+
+		
 
     }
-    draw_arrow(DIRECTION_A, RED);
+
 
 gameover:
+	cleardisplay();
 	return (0);
 }
