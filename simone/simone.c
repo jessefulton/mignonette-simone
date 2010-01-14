@@ -50,27 +50,38 @@
 //
 // a few notes from a well known classical melody (J.S. Bach, Cantata BWV 147)
 //
-byte ClassicalIntroSong[] = {
-N_E4,N_8TH,
+static byte IntroSong[] = {
 N_C4,N_8TH,
-N_D4,N_8TH,
 N_E4,N_8TH,
-N_G4,N_8TH,
+N_F4,N_HALF,
+N_REST,N_QUARTER,
+N_C4,N_8TH,
+N_E4,N_8TH,
+N_G4,N_HALF,
+N_REST,N_QUARTER,
 N_F4,N_8TH,
-N_F4,N_8TH,
-N_A4,N_8TH,
-N_G4,N_8TH,
-N_G4,N_8TH,
-N_C5,N_8TH,
-N_B4,N_8TH,
-N_C5,N_8TH,
-N_G4,N_8TH,
 N_E4,N_8TH,
 N_C4,N_HALF,
-
 N_END,
 };
 
+
+static byte TapsSong[] = {
+N_G3, N_HALF,
+N_G3, N_8TH,
+N_C4, N_WHOLE,
+N_G3, N_HALF,
+N_C4, N_8TH,
+N_E4, N_WHOLE,
+N_END
+};
+
+
+static byte DIRECTION_A_NOISE[] = {N_C4, N_16TH, N_END};
+static byte DIRECTION_B_NOISE[] = {N_E4, N_16TH, N_END};
+static byte DIRECTION_C_NOISE[] = {N_G4, N_16TH, N_END};
+static byte DIRECTION_D_NOISE[] = {N_A4, N_16TH, N_END};
+//static byte BUTTON_NOISE[] = {N_C5, N_16TH, N_END};
 
 /* colors */
 #define DIRECTION_A 0
@@ -198,6 +209,36 @@ void draw_arrow(byte dir, byte clr) {
 	}
 }
 
+void show_next_arrow(int cnt) {
+	byte *noise;
+	byte clr;
+	byte dir = arrows[cnt];
+
+	if (dir == DIRECTION_A) {
+		noise = DIRECTION_A_NOISE;
+	}
+	else if (dir == DIRECTION_B) {
+		noise = DIRECTION_B_NOISE;
+	}
+	else if (dir == DIRECTION_C) {
+		noise = DIRECTION_C_NOISE;
+	}
+	if (dir == DIRECTION_D) {
+		noise = DIRECTION_D_NOISE;
+	}
+	
+	
+	    draw_arrow(arrows[cnt], GREEN);
+	    delay_ms(200);
+		playsong(noise);
+		//waitaudio();
+	    delay_ms(200);
+	    delay_ms(200);
+	    cleardisplay();	
+	    delay_ms(200);
+
+	
+}
 
 
 void startup_screen() {
@@ -224,12 +265,151 @@ void startup_screen() {
 }
 
 
+
+void draw_digit_vert_right(int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	drawpoint(col3, 0);
+	drawpoint(col3, 1);
+	drawpoint(col3, 2);
+	drawpoint(col3, 3);
+	drawpoint(col3, 3);
+	drawpoint(col3, 4);
+}
+
+void draw_digit_vert_left(int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	drawpoint(col1, 0);
+	drawpoint(col1, 1);
+	drawpoint(col1, 2);
+	drawpoint(col1, 3);
+	drawpoint(col1, 3);
+	drawpoint(col1, 4);
+}
+
+
+void draw_digit_horiz_top(int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	drawpoint(col1, 0);
+	drawpoint(col2, 0);
+	drawpoint(col3, 0);
+}
+
+
+void draw_digit_horiz_mid(int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	drawpoint(col1, 2);
+	drawpoint(col2, 2);
+	drawpoint(col3, 2);
+}
+void draw_digit_horiz_bot(int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	drawpoint(col1, 4);
+	drawpoint(col2, 4);
+	drawpoint(col3, 4);
+}
+
+
+void draw_number(int number, int x_shift) {
+	int col1 = 0 + x_shift;
+	int col2 = 1 + x_shift;
+	int col3 = 2 + x_shift;
+	
+	if (number == 0) {
+		draw_digit_vert_left(x_shift);
+		draw_digit_vert_right(x_shift);
+		draw_digit_horiz_top(x_shift);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 1) {
+		drawpoint(col2, 0);
+		drawpoint(col2, 1);
+		drawpoint(col2, 2);
+		drawpoint(col2, 3);
+		drawpoint(col2, 4);
+	}
+	else if (number == 2) {
+		draw_digit_horiz_top(x_shift);
+		drawpoint(col3, 1);
+		draw_digit_horiz_mid(x_shift);
+		drawpoint(col1, 3);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 3) {
+		draw_digit_vert_right(x_shift);
+		draw_digit_horiz_top(x_shift);
+		draw_digit_horiz_mid(x_shift);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 4) {
+		drawpoint(col1, 0);
+		drawpoint(col1, 1);
+		draw_digit_vert_right(x_shift);
+		draw_digit_horiz_mid(x_shift);
+
+	}
+	else if (number == 5) {
+		draw_digit_horiz_top(x_shift);
+		drawpoint(col1, 1);
+		draw_digit_horiz_mid(x_shift);
+		drawpoint(col3, 3);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 6) {
+		draw_digit_vert_left(x_shift);
+		draw_digit_horiz_mid(x_shift);
+		drawpoint(col1, 3);
+		drawpoint(col3, 3);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 7) {
+		draw_digit_vert_right(x_shift);
+		draw_digit_horiz_top(x_shift);
+	}
+	else if (number == 8) {
+		draw_digit_vert_left(x_shift);
+		draw_digit_vert_right(x_shift);
+		draw_digit_horiz_top(x_shift);
+		draw_digit_horiz_mid(x_shift);
+		draw_digit_horiz_bot(x_shift);
+	}
+	else if (number == 9) {
+		draw_digit_vert_left(x_shift);
+		drawpoint(col1, 1);
+		drawpoint(col3, 1);
+		draw_digit_horiz_mid(x_shift);
+		draw_digit_horiz_bot(x_shift);
+	}
+
+}
+
+
+
+void gameover_screen(int level) {
+	setcolor(RED);
+	draw_number((level % 10), 4);
+	draw_number((level / 10), 0);
+}
+
+
+
+
 int
 main(void)
 {
 	int cnt;
 	byte btnDown = 0;
 	byte level = 1;
+
 
     avrinit();
 
@@ -244,7 +424,7 @@ main(void)
 	initaudio();			// XXX eventually, we remove this!
 
 	//setwavetable(WT_SINE);
-	playsong(ClassicalIntroSong);	// test audio
+	playsong(IntroSong);
 
 	startup_screen();
 
@@ -257,11 +437,7 @@ main(void)
 nextlevel:
     cleardisplay();
     for(cnt=0; cnt<level; cnt++) {
-	    draw_arrow(arrows[cnt], GREEN);
-	    delay_ms(200);
-	    delay_ms(200);
-	    delay_ms(200);
-	    cleardisplay();		
+		show_next_arrow(cnt);
     }
     
     cnt = 0;
@@ -280,7 +456,8 @@ nextlevel:
 
 	
 			if (ButtonA) {
-				draw_arrow(DIRECTION_A, RED);
+				draw_arrow(DIRECTION_A, YELLOW);
+				playsong(DIRECTION_A_NOISE);
 				delay_ms(100);
 				if (arrows[cnt] == DIRECTION_A) {
 					cnt++;
@@ -291,7 +468,8 @@ nextlevel:
 	
 			}
 			if (ButtonB) {
-				draw_arrow(DIRECTION_B, RED);
+				draw_arrow(DIRECTION_B, YELLOW);
+				playsong(DIRECTION_B_NOISE);
 				delay_ms(100);
 				if (arrows[cnt] == DIRECTION_B) {
 					cnt++;
@@ -303,7 +481,8 @@ nextlevel:
 			}
 	
 			if (ButtonC) {
-				draw_arrow(DIRECTION_C, RED);
+				draw_arrow(DIRECTION_C, YELLOW);
+				playsong(DIRECTION_C_NOISE);
 				delay_ms(100);
 				if (arrows[cnt] == DIRECTION_C) {
 					cnt++;
@@ -314,7 +493,8 @@ nextlevel:
 	
 			}
 			if (ButtonD) {
-				draw_arrow(DIRECTION_D, RED);
+				draw_arrow(DIRECTION_D, YELLOW);
+				playsong(DIRECTION_D_NOISE);
 				delay_ms(100);
 				if (arrows[cnt] == DIRECTION_D) {
 					cnt++;
@@ -348,5 +528,7 @@ nextlevel:
 
 gameover:
 	cleardisplay();
+	playsong(TapsSong);
+	gameover_screen(level);
 	return (0);
 }
