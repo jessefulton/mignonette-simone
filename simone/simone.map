@@ -6,6 +6,18 @@ Archive member included because of file (symbol)
                               simone.o (__do_copy_data)
 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
                               simone.o (__do_clear_bss)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
+                              simone.o (rand)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_mulsi3.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o) (__mulsi3)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o) (__divmodsi4)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_prologue.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o) (__prologue_saves__)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_epilogue.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o) (__epilogue_restores__)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_udivmodsi4.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o) (__udivmodsi4)
 
 Allocating common symbols
 Common symbol       size              file
@@ -144,7 +156,7 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xa74
+.text           0x00000000      0xc9e
  *(.vectors)
  .vectors       0x00000000       0x34 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
                 0x00000000                __vectors
@@ -227,50 +239,69 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
                 0x0000007e                __vector_16
                 0x0000007e                __vector_18
                 0x0000007e                __vector_20
- .text          0x00000080      0x332 simone.o
+ .text          0x00000080      0x360 simone.o
                 0x000001fc                startup_screen
                 0x000000bc                delay_sec
                 0x000000fa                draw_arrow
                 0x00000080                delay_us
                 0x0000024e                main
                 0x0000009a                delay_ms
- .text          0x000003b2      0x6c0 miggl.o
-                0x000006d2                start_timer1
-                0x00000788                handlebuttons
-                0x000007ec                swapbuffers
-                0x0000071e                button_init
-                0x00000a56                isaudioplaying
-                0x00000820                cleardisplay
-                0x00000806                initswapbuffers
-                0x00000838                getcolor
-                0x00000984                settempo
-                0x000008a4                drawfilledrect
-                0x00000594                __vector_13
-                0x000009c0                playnote
-                0x000009c2                playsong
-                0x00000830                setcolor
-                0x000009be                playsound
-                0x00000702                avrinit
-                0x00000816                swapinterval
-                0x000003b2                do_audio_isr
-                0x00000740                poll_buttons
-                0x00000986                setwavetable
-                0x00000964                initaudio
-                0x00000a5e                waitaudio
-                0x00000840                drawpoint
- .text          0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
- .text          0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
- .text          0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
-                0x00000a72                . = ALIGN (0x2)
+ .text          0x000003e0      0x6c0 miggl.o
+                0x00000700                start_timer1
+                0x000007b6                handlebuttons
+                0x0000081a                swapbuffers
+                0x0000074c                button_init
+                0x00000a84                isaudioplaying
+                0x0000084e                cleardisplay
+                0x00000834                initswapbuffers
+                0x00000866                getcolor
+                0x000009b2                settempo
+                0x000008d2                drawfilledrect
+                0x000005c2                __vector_13
+                0x000009ee                playnote
+                0x000009f0                playsong
+                0x0000085e                setcolor
+                0x000009ec                playsound
+                0x00000730                avrinit
+                0x00000844                swapinterval
+                0x000003e0                do_audio_isr
+                0x0000076e                poll_buttons
+                0x000009b4                setwavetable
+                0x00000992                initaudio
+                0x00000a8c                waitaudio
+                0x0000086e                drawpoint
+ .text          0x00000aa0        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .text          0x00000aa0        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .text          0x00000aa0        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .text          0x00000aa0       0xd6 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
+                0x00000b54                rand_r
+                0x00000b58                rand
+                0x00000b60                srand
+ .text          0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_mulsi3.o)
+ .text          0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o)
+ .text          0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_prologue.o)
+ .text          0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_epilogue.o)
+ .text          0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_udivmodsi4.o)
+                0x00000b76                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
- .text.libgcc   0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
- .text.libgcc   0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
-                0x00000a72                . = ALIGN (0x2)
+ .text.libgcc   0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .text.libgcc   0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000b76        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000b76       0x3e /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_mulsi3.o)
+                0x00000b76                __mulsi3
+ .text.libgcc   0x00000bb4       0x36 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o)
+                0x00000bb4                __divmodsi4
+ .text.libgcc   0x00000bea       0x38 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_prologue.o)
+                0x00000bea                __prologue_saves__
+ .text.libgcc   0x00000c22       0x36 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_epilogue.o)
+                0x00000c22                __epilogue_restores__
+ .text.libgcc   0x00000c58       0x44 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_udivmodsi4.o)
+                0x00000c58                __udivmodsi4
+                0x00000c9c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000a72        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
-                0x00000a72                exit
-                0x00000a72                _exit
+ .fini9         0x00000c9c        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+                0x00000c9c                exit
+                0x00000c9c                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -289,75 +320,87 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000a72        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .fini0         0x00000c9c        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000a74                _etext = .
+                0x00000c9e                _etext = .
 
-.data           0x00800100      0x192 load address 0x00000a74
+.data           0x00800100      0x19a load address 0x00000c9e
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
- .data          0x00800100       0x85 simone.o
+ .data          0x00800100       0x89 simone.o
                 0x00800100                ClassicalIntroSong
- .data          0x00800185      0x10c miggl.o
-                0x00800185                DurTab
-                0x008001e5                NoteTab
- .data          0x00800291        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
- .data          0x00800291        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
- .data          0x00800291        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .data          0x00800189      0x10c miggl.o
+                0x00800189                DurTab
+                0x008001e9                NoteTab
+ .data          0x00800295        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .data          0x00800295        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .data          0x00800295        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .data          0x00800295        0x4 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
+ .data          0x00800299        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_mulsi3.o)
+ .data          0x00800299        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o)
+ .data          0x00800299        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_prologue.o)
+ .data          0x00800299        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_epilogue.o)
+ .data          0x00800299        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_udivmodsi4.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800292                . = ALIGN (0x2)
- *fill*         0x00800291        0x1 00
-                0x00800292                _edata = .
-                0x00800292                PROVIDE (__data_end, .)
+                0x0080029a                . = ALIGN (0x2)
+ *fill*         0x00800299        0x1 00
+                0x0080029a                _edata = .
+                0x0080029a                PROVIDE (__data_end, .)
 
-.bss            0x00800292       0x26
-                0x00800292                PROVIDE (__bss_start, .)
+.bss            0x0080029a       0x26
+                0x0080029a                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
- .bss           0x00800292        0x0 simone.o
- .bss           0x00800292        0x0 miggl.o
- .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
- .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
- .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+ .bss           0x0080029a        0x0 simone.o
+ .bss           0x0080029a        0x0 miggl.o
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_mulsi3.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_divmodsi4.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_prologue.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_epilogue.o)
+ .bss           0x0080029a        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_udivmodsi4.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x00800292       0x26 miggl.o
-                0x00800292                ButtonBEvent
-                0x00800293                WtabDelta
-                0x00800295                CurNote
-                0x00800296                ButtonAEvent
-                0x00800297                ButtonCEvent
-                0x00800298                ButtonC
-                0x00800299                ButtonB
-                0x0080029a                CurRow
-                0x0080029b                wavPtr
-                0x0080029d                Wdur
-                0x0080029f                Disp
-                0x008002a9                SwapInterval
-                0x008002aa                WtabCount
-                0x008002ac                SwapRelease
-                0x008002ad                PWMval
-                0x008002af                SwapCounter
-                0x008002b0                ButtonA
-                0x008002b1                SongPlayFlag
-                0x008002b2                Wnote_sep
-                0x008002b4                ButtonD
-                0x008002b5                songPtr
-                0x008002b7                ButtonDEvent
-                0x008002b8                PROVIDE (__bss_end, .)
-                0x00000a74                __data_load_start = LOADADDR (.data)
-                0x00000c06                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080029a       0x26 miggl.o
+                0x0080029a                ButtonBEvent
+                0x0080029b                WtabDelta
+                0x0080029d                CurNote
+                0x0080029e                ButtonAEvent
+                0x0080029f                ButtonCEvent
+                0x008002a0                ButtonC
+                0x008002a1                ButtonB
+                0x008002a2                CurRow
+                0x008002a3                wavPtr
+                0x008002a5                Wdur
+                0x008002a7                Disp
+                0x008002b1                SwapInterval
+                0x008002b2                WtabCount
+                0x008002b4                SwapRelease
+                0x008002b5                PWMval
+                0x008002b7                SwapCounter
+                0x008002b8                ButtonA
+                0x008002b9                SongPlayFlag
+                0x008002ba                Wnote_sep
+                0x008002bc                ButtonD
+                0x008002bd                songPtr
+                0x008002bf                ButtonDEvent
+                0x008002c0                PROVIDE (__bss_end, .)
+                0x00000c9e                __data_load_start = LOADADDR (.data)
+                0x00000e38                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008002b8        0x0
-                0x008002b8                PROVIDE (__noinit_start, .)
+.noinit         0x008002c0        0x0
+                0x008002c0                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008002b8                PROVIDE (__noinit_end, .)
-                0x008002b8                _end = .
-                0x008002b8                PROVIDE (__heap_start, .)
+                0x008002c0                PROVIDE (__noinit_end, .)
+                0x008002c0                _end = .
+                0x008002c0                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -408,46 +451,55 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x28
+.debug_aranges  0x00000000       0x3c
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x14 simone.o
  .debug_aranges
                 0x00000014       0x14 miggl.o
+ .debug_aranges
+                0x00000028       0x14 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
 
 .debug_pubnames
-                0x00000000      0x337
+                0x00000000      0x367
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x7c simone.o
  .debug_pubnames
                 0x0000007c      0x2bb miggl.o
+ .debug_pubnames
+                0x00000337       0x30 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
 
-.debug_info     0x00000000      0xc51
+.debug_info     0x00000000      0xd95
  *(.debug_info)
- .debug_info    0x00000000      0x369 simone.o
- .debug_info    0x00000369      0x8e8 miggl.o
+ .debug_info    0x00000000      0x388 simone.o
+ .debug_info    0x00000388      0x8e8 miggl.o
+ .debug_info    0x00000c70      0x125 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x2eb
+.debug_abbrev   0x00000000      0x3c5
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x14d simone.o
  .debug_abbrev  0x0000014d      0x19e miggl.o
+ .debug_abbrev  0x000002eb       0xda /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
 
-.debug_line     0x00000000      0xc81
+.debug_line     0x00000000      0xdc8
  *(.debug_line)
- .debug_line    0x00000000      0x4dd simone.o
- .debug_line    0x000004dd      0x7a4 miggl.o
+ .debug_line    0x00000000      0x4e3 simone.o
+ .debug_line    0x000004e3      0x7a4 miggl.o
+ .debug_line    0x00000c87      0x141 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x00000000      0x3da
+.debug_str      0x00000000      0x47f
  *(.debug_str)
- .debug_str     0x00000000      0x171 simone.o
-                                0x1e1 (size before relaxing)
- .debug_str     0x00000171      0x269 miggl.o
+ .debug_str     0x00000000      0x17c simone.o
+                                0x1ec (size before relaxing)
+ .debug_str     0x0000017c      0x269 miggl.o
                                 0x380 (size before relaxing)
+ .debug_str     0x000003e5       0x9a /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a(rand.o)
+                                 0xd3 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)

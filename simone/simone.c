@@ -79,7 +79,12 @@ N_END,
 #define DIRECTION_D	3
 
 
-
+static byte directions[4] = {
+	DIRECTION_A,
+	DIRECTION_B,
+	DIRECTION_C,
+	DIRECTION_D
+};
 
 static byte arrows[100] = {DIRECTION_B};
 //static byte[100] colors;
@@ -324,7 +329,7 @@ nextlevel:
 		
 			if (cnt == level) {
 				level++;
-				arrows[cnt] = DIRECTION_D;
+				arrows[cnt] = directions[rand() / (RAND_MAX / 4 + 1) ];
 				delay_ms(200);
 				goto nextlevel;
 			}
