@@ -1,0 +1,457 @@
+Archive member included because of file (symbol)
+
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+                              /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o (exit)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+                              simone.o (__do_copy_data)
+/usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+                              simone.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+ButtonBEvent        0x1               miggl.o
+WtabDelta           0x2               miggl.o
+CurNote             0x1               miggl.o
+ButtonAEvent        0x1               miggl.o
+ButtonCEvent        0x1               miggl.o
+ButtonC             0x1               miggl.o
+ButtonB             0x1               miggl.o
+CurRow              0x1               miggl.o
+wavPtr              0x2               miggl.o
+Wdur                0x2               miggl.o
+Disp                0xa               miggl.o
+SwapInterval        0x1               miggl.o
+WtabCount           0x2               miggl.o
+SwapRelease         0x1               miggl.o
+PWMval              0x2               miggl.o
+SwapCounter         0x1               miggl.o
+ButtonA             0x1               miggl.o
+SongPlayFlag        0x1               miggl.o
+Wnote_sep           0x2               miggl.o
+ButtonD             0x1               miggl.o
+songPtr             0x2               miggl.o
+ButtonDEvent        0x1               miggl.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00002000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+LOAD simone.o
+LOAD miggl.o
+LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
+LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/libc.a
+LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x836
+ *(.vectors)
+ .vectors       0x00000000       0x34 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table
+                0x00000034       0x14 miggl.o
+ *(.progmem*)
+                0x00000048                . = ALIGN (0x2)
+                0x00000048                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000048        0x0 linker stubs
+ *(.trampolines*)
+                0x00000048                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000048                __ctors_start = .
+ *(.ctors)
+                0x00000048                __ctors_end = .
+                0x00000048                __dtors_start = .
+ *(.dtors)
+                0x00000048                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000048        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+                0x00000048                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000048        0xc /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000054       0x16 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+                0x00000054                __do_copy_data
+ .init4         0x0000006a       0x10 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+                0x0000006a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000007a        0x4 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+ *(.init9)
+ *(.text)
+ .text          0x0000007e        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+                0x0000007e                __vector_22
+                0x0000007e                __vector_1
+                0x0000007e                __vector_24
+                0x0000007e                __vector_12
+                0x0000007e                __bad_interrupt
+                0x0000007e                __vector_6
+                0x0000007e                __vector_3
+                0x0000007e                __vector_23
+                0x0000007e                __vector_25
+                0x0000007e                __vector_11
+                0x0000007e                __vector_17
+                0x0000007e                __vector_19
+                0x0000007e                __vector_7
+                0x0000007e                __vector_5
+                0x0000007e                __vector_4
+                0x0000007e                __vector_9
+                0x0000007e                __vector_2
+                0x0000007e                __vector_21
+                0x0000007e                __vector_15
+                0x0000007e                __vector_8
+                0x0000007e                __vector_14
+                0x0000007e                __vector_10
+                0x0000007e                __vector_16
+                0x0000007e                __vector_18
+                0x0000007e                __vector_20
+ .text          0x00000080       0xf4 simone.o
+                0x000000bc                delay_sec
+                0x000000fa                draw_arrow
+                0x00000080                delay_us
+                0x0000013c                main
+                0x0000009a                delay_ms
+ .text          0x00000174      0x6c0 miggl.o
+                0x00000494                start_timer1
+                0x0000054a                handlebuttons
+                0x000005ae                swapbuffers
+                0x000004e0                button_init
+                0x00000818                isaudioplaying
+                0x000005e2                cleardisplay
+                0x000005c8                initswapbuffers
+                0x000005fa                getcolor
+                0x00000746                settempo
+                0x00000666                drawfilledrect
+                0x00000356                __vector_13
+                0x00000782                playnote
+                0x00000784                playsong
+                0x000005f2                setcolor
+                0x00000780                playsound
+                0x000004c4                avrinit
+                0x000005d8                swapinterval
+                0x00000174                do_audio_isr
+                0x00000502                poll_buttons
+                0x00000748                setwavetable
+                0x00000726                initaudio
+                0x00000820                waitaudio
+                0x00000602                drawpoint
+ .text          0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .text          0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .text          0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+                0x00000834                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .text.libgcc   0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+                0x00000834                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000834        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+                0x00000834                exit
+                0x00000834                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000834        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000836                _etext = .
+
+.data           0x00800100      0x12e load address 0x00000836
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+ .data          0x00800100       0x21 simone.o
+                0x00800100                ClassicalIntroSong
+ .data          0x00800121      0x10c miggl.o
+                0x00800121                DurTab
+                0x00800181                NoteTab
+ .data          0x0080022d        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .data          0x0080022d        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .data          0x0080022d        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080022e                . = ALIGN (0x2)
+ *fill*         0x0080022d        0x1 00
+                0x0080022e                _edata = .
+                0x0080022e                PROVIDE (__data_end, .)
+
+.bss            0x0080022e       0x8a
+                0x0080022e                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080022e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/avr4/crtm88.o
+ .bss           0x0080022e       0x64 simone.o
+ .bss           0x00800292        0x0 miggl.o
+ .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_exit.o)
+ .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_copy_data.o)
+ .bss           0x00800292        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/avr4/libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800292       0x26 miggl.o
+                0x00800292                ButtonBEvent
+                0x00800293                WtabDelta
+                0x00800295                CurNote
+                0x00800296                ButtonAEvent
+                0x00800297                ButtonCEvent
+                0x00800298                ButtonC
+                0x00800299                ButtonB
+                0x0080029a                CurRow
+                0x0080029b                wavPtr
+                0x0080029d                Wdur
+                0x0080029f                Disp
+                0x008002a9                SwapInterval
+                0x008002aa                WtabCount
+                0x008002ac                SwapRelease
+                0x008002ad                PWMval
+                0x008002af                SwapCounter
+                0x008002b0                ButtonA
+                0x008002b1                SongPlayFlag
+                0x008002b2                Wnote_sep
+                0x008002b4                ButtonD
+                0x008002b5                songPtr
+                0x008002b7                ButtonDEvent
+                0x008002b8                PROVIDE (__bss_end, .)
+                0x00000836                __data_load_start = LOADADDR (.data)
+                0x00000964                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002b8        0x0
+                0x008002b8                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002b8                PROVIDE (__noinit_end, .)
+                0x008002b8                _end = .
+                0x008002b8                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x28
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x14 simone.o
+ .debug_aranges
+                0x00000014       0x14 miggl.o
+
+.debug_pubnames
+                0x00000000      0x324
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x69 simone.o
+ .debug_pubnames
+                0x00000069      0x2bb miggl.o
+
+.debug_info     0x00000000      0xbf0
+ *(.debug_info)
+ .debug_info    0x00000000      0x308 simone.o
+ .debug_info    0x00000308      0x8e8 miggl.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x2d4
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x136 simone.o
+ .debug_abbrev  0x00000136      0x19e miggl.o
+
+.debug_line     0x00000000      0xa26
+ *(.debug_line)
+ .debug_line    0x00000000      0x282 simone.o
+ .debug_line    0x00000282      0x7a4 miggl.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x00000000      0x3c3
+ *(.debug_str)
+ .debug_str     0x00000000      0x13a simone.o
+                                0x1aa (size before relaxing)
+ .debug_str     0x0000013a      0x289 miggl.o
+                                0x380 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(simone.elf elf32-avr)
+LOAD linker stubs
