@@ -3,23 +3,23 @@ simone.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000162  00800100  00000f98  0000102c  2**0
+  0 .data         0000015c  00800100  00000e6a  00000efe  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000f98  00000000  00000000  00000094  2**1
+  1 .text         00000e6a  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000008a  00800262  00800262  0000118e  2**0
+  2 .bss          0000008a  0080025c  0080025c  0000105a  2**0
                   ALLOC
-  3 .debug_aranges 00000028  00000000  00000000  0000118e  2**0
+  3 .debug_aranges 00000028  00000000  00000000  0000105a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_pubnames 000003f6  00000000  00000000  000011b6  2**0
+  4 .debug_pubnames 000003f6  00000000  00000000  00001082  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000010ba  00000000  00000000  000015ac  2**0
+  5 .debug_info   000010a4  00000000  00000000  00001478  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000035a  00000000  00000000  00002666  2**0
+  6 .debug_abbrev 0000035a  00000000  00000000  0000251c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000f7d  00000000  00000000  000029c0  2**0
+  7 .debug_line   00000f7d  00000000  00000000  00002876  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    00000535  00000000  00000000  0000393d  2**0
+  8 .debug_str    00000535  00000000  00000000  000037f3  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -38,7 +38,7 @@ Disassembly of section .text:
   14:	34 c0       	rjmp	.+104    	; 0x7e <__bad_interrupt>
   16:	33 c0       	rjmp	.+102    	; 0x7e <__bad_interrupt>
   18:	32 c0       	rjmp	.+100    	; 0x7e <__bad_interrupt>
-  1a:	e6 c4       	rjmp	.+2508   	; 0x9e8 <__vector_13>
+  1a:	90 c4       	rjmp	.+2336   	; 0x93c <__vector_13>
   1c:	30 c0       	rjmp	.+96     	; 0x7e <__bad_interrupt>
   1e:	2f c0       	rjmp	.+94     	; 0x7e <__bad_interrupt>
   20:	2e c0       	rjmp	.+92     	; 0x7e <__bad_interrupt>
@@ -51,16 +51,16 @@ Disassembly of section .text:
   2e:	27 c0       	rjmp	.+78     	; 0x7e <__bad_interrupt>
   30:	26 c0       	rjmp	.+76     	; 0x7e <__bad_interrupt>
   32:	25 c0       	rjmp	.+74     	; 0x7e <__bad_interrupt>
-  34:	28 c5       	rjmp	.+2640   	; 0xa86 <__vector_13+0x9e>
-  36:	2e c5       	rjmp	.+2652   	; 0xa94 <__vector_13+0xac>
-  38:	34 c5       	rjmp	.+2664   	; 0xaa2 <__vector_13+0xba>
-  3a:	3a c5       	rjmp	.+2676   	; 0xab0 <__vector_13+0xc8>
-  3c:	40 c5       	rjmp	.+2688   	; 0xabe <__vector_13+0xd6>
-  3e:	46 c5       	rjmp	.+2700   	; 0xacc <__vector_13+0xe4>
-  40:	4c c5       	rjmp	.+2712   	; 0xada <__vector_13+0xf2>
-  42:	52 c5       	rjmp	.+2724   	; 0xae8 <__vector_13+0x100>
-  44:	58 c5       	rjmp	.+2736   	; 0xaf6 <__vector_13+0x10e>
-  46:	18 c5       	rjmp	.+2608   	; 0xa78 <__vector_13+0x90>
+  34:	d2 c4       	rjmp	.+2468   	; 0x9da <__vector_13+0x9e>
+  36:	d8 c4       	rjmp	.+2480   	; 0x9e8 <__vector_13+0xac>
+  38:	de c4       	rjmp	.+2492   	; 0x9f6 <__vector_13+0xba>
+  3a:	e4 c4       	rjmp	.+2504   	; 0xa04 <__vector_13+0xc8>
+  3c:	ea c4       	rjmp	.+2516   	; 0xa12 <__vector_13+0xd6>
+  3e:	f0 c4       	rjmp	.+2528   	; 0xa20 <__vector_13+0xe4>
+  40:	f6 c4       	rjmp	.+2540   	; 0xa2e <__vector_13+0xf2>
+  42:	fc c4       	rjmp	.+2552   	; 0xa3c <__vector_13+0x100>
+  44:	02 c5       	rjmp	.+2564   	; 0xa4a <__vector_13+0x10e>
+  46:	c2 c4       	rjmp	.+2436   	; 0x9cc <__vector_13+0x90>
 
 00000048 <__ctors_end>:
   48:	11 24       	eor	r1, r1
@@ -74,8 +74,8 @@ Disassembly of section .text:
   54:	12 e0       	ldi	r17, 0x02	; 2
   56:	a0 e0       	ldi	r26, 0x00	; 0
   58:	b1 e0       	ldi	r27, 0x01	; 1
-  5a:	e8 e9       	ldi	r30, 0x98	; 152
-  5c:	ff e0       	ldi	r31, 0x0F	; 15
+  5a:	ea e6       	ldi	r30, 0x6A	; 106
+  5c:	fe e0       	ldi	r31, 0x0E	; 14
   5e:	02 c0       	rjmp	.+4      	; 0x64 <.do_copy_data_start>
 
 00000060 <.do_copy_data_loop>:
@@ -83,13 +83,13 @@ Disassembly of section .text:
   62:	0d 92       	st	X+, r0
 
 00000064 <.do_copy_data_start>:
-  64:	a2 36       	cpi	r26, 0x62	; 98
+  64:	ac 35       	cpi	r26, 0x5C	; 92
   66:	b1 07       	cpc	r27, r17
   68:	d9 f7       	brne	.-10     	; 0x60 <.do_copy_data_loop>
 
 0000006a <__do_clear_bss>:
   6a:	12 e0       	ldi	r17, 0x02	; 2
-  6c:	a2 e6       	ldi	r26, 0x62	; 98
+  6c:	ac e5       	ldi	r26, 0x5C	; 92
   6e:	b2 e0       	ldi	r27, 0x02	; 2
   70:	01 c0       	rjmp	.+2      	; 0x74 <.do_clear_bss_start>
 
@@ -97,11 +97,11 @@ Disassembly of section .text:
   72:	1d 92       	st	X+, r1
 
 00000074 <.do_clear_bss_start>:
-  74:	ac 3e       	cpi	r26, 0xEC	; 236
+  74:	a6 3e       	cpi	r26, 0xE6	; 230
   76:	b1 07       	cpc	r27, r17
   78:	e1 f7       	brne	.-8      	; 0x72 <.do_clear_bss_loop>
-  7a:	d2 d2       	rcall	.+1444   	; 0x620 <main>
-  7c:	8c c7       	rjmp	.+3864   	; 0xf96 <_exit>
+  7a:	85 d2       	rcall	.+1290   	; 0x586 <main>
+  7c:	f5 c6       	rjmp	.+3562   	; 0xe68 <_exit>
 
 0000007e <__bad_interrupt>:
   7e:	c0 cf       	rjmp	.-128    	; 0x0 <__vectors>
@@ -221,3073 +221,2930 @@ delay_sec(uint8_t sec)
 
 000000fa <next_random>:
 
-// A 32-bit version
-static uint32_t RandomSeedA = 65537;
-static uint32_t RandomSeedB = 12345;
+static uint8_t RandomSeedA = 0x11;
+static uint8_t RandomSeedB = 0x0D;
 
-uint32_t next_random (uint32_t max) {
-  fa:	6f 92       	push	r6
-  fc:	7f 92       	push	r7
-  fe:	8f 92       	push	r8
- 100:	9f 92       	push	r9
- 102:	af 92       	push	r10
- 104:	bf 92       	push	r11
- 106:	cf 92       	push	r12
- 108:	df 92       	push	r13
- 10a:	ef 92       	push	r14
- 10c:	ff 92       	push	r15
- 10e:	0f 93       	push	r16
- 110:	1f 93       	push	r17
- 112:	3b 01       	movw	r6, r22
- 114:	4c 01       	movw	r8, r24
-	RandomSeedA = 36969 * (RandomSeedA & 65535) + (RandomSeedA >> 16);
- 116:	a0 90 52 01 	lds	r10, 0x0152
- 11a:	b0 90 53 01 	lds	r11, 0x0153
- 11e:	c0 90 54 01 	lds	r12, 0x0154
- 122:	d0 90 55 01 	lds	r13, 0x0155
- 126:	d6 01       	movw	r26, r12
- 128:	c5 01       	movw	r24, r10
- 12a:	a0 70       	andi	r26, 0x00	; 0
- 12c:	b0 70       	andi	r27, 0x00	; 0
- 12e:	bc 01       	movw	r22, r24
- 130:	cd 01       	movw	r24, r26
- 132:	29 e6       	ldi	r18, 0x69	; 105
- 134:	30 e9       	ldi	r19, 0x90	; 144
- 136:	40 e0       	ldi	r20, 0x00	; 0
- 138:	50 e0       	ldi	r21, 0x00	; 0
- 13a:	c5 d6       	rcall	.+3466   	; 0xec6 <__mulsi3>
- 13c:	7b 01       	movw	r14, r22
- 13e:	8c 01       	movw	r16, r24
- 140:	c6 01       	movw	r24, r12
- 142:	aa 27       	eor	r26, r26
- 144:	bb 27       	eor	r27, r27
- 146:	e8 0e       	add	r14, r24
- 148:	f9 1e       	adc	r15, r25
- 14a:	0a 1f       	adc	r16, r26
- 14c:	1b 1f       	adc	r17, r27
- 14e:	e0 92 52 01 	sts	0x0152, r14
- 152:	f0 92 53 01 	sts	0x0153, r15
- 156:	00 93 54 01 	sts	0x0154, r16
- 15a:	10 93 55 01 	sts	0x0155, r17
-	RandomSeedB = 18000 * (RandomSeedB & 65535) + (RandomSeedB >> 16);
- 15e:	a0 90 4e 01 	lds	r10, 0x014E
- 162:	b0 90 4f 01 	lds	r11, 0x014F
- 166:	c0 90 50 01 	lds	r12, 0x0150
- 16a:	d0 90 51 01 	lds	r13, 0x0151
- 16e:	d6 01       	movw	r26, r12
- 170:	c5 01       	movw	r24, r10
- 172:	a0 70       	andi	r26, 0x00	; 0
- 174:	b0 70       	andi	r27, 0x00	; 0
- 176:	bc 01       	movw	r22, r24
- 178:	cd 01       	movw	r24, r26
- 17a:	20 e5       	ldi	r18, 0x50	; 80
- 17c:	36 e4       	ldi	r19, 0x46	; 70
- 17e:	40 e0       	ldi	r20, 0x00	; 0
- 180:	50 e0       	ldi	r21, 0x00	; 0
- 182:	a1 d6       	rcall	.+3394   	; 0xec6 <__mulsi3>
- 184:	9b 01       	movw	r18, r22
- 186:	ac 01       	movw	r20, r24
- 188:	c6 01       	movw	r24, r12
- 18a:	aa 27       	eor	r26, r26
- 18c:	bb 27       	eor	r27, r27
- 18e:	28 0f       	add	r18, r24
- 190:	39 1f       	adc	r19, r25
- 192:	4a 1f       	adc	r20, r26
- 194:	5b 1f       	adc	r21, r27
- 196:	20 93 4e 01 	sts	0x014E, r18
- 19a:	30 93 4f 01 	sts	0x014F, r19
- 19e:	40 93 50 01 	sts	0x0150, r20
- 1a2:	50 93 51 01 	sts	0x0151, r21
- 	return ((RandomSeedA << 16) + RandomSeedB) % max;
- 1a6:	d7 01       	movw	r26, r14
- 1a8:	99 27       	eor	r25, r25
- 1aa:	88 27       	eor	r24, r24
- 1ac:	82 0f       	add	r24, r18
- 1ae:	93 1f       	adc	r25, r19
- 1b0:	a4 1f       	adc	r26, r20
- 1b2:	b5 1f       	adc	r27, r21
- 1b4:	bc 01       	movw	r22, r24
- 1b6:	cd 01       	movw	r24, r26
- 1b8:	a4 01       	movw	r20, r8
- 1ba:	93 01       	movw	r18, r6
- 1bc:	b6 d6       	rcall	.+3436   	; 0xf2a <__udivmodsi4>
- 1be:	dc 01       	movw	r26, r24
- 1c0:	cb 01       	movw	r24, r22
+uint8_t next_random (uint8_t max) {
+	RandomSeedA = 0x7F * (RandomSeedA & 0x0F) + (RandomSeedA >> 4);
+  fa:	90 91 4f 01 	lds	r25, 0x014F
+  fe:	29 2f       	mov	r18, r25
+ 100:	33 27       	eor	r19, r19
+ 102:	2f 70       	andi	r18, 0x0F	; 15
+ 104:	30 70       	andi	r19, 0x00	; 0
+ 106:	a9 01       	movw	r20, r18
+ 108:	56 95       	lsr	r21
+ 10a:	54 2f       	mov	r21, r20
+ 10c:	44 27       	eor	r20, r20
+ 10e:	57 95       	ror	r21
+ 110:	47 95       	ror	r20
+ 112:	42 1b       	sub	r20, r18
+ 114:	53 0b       	sbc	r21, r19
+ 116:	69 2f       	mov	r22, r25
+ 118:	62 95       	swap	r22
+ 11a:	6f 70       	andi	r22, 0x0F	; 15
+ 11c:	64 0f       	add	r22, r20
+ 11e:	60 93 4f 01 	sts	0x014F, r22
+	RandomSeedB = 0x3C * (RandomSeedB & 0x0F) + (RandomSeedB >> 4);
+ 122:	90 91 4e 01 	lds	r25, 0x014E
+ 126:	29 2f       	mov	r18, r25
+ 128:	33 27       	eor	r19, r19
+ 12a:	2f 70       	andi	r18, 0x0F	; 15
+ 12c:	30 70       	andi	r19, 0x00	; 0
+ 12e:	4c e3       	ldi	r20, 0x3C	; 60
+ 130:	50 e0       	ldi	r21, 0x00	; 0
+ 132:	24 9f       	mul	r18, r20
+ 134:	f0 01       	movw	r30, r0
+ 136:	25 9f       	mul	r18, r21
+ 138:	f0 0d       	add	r31, r0
+ 13a:	34 9f       	mul	r19, r20
+ 13c:	f0 0d       	add	r31, r0
+ 13e:	11 24       	eor	r1, r1
+ 140:	92 95       	swap	r25
+ 142:	9f 70       	andi	r25, 0x0F	; 15
+ 144:	9e 0f       	add	r25, r30
+ 146:	90 93 4e 01 	sts	0x014E, r25
+ 	return ((RandomSeedA << 4) + RandomSeedB) % max;
+ 14a:	26 2f       	mov	r18, r22
+ 14c:	33 27       	eor	r19, r19
+ 14e:	22 95       	swap	r18
+ 150:	32 95       	swap	r19
+ 152:	30 7f       	andi	r19, 0xF0	; 240
+ 154:	32 27       	eor	r19, r18
+ 156:	20 7f       	andi	r18, 0xF0	; 240
+ 158:	32 27       	eor	r19, r18
+ 15a:	48 2f       	mov	r20, r24
+ 15c:	55 27       	eor	r21, r21
+ 15e:	29 0f       	add	r18, r25
+ 160:	31 1d       	adc	r19, r1
+ 162:	c9 01       	movw	r24, r18
+ 164:	ba 01       	movw	r22, r20
+ 166:	59 d6       	rcall	.+3250   	; 0xe1a <__divmodhi4>
 }
- 1c2:	bc 01       	movw	r22, r24
- 1c4:	cd 01       	movw	r24, r26
- 1c6:	1f 91       	pop	r17
- 1c8:	0f 91       	pop	r16
- 1ca:	ff 90       	pop	r15
- 1cc:	ef 90       	pop	r14
- 1ce:	df 90       	pop	r13
- 1d0:	cf 90       	pop	r12
- 1d2:	bf 90       	pop	r11
- 1d4:	af 90       	pop	r10
- 1d6:	9f 90       	pop	r9
- 1d8:	8f 90       	pop	r8
- 1da:	7f 90       	pop	r7
- 1dc:	6f 90       	pop	r6
- 1de:	08 95       	ret
+ 168:	99 27       	eor	r25, r25
+ 16a:	08 95       	ret
 
-000001e0 <init_random>:
+0000016c <init_random>:
 
 void init_random (void) {
-	uint16_t *addr = 0;
- 1e0:	e0 e0       	ldi	r30, 0x00	; 0
- 1e2:	f0 e0       	ldi	r31, 0x00	; 0
- 1e4:	20 91 4e 01 	lds	r18, 0x014E
- 1e8:	30 91 4f 01 	lds	r19, 0x014F
- 1ec:	40 91 50 01 	lds	r20, 0x0150
- 1f0:	50 91 51 01 	lds	r21, 0x0151
-	for (addr = 0; addr < (uint16_t*)0xFFFF; addr++) 
+	uint8_t *addr = 0;
+ 16c:	e0 e0       	ldi	r30, 0x00	; 0
+ 16e:	f0 e0       	ldi	r31, 0x00	; 0
+ 170:	90 91 4e 01 	lds	r25, 0x014E
+	for (addr = 0; addr < (uint8_t*)0xFFFF; addr++) 
 		RandomSeedB += (*addr);	
- 1f4:	81 91       	ld	r24, Z+
- 1f6:	91 91       	ld	r25, Z+
- 1f8:	aa 27       	eor	r26, r26
- 1fa:	bb 27       	eor	r27, r27
- 1fc:	82 0f       	add	r24, r18
- 1fe:	93 1f       	adc	r25, r19
- 200:	a4 1f       	adc	r26, r20
- 202:	b5 1f       	adc	r27, r21
- 204:	9c 01       	movw	r18, r24
- 206:	ad 01       	movw	r20, r26
- 	return ((RandomSeedA << 16) + RandomSeedB) % max;
+ 174:	81 91       	ld	r24, Z+
+ 176:	89 0f       	add	r24, r25
+ 178:	98 2f       	mov	r25, r24
+ 17a:	80 93 4e 01 	sts	0x014E, r24
+ 	return ((RandomSeedA << 4) + RandomSeedB) % max;
 }
 
 void init_random (void) {
-	uint16_t *addr = 0;
-	for (addr = 0; addr < (uint16_t*)0xFFFF; addr++) 
- 208:	6f ef       	ldi	r22, 0xFF	; 255
- 20a:	ef 3f       	cpi	r30, 0xFF	; 255
- 20c:	f6 07       	cpc	r31, r22
- 20e:	91 f7       	brne	.-28     	; 0x1f4 <init_random+0x14>
- 210:	80 93 4e 01 	sts	0x014E, r24
- 214:	90 93 4f 01 	sts	0x014F, r25
- 218:	a0 93 50 01 	sts	0x0150, r26
- 21c:	b0 93 51 01 	sts	0x0151, r27
- 220:	08 95       	ret
+	uint8_t *addr = 0;
+	for (addr = 0; addr < (uint8_t*)0xFFFF; addr++) 
+ 17e:	8f ef       	ldi	r24, 0xFF	; 255
+ 180:	ef 3f       	cpi	r30, 0xFF	; 255
+ 182:	f8 07       	cpc	r31, r24
+ 184:	b9 f7       	brne	.-18     	; 0x174 <init_random+0x8>
+ 186:	08 95       	ret
 
-00000222 <draw_arrow>:
-
-// An 8 bit version
-
+00000188 <draw_arrow>:
+		RandomSeedB += (*addr);	
+}
 
 
 void draw_arrow(byte dir, byte clr) {
- 222:	cf 93       	push	r28
- 224:	c8 2f       	mov	r28, r24
- 226:	86 2f       	mov	r24, r22
+ 188:	cf 93       	push	r28
+ 18a:	c8 2f       	mov	r28, r24
+ 18c:	86 2f       	mov	r24, r22
 	setcolor(clr);
- 228:	2d d5       	rcall	.+2650   	; 0xc84 <setcolor>
+ 18e:	24 d5       	rcall	.+2632   	; 0xbd8 <setcolor>
 	if (dir == DIRECTION_A) {
- 22a:	cc 23       	and	r28, r28
- 22c:	51 f0       	breq	.+20     	; 0x242 <draw_arrow+0x20>
+ 190:	cc 23       	and	r28, r28
+ 192:	51 f0       	breq	.+20     	; 0x1a8 <draw_arrow+0x20>
 		drawpoint(2, 2);
 		drawpoint(3, 3);
 		drawpoint(4, 4);
 		//drawpoint(5, 5);
 	}
 	else if (dir == DIRECTION_B) {
- 22e:	c1 30       	cpi	r28, 0x01	; 1
- 230:	09 f4       	brne	.+2      	; 0x234 <draw_arrow+0x12>
- 232:	3f c0       	rjmp	.+126    	; 0x2b2 <draw_arrow+0x90>
+ 194:	c1 30       	cpi	r28, 0x01	; 1
+ 196:	09 f4       	brne	.+2      	; 0x19a <draw_arrow+0x12>
+ 198:	3f c0       	rjmp	.+126    	; 0x218 <draw_arrow+0x90>
 		drawpoint(2, 2);
 		drawpoint(3, 1);
 		drawpoint(4, 0);
 		//drawpoint(0, 5);
 	}
 	else if (dir == DIRECTION_C) {
- 234:	c2 30       	cpi	r28, 0x02	; 2
- 236:	09 f4       	brne	.+2      	; 0x23a <draw_arrow+0x18>
- 238:	58 c0       	rjmp	.+176    	; 0x2ea <draw_arrow+0xc8>
+ 19a:	c2 30       	cpi	r28, 0x02	; 2
+ 19c:	09 f4       	brne	.+2      	; 0x1a0 <draw_arrow+0x18>
+ 19e:	58 c0       	rjmp	.+176    	; 0x250 <draw_arrow+0xc8>
 		drawpoint(3, 1);
 		drawpoint(2, 0);
 		//drawpoint(0, 5);
 
 	}
 	else if (dir == DIRECTION_D) {
- 23a:	c3 30       	cpi	r28, 0x03	; 3
- 23c:	09 f0       	breq	.+2      	; 0x240 <draw_arrow+0x1e>
- 23e:	70 c0       	rjmp	.+224    	; 0x320 <draw_arrow+0xfe>
- 240:	1c c0       	rjmp	.+56     	; 0x27a <draw_arrow+0x58>
+ 1a0:	c3 30       	cpi	r28, 0x03	; 3
+ 1a2:	09 f0       	breq	.+2      	; 0x1a6 <draw_arrow+0x1e>
+ 1a4:	70 c0       	rjmp	.+224    	; 0x286 <draw_arrow+0xfe>
+ 1a6:	1c c0       	rjmp	.+56     	; 0x1e0 <draw_arrow+0x58>
 
 void draw_arrow(byte dir, byte clr) {
 	setcolor(clr);
 	if (dir == DIRECTION_A) {
 		//POINTS UP AND LEFT
 		drawpoint(0, 0);
- 242:	6c 2f       	mov	r22, r28
- 244:	8c 2f       	mov	r24, r28
- 246:	26 d5       	rcall	.+2636   	; 0xc94 <drawpoint>
+ 1a8:	6c 2f       	mov	r22, r28
+ 1aa:	8c 2f       	mov	r24, r28
+ 1ac:	1d d5       	rcall	.+2618   	; 0xbe8 <drawpoint>
 		drawpoint(0, 1);
- 248:	61 e0       	ldi	r22, 0x01	; 1
- 24a:	8c 2f       	mov	r24, r28
- 24c:	23 d5       	rcall	.+2630   	; 0xc94 <drawpoint>
+ 1ae:	61 e0       	ldi	r22, 0x01	; 1
+ 1b0:	8c 2f       	mov	r24, r28
+ 1b2:	1a d5       	rcall	.+2612   	; 0xbe8 <drawpoint>
 		drawpoint(0, 2);
- 24e:	62 e0       	ldi	r22, 0x02	; 2
- 250:	8c 2f       	mov	r24, r28
- 252:	20 d5       	rcall	.+2624   	; 0xc94 <drawpoint>
+ 1b4:	62 e0       	ldi	r22, 0x02	; 2
+ 1b6:	8c 2f       	mov	r24, r28
+ 1b8:	17 d5       	rcall	.+2606   	; 0xbe8 <drawpoint>
 		drawpoint(1, 0);
- 254:	6c 2f       	mov	r22, r28
- 256:	81 e0       	ldi	r24, 0x01	; 1
- 258:	1d d5       	rcall	.+2618   	; 0xc94 <drawpoint>
+ 1ba:	6c 2f       	mov	r22, r28
+ 1bc:	81 e0       	ldi	r24, 0x01	; 1
+ 1be:	14 d5       	rcall	.+2600   	; 0xbe8 <drawpoint>
 		drawpoint(2, 0);
- 25a:	6c 2f       	mov	r22, r28
- 25c:	82 e0       	ldi	r24, 0x02	; 2
- 25e:	1a d5       	rcall	.+2612   	; 0xc94 <drawpoint>
+ 1c0:	6c 2f       	mov	r22, r28
+ 1c2:	82 e0       	ldi	r24, 0x02	; 2
+ 1c4:	11 d5       	rcall	.+2594   	; 0xbe8 <drawpoint>
 		drawpoint(1, 1);
- 260:	61 e0       	ldi	r22, 0x01	; 1
- 262:	86 2f       	mov	r24, r22
- 264:	17 d5       	rcall	.+2606   	; 0xc94 <drawpoint>
+ 1c6:	61 e0       	ldi	r22, 0x01	; 1
+ 1c8:	86 2f       	mov	r24, r22
+ 1ca:	0e d5       	rcall	.+2588   	; 0xbe8 <drawpoint>
 		drawpoint(2, 2);
- 266:	62 e0       	ldi	r22, 0x02	; 2
- 268:	86 2f       	mov	r24, r22
- 26a:	14 d5       	rcall	.+2600   	; 0xc94 <drawpoint>
+ 1cc:	62 e0       	ldi	r22, 0x02	; 2
+ 1ce:	86 2f       	mov	r24, r22
+ 1d0:	0b d5       	rcall	.+2582   	; 0xbe8 <drawpoint>
 		drawpoint(3, 3);
- 26c:	63 e0       	ldi	r22, 0x03	; 3
- 26e:	86 2f       	mov	r24, r22
- 270:	11 d5       	rcall	.+2594   	; 0xc94 <drawpoint>
+ 1d2:	63 e0       	ldi	r22, 0x03	; 3
+ 1d4:	86 2f       	mov	r24, r22
+ 1d6:	08 d5       	rcall	.+2576   	; 0xbe8 <drawpoint>
 		drawpoint(4, 4);
- 272:	64 e0       	ldi	r22, 0x04	; 4
- 274:	86 2f       	mov	r24, r22
+ 1d8:	64 e0       	ldi	r22, 0x04	; 4
+ 1da:	86 2f       	mov	r24, r22
 		drawpoint(5, 0);
 		drawpoint(4, 0);
 		drawpoint(5, 1);
 		drawpoint(4, 2);
 		drawpoint(3, 3);
 		drawpoint(2, 4);
- 276:	0e d5       	rcall	.+2588   	; 0xc94 <drawpoint>
- 278:	53 c0       	rjmp	.+166    	; 0x320 <draw_arrow+0xfe>
+ 1dc:	05 d5       	rcall	.+2570   	; 0xbe8 <drawpoint>
+ 1de:	53 c0       	rjmp	.+166    	; 0x286 <draw_arrow+0xfe>
 
 	}
 	else if (dir == DIRECTION_D) {
 
 		//POINTS UP AND RIGHT
 		drawpoint(6, 0);
- 27a:	60 e0       	ldi	r22, 0x00	; 0
- 27c:	86 e0       	ldi	r24, 0x06	; 6
- 27e:	0a d5       	rcall	.+2580   	; 0xc94 <drawpoint>
+ 1e0:	60 e0       	ldi	r22, 0x00	; 0
+ 1e2:	86 e0       	ldi	r24, 0x06	; 6
+ 1e4:	01 d5       	rcall	.+2562   	; 0xbe8 <drawpoint>
 		drawpoint(6, 1);
- 280:	61 e0       	ldi	r22, 0x01	; 1
- 282:	86 e0       	ldi	r24, 0x06	; 6
- 284:	07 d5       	rcall	.+2574   	; 0xc94 <drawpoint>
+ 1e6:	61 e0       	ldi	r22, 0x01	; 1
+ 1e8:	86 e0       	ldi	r24, 0x06	; 6
+ 1ea:	fe d4       	rcall	.+2556   	; 0xbe8 <drawpoint>
 		drawpoint(6, 2);
- 286:	62 e0       	ldi	r22, 0x02	; 2
- 288:	86 e0       	ldi	r24, 0x06	; 6
- 28a:	04 d5       	rcall	.+2568   	; 0xc94 <drawpoint>
+ 1ec:	62 e0       	ldi	r22, 0x02	; 2
+ 1ee:	86 e0       	ldi	r24, 0x06	; 6
+ 1f0:	fb d4       	rcall	.+2550   	; 0xbe8 <drawpoint>
 		drawpoint(5, 0);
- 28c:	60 e0       	ldi	r22, 0x00	; 0
- 28e:	85 e0       	ldi	r24, 0x05	; 5
- 290:	01 d5       	rcall	.+2562   	; 0xc94 <drawpoint>
+ 1f2:	60 e0       	ldi	r22, 0x00	; 0
+ 1f4:	85 e0       	ldi	r24, 0x05	; 5
+ 1f6:	f8 d4       	rcall	.+2544   	; 0xbe8 <drawpoint>
 		drawpoint(4, 0);
- 292:	60 e0       	ldi	r22, 0x00	; 0
- 294:	84 e0       	ldi	r24, 0x04	; 4
- 296:	fe d4       	rcall	.+2556   	; 0xc94 <drawpoint>
+ 1f8:	60 e0       	ldi	r22, 0x00	; 0
+ 1fa:	84 e0       	ldi	r24, 0x04	; 4
+ 1fc:	f5 d4       	rcall	.+2538   	; 0xbe8 <drawpoint>
 		drawpoint(5, 1);
- 298:	61 e0       	ldi	r22, 0x01	; 1
- 29a:	85 e0       	ldi	r24, 0x05	; 5
- 29c:	fb d4       	rcall	.+2550   	; 0xc94 <drawpoint>
+ 1fe:	61 e0       	ldi	r22, 0x01	; 1
+ 200:	85 e0       	ldi	r24, 0x05	; 5
+ 202:	f2 d4       	rcall	.+2532   	; 0xbe8 <drawpoint>
 		drawpoint(4, 2);
- 29e:	62 e0       	ldi	r22, 0x02	; 2
- 2a0:	84 e0       	ldi	r24, 0x04	; 4
- 2a2:	f8 d4       	rcall	.+2544   	; 0xc94 <drawpoint>
+ 204:	62 e0       	ldi	r22, 0x02	; 2
+ 206:	84 e0       	ldi	r24, 0x04	; 4
+ 208:	ef d4       	rcall	.+2526   	; 0xbe8 <drawpoint>
 		drawpoint(3, 3);
- 2a4:	6c 2f       	mov	r22, r28
- 2a6:	8c 2f       	mov	r24, r28
- 2a8:	f5 d4       	rcall	.+2538   	; 0xc94 <drawpoint>
+ 20a:	6c 2f       	mov	r22, r28
+ 20c:	8c 2f       	mov	r24, r28
+ 20e:	ec d4       	rcall	.+2520   	; 0xbe8 <drawpoint>
 		drawpoint(2, 4);
- 2aa:	64 e0       	ldi	r22, 0x04	; 4
- 2ac:	82 e0       	ldi	r24, 0x02	; 2
- 2ae:	f2 d4       	rcall	.+2532   	; 0xc94 <drawpoint>
- 2b0:	37 c0       	rjmp	.+110    	; 0x320 <draw_arrow+0xfe>
+ 210:	64 e0       	ldi	r22, 0x04	; 4
+ 212:	82 e0       	ldi	r24, 0x02	; 2
+ 214:	e9 d4       	rcall	.+2514   	; 0xbe8 <drawpoint>
+ 216:	37 c0       	rjmp	.+110    	; 0x286 <draw_arrow+0xfe>
 		drawpoint(4, 4);
 		//drawpoint(5, 5);
 	}
 	else if (dir == DIRECTION_B) {
 		//POINTS DOWN AND LEFT
 		drawpoint(0, 4);
- 2b2:	64 e0       	ldi	r22, 0x04	; 4
- 2b4:	80 e0       	ldi	r24, 0x00	; 0
- 2b6:	ee d4       	rcall	.+2524   	; 0xc94 <drawpoint>
+ 218:	64 e0       	ldi	r22, 0x04	; 4
+ 21a:	80 e0       	ldi	r24, 0x00	; 0
+ 21c:	e5 d4       	rcall	.+2506   	; 0xbe8 <drawpoint>
 		drawpoint(0, 3);
- 2b8:	63 e0       	ldi	r22, 0x03	; 3
- 2ba:	80 e0       	ldi	r24, 0x00	; 0
- 2bc:	eb d4       	rcall	.+2518   	; 0xc94 <drawpoint>
+ 21e:	63 e0       	ldi	r22, 0x03	; 3
+ 220:	80 e0       	ldi	r24, 0x00	; 0
+ 222:	e2 d4       	rcall	.+2500   	; 0xbe8 <drawpoint>
 		drawpoint(0, 2);
- 2be:	62 e0       	ldi	r22, 0x02	; 2
- 2c0:	80 e0       	ldi	r24, 0x00	; 0
- 2c2:	e8 d4       	rcall	.+2512   	; 0xc94 <drawpoint>
+ 224:	62 e0       	ldi	r22, 0x02	; 2
+ 226:	80 e0       	ldi	r24, 0x00	; 0
+ 228:	df d4       	rcall	.+2494   	; 0xbe8 <drawpoint>
 		drawpoint(1, 4);
- 2c4:	64 e0       	ldi	r22, 0x04	; 4
- 2c6:	8c 2f       	mov	r24, r28
- 2c8:	e5 d4       	rcall	.+2506   	; 0xc94 <drawpoint>
+ 22a:	64 e0       	ldi	r22, 0x04	; 4
+ 22c:	8c 2f       	mov	r24, r28
+ 22e:	dc d4       	rcall	.+2488   	; 0xbe8 <drawpoint>
 		drawpoint(2, 4);
- 2ca:	64 e0       	ldi	r22, 0x04	; 4
- 2cc:	82 e0       	ldi	r24, 0x02	; 2
- 2ce:	e2 d4       	rcall	.+2500   	; 0xc94 <drawpoint>
+ 230:	64 e0       	ldi	r22, 0x04	; 4
+ 232:	82 e0       	ldi	r24, 0x02	; 2
+ 234:	d9 d4       	rcall	.+2482   	; 0xbe8 <drawpoint>
 		drawpoint(1, 3);
- 2d0:	63 e0       	ldi	r22, 0x03	; 3
- 2d2:	8c 2f       	mov	r24, r28
- 2d4:	df d4       	rcall	.+2494   	; 0xc94 <drawpoint>
+ 236:	63 e0       	ldi	r22, 0x03	; 3
+ 238:	8c 2f       	mov	r24, r28
+ 23a:	d6 d4       	rcall	.+2476   	; 0xbe8 <drawpoint>
 		drawpoint(2, 2);
- 2d6:	62 e0       	ldi	r22, 0x02	; 2
- 2d8:	86 2f       	mov	r24, r22
- 2da:	dc d4       	rcall	.+2488   	; 0xc94 <drawpoint>
+ 23c:	62 e0       	ldi	r22, 0x02	; 2
+ 23e:	86 2f       	mov	r24, r22
+ 240:	d3 d4       	rcall	.+2470   	; 0xbe8 <drawpoint>
 		drawpoint(3, 1);
- 2dc:	6c 2f       	mov	r22, r28
- 2de:	83 e0       	ldi	r24, 0x03	; 3
- 2e0:	d9 d4       	rcall	.+2482   	; 0xc94 <drawpoint>
+ 242:	6c 2f       	mov	r22, r28
+ 244:	83 e0       	ldi	r24, 0x03	; 3
+ 246:	d0 d4       	rcall	.+2464   	; 0xbe8 <drawpoint>
 		drawpoint(4, 0);
- 2e2:	60 e0       	ldi	r22, 0x00	; 0
- 2e4:	84 e0       	ldi	r24, 0x04	; 4
+ 248:	60 e0       	ldi	r22, 0x00	; 0
+ 24a:	84 e0       	ldi	r24, 0x04	; 4
 		drawpoint(5, 0);
 		drawpoint(4, 0);
 		drawpoint(5, 1);
 		drawpoint(4, 2);
 		drawpoint(3, 3);
 		drawpoint(2, 4);
- 2e6:	d6 d4       	rcall	.+2476   	; 0xc94 <drawpoint>
- 2e8:	1b c0       	rjmp	.+54     	; 0x320 <draw_arrow+0xfe>
+ 24c:	cd d4       	rcall	.+2458   	; 0xbe8 <drawpoint>
+ 24e:	1b c0       	rjmp	.+54     	; 0x286 <draw_arrow+0xfe>
 		drawpoint(4, 0);
 		//drawpoint(0, 5);
 	}
 	else if (dir == DIRECTION_C) {
 		//POINTS DOWN AND RIGHT
 		drawpoint(6, 4);
- 2ea:	64 e0       	ldi	r22, 0x04	; 4
- 2ec:	86 e0       	ldi	r24, 0x06	; 6
- 2ee:	d2 d4       	rcall	.+2468   	; 0xc94 <drawpoint>
+ 250:	64 e0       	ldi	r22, 0x04	; 4
+ 252:	86 e0       	ldi	r24, 0x06	; 6
+ 254:	c9 d4       	rcall	.+2450   	; 0xbe8 <drawpoint>
 		drawpoint(6, 3);
- 2f0:	63 e0       	ldi	r22, 0x03	; 3
- 2f2:	86 e0       	ldi	r24, 0x06	; 6
- 2f4:	cf d4       	rcall	.+2462   	; 0xc94 <drawpoint>
+ 256:	63 e0       	ldi	r22, 0x03	; 3
+ 258:	86 e0       	ldi	r24, 0x06	; 6
+ 25a:	c6 d4       	rcall	.+2444   	; 0xbe8 <drawpoint>
 		drawpoint(6, 2);
- 2f6:	6c 2f       	mov	r22, r28
- 2f8:	86 e0       	ldi	r24, 0x06	; 6
- 2fa:	cc d4       	rcall	.+2456   	; 0xc94 <drawpoint>
+ 25c:	6c 2f       	mov	r22, r28
+ 25e:	86 e0       	ldi	r24, 0x06	; 6
+ 260:	c3 d4       	rcall	.+2438   	; 0xbe8 <drawpoint>
 		drawpoint(5, 4);
- 2fc:	64 e0       	ldi	r22, 0x04	; 4
- 2fe:	85 e0       	ldi	r24, 0x05	; 5
- 300:	c9 d4       	rcall	.+2450   	; 0xc94 <drawpoint>
+ 262:	64 e0       	ldi	r22, 0x04	; 4
+ 264:	85 e0       	ldi	r24, 0x05	; 5
+ 266:	c0 d4       	rcall	.+2432   	; 0xbe8 <drawpoint>
 		drawpoint(4, 4);
- 302:	64 e0       	ldi	r22, 0x04	; 4
- 304:	86 2f       	mov	r24, r22
- 306:	c6 d4       	rcall	.+2444   	; 0xc94 <drawpoint>
+ 268:	64 e0       	ldi	r22, 0x04	; 4
+ 26a:	86 2f       	mov	r24, r22
+ 26c:	bd d4       	rcall	.+2426   	; 0xbe8 <drawpoint>
 		drawpoint(5, 3);
- 308:	63 e0       	ldi	r22, 0x03	; 3
- 30a:	85 e0       	ldi	r24, 0x05	; 5
- 30c:	c3 d4       	rcall	.+2438   	; 0xc94 <drawpoint>
+ 26e:	63 e0       	ldi	r22, 0x03	; 3
+ 270:	85 e0       	ldi	r24, 0x05	; 5
+ 272:	ba d4       	rcall	.+2420   	; 0xbe8 <drawpoint>
 		drawpoint(4, 2);
- 30e:	6c 2f       	mov	r22, r28
- 310:	84 e0       	ldi	r24, 0x04	; 4
- 312:	c0 d4       	rcall	.+2432   	; 0xc94 <drawpoint>
+ 274:	6c 2f       	mov	r22, r28
+ 276:	84 e0       	ldi	r24, 0x04	; 4
+ 278:	b7 d4       	rcall	.+2414   	; 0xbe8 <drawpoint>
 		drawpoint(3, 1);
- 314:	61 e0       	ldi	r22, 0x01	; 1
- 316:	83 e0       	ldi	r24, 0x03	; 3
- 318:	bd d4       	rcall	.+2426   	; 0xc94 <drawpoint>
+ 27a:	61 e0       	ldi	r22, 0x01	; 1
+ 27c:	83 e0       	ldi	r24, 0x03	; 3
+ 27e:	b4 d4       	rcall	.+2408   	; 0xbe8 <drawpoint>
 		drawpoint(2, 0);
- 31a:	60 e0       	ldi	r22, 0x00	; 0
- 31c:	8c 2f       	mov	r24, r28
+ 280:	60 e0       	ldi	r22, 0x00	; 0
+ 282:	8c 2f       	mov	r24, r28
 		drawpoint(5, 0);
 		drawpoint(4, 0);
 		drawpoint(5, 1);
 		drawpoint(4, 2);
 		drawpoint(3, 3);
 		drawpoint(2, 4);
- 31e:	ba d4       	rcall	.+2420   	; 0xc94 <drawpoint>
- 320:	cf 91       	pop	r28
- 322:	08 95       	ret
+ 284:	b1 d4       	rcall	.+2402   	; 0xbe8 <drawpoint>
+ 286:	cf 91       	pop	r28
+ 288:	08 95       	ret
 
-00000324 <show_next_arrow>:
+0000028a <show_next_arrow>:
 		//drawpoint(0, 5);
 	}
 }
 
 void show_next_arrow(int cnt) {
- 324:	cf 93       	push	r28
- 326:	df 93       	push	r29
+ 28a:	cf 93       	push	r28
+ 28c:	df 93       	push	r29
 	byte *noise;
 	byte clr;
 	byte dir = arrows[cnt];
- 328:	fc 01       	movw	r30, r24
- 32a:	ee 59       	subi	r30, 0x9E	; 158
- 32c:	fd 4f       	sbci	r31, 0xFD	; 253
- 32e:	80 81       	ld	r24, Z
+ 28e:	fc 01       	movw	r30, r24
+ 290:	e4 5a       	subi	r30, 0xA4	; 164
+ 292:	fd 4f       	sbci	r31, 0xFD	; 253
+ 294:	80 81       	ld	r24, Z
 
 	if (dir == DIRECTION_A) {
- 330:	88 23       	and	r24, r24
- 332:	19 f4       	brne	.+6      	; 0x33a <show_next_arrow+0x16>
+ 296:	88 23       	and	r24, r24
+ 298:	19 f4       	brne	.+6      	; 0x2a0 <show_next_arrow+0x16>
 		noise = DIRECTION_A_NOISE;
- 334:	c0 e3       	ldi	r28, 0x30	; 48
- 336:	d1 e0       	ldi	r29, 0x01	; 1
- 338:	0e c0       	rjmp	.+28     	; 0x356 <show_next_arrow+0x32>
+ 29a:	c0 e3       	ldi	r28, 0x30	; 48
+ 29c:	d1 e0       	ldi	r29, 0x01	; 1
+ 29e:	0e c0       	rjmp	.+28     	; 0x2bc <show_next_arrow+0x32>
 	}
 	else if (dir == DIRECTION_B) {
- 33a:	81 30       	cpi	r24, 0x01	; 1
- 33c:	39 f0       	breq	.+14     	; 0x34c <show_next_arrow+0x28>
+ 2a0:	81 30       	cpi	r24, 0x01	; 1
+ 2a2:	39 f0       	breq	.+14     	; 0x2b2 <show_next_arrow+0x28>
 		noise = DIRECTION_B_NOISE;
 	}
 	else if (dir == DIRECTION_C) {
- 33e:	82 30       	cpi	r24, 0x02	; 2
- 340:	41 f0       	breq	.+16     	; 0x352 <show_next_arrow+0x2e>
+ 2a4:	82 30       	cpi	r24, 0x02	; 2
+ 2a6:	41 f0       	breq	.+16     	; 0x2b8 <show_next_arrow+0x2e>
 		noise = DIRECTION_C_NOISE;
 	}
 	if (dir == DIRECTION_D) {
- 342:	83 30       	cpi	r24, 0x03	; 3
- 344:	41 f4       	brne	.+16     	; 0x356 <show_next_arrow+0x32>
+ 2a8:	83 30       	cpi	r24, 0x03	; 3
+ 2aa:	41 f4       	brne	.+16     	; 0x2bc <show_next_arrow+0x32>
 		noise = DIRECTION_D_NOISE;
- 346:	c7 e2       	ldi	r28, 0x27	; 39
- 348:	d1 e0       	ldi	r29, 0x01	; 1
- 34a:	05 c0       	rjmp	.+10     	; 0x356 <show_next_arrow+0x32>
+ 2ac:	c7 e2       	ldi	r28, 0x27	; 39
+ 2ae:	d1 e0       	ldi	r29, 0x01	; 1
+ 2b0:	05 c0       	rjmp	.+10     	; 0x2bc <show_next_arrow+0x32>
 
 	if (dir == DIRECTION_A) {
 		noise = DIRECTION_A_NOISE;
 	}
 	else if (dir == DIRECTION_B) {
 		noise = DIRECTION_B_NOISE;
- 34c:	cd e2       	ldi	r28, 0x2D	; 45
- 34e:	d1 e0       	ldi	r29, 0x01	; 1
- 350:	02 c0       	rjmp	.+4      	; 0x356 <show_next_arrow+0x32>
+ 2b2:	cd e2       	ldi	r28, 0x2D	; 45
+ 2b4:	d1 e0       	ldi	r29, 0x01	; 1
+ 2b6:	02 c0       	rjmp	.+4      	; 0x2bc <show_next_arrow+0x32>
 	}
 	else if (dir == DIRECTION_C) {
 		noise = DIRECTION_C_NOISE;
- 352:	ca e2       	ldi	r28, 0x2A	; 42
- 354:	d1 e0       	ldi	r29, 0x01	; 1
+ 2b8:	ca e2       	ldi	r28, 0x2A	; 42
+ 2ba:	d1 e0       	ldi	r29, 0x01	; 1
 	if (dir == DIRECTION_D) {
 		noise = DIRECTION_D_NOISE;
 	}
 	
 	
 	    draw_arrow(arrows[cnt], GREEN);
- 356:	62 e0       	ldi	r22, 0x02	; 2
- 358:	80 81       	ld	r24, Z
- 35a:	63 df       	rcall	.-314    	; 0x222 <draw_arrow>
+ 2bc:	62 e0       	ldi	r22, 0x02	; 2
+ 2be:	80 81       	ld	r24, Z
+ 2c0:	63 df       	rcall	.-314    	; 0x188 <draw_arrow>
 	    delay_ms(200);
- 35c:	88 ec       	ldi	r24, 0xC8	; 200
- 35e:	9d de       	rcall	.-710    	; 0x9a <delay_ms>
+ 2c2:	88 ec       	ldi	r24, 0xC8	; 200
+ 2c4:	ea de       	rcall	.-556    	; 0x9a <delay_ms>
 		playsong(noise);
- 360:	ce 01       	movw	r24, r28
- 362:	59 d5       	rcall	.+2738   	; 0xe16 <playsong>
+ 2c6:	ce 01       	movw	r24, r28
+ 2c8:	50 d5       	rcall	.+2720   	; 0xd6a <playsong>
 		//waitaudio();
 	    delay_ms(200);
- 364:	88 ec       	ldi	r24, 0xC8	; 200
- 366:	99 de       	rcall	.-718    	; 0x9a <delay_ms>
+ 2ca:	88 ec       	ldi	r24, 0xC8	; 200
+ 2cc:	e6 de       	rcall	.-564    	; 0x9a <delay_ms>
 	    delay_ms(200);
- 368:	88 ec       	ldi	r24, 0xC8	; 200
- 36a:	97 de       	rcall	.-722    	; 0x9a <delay_ms>
+ 2ce:	88 ec       	ldi	r24, 0xC8	; 200
+ 2d0:	e4 de       	rcall	.-568    	; 0x9a <delay_ms>
 	    cleardisplay();	
- 36c:	83 d4       	rcall	.+2310   	; 0xc74 <cleardisplay>
+ 2d2:	7a d4       	rcall	.+2292   	; 0xbc8 <cleardisplay>
 	    delay_ms(200);
- 36e:	88 ec       	ldi	r24, 0xC8	; 200
- 370:	94 de       	rcall	.-728    	; 0x9a <delay_ms>
- 372:	df 91       	pop	r29
- 374:	cf 91       	pop	r28
- 376:	08 95       	ret
+ 2d4:	88 ec       	ldi	r24, 0xC8	; 200
+ 2d6:	e1 de       	rcall	.-574    	; 0x9a <delay_ms>
+ 2d8:	df 91       	pop	r29
+ 2da:	cf 91       	pop	r28
+ 2dc:	08 95       	ret
 
-00000378 <startup_screen>:
+000002de <startup_screen>:
 	
 }
 
 
 void startup_screen() {
 	draw_arrow(DIRECTION_A, GREEN);
- 378:	62 e0       	ldi	r22, 0x02	; 2
- 37a:	80 e0       	ldi	r24, 0x00	; 0
- 37c:	52 df       	rcall	.-348    	; 0x222 <draw_arrow>
+ 2de:	62 e0       	ldi	r22, 0x02	; 2
+ 2e0:	80 e0       	ldi	r24, 0x00	; 0
+ 2e2:	52 df       	rcall	.-348    	; 0x188 <draw_arrow>
 	delay_ms(200);
- 37e:	88 ec       	ldi	r24, 0xC8	; 200
- 380:	8c de       	rcall	.-744    	; 0x9a <delay_ms>
+ 2e4:	88 ec       	ldi	r24, 0xC8	; 200
+ 2e6:	d9 de       	rcall	.-590    	; 0x9a <delay_ms>
 	delay_ms(200);
- 382:	88 ec       	ldi	r24, 0xC8	; 200
- 384:	8a de       	rcall	.-748    	; 0x9a <delay_ms>
+ 2e8:	88 ec       	ldi	r24, 0xC8	; 200
+ 2ea:	d7 de       	rcall	.-594    	; 0x9a <delay_ms>
 	delay_ms(200);
- 386:	88 ec       	ldi	r24, 0xC8	; 200
- 388:	88 de       	rcall	.-752    	; 0x9a <delay_ms>
+ 2ec:	88 ec       	ldi	r24, 0xC8	; 200
+ 2ee:	d5 de       	rcall	.-598    	; 0x9a <delay_ms>
 	cleardisplay();
- 38a:	74 d4       	rcall	.+2280   	; 0xc74 <cleardisplay>
+ 2f0:	6b d4       	rcall	.+2262   	; 0xbc8 <cleardisplay>
 	draw_arrow(DIRECTION_B, GREEN);
- 38c:	62 e0       	ldi	r22, 0x02	; 2
- 38e:	81 e0       	ldi	r24, 0x01	; 1
- 390:	48 df       	rcall	.-368    	; 0x222 <draw_arrow>
+ 2f2:	62 e0       	ldi	r22, 0x02	; 2
+ 2f4:	81 e0       	ldi	r24, 0x01	; 1
+ 2f6:	48 df       	rcall	.-368    	; 0x188 <draw_arrow>
 	delay_ms(200);
- 392:	88 ec       	ldi	r24, 0xC8	; 200
- 394:	82 de       	rcall	.-764    	; 0x9a <delay_ms>
+ 2f8:	88 ec       	ldi	r24, 0xC8	; 200
+ 2fa:	cf de       	rcall	.-610    	; 0x9a <delay_ms>
 	delay_ms(200);
- 396:	88 ec       	ldi	r24, 0xC8	; 200
- 398:	80 de       	rcall	.-768    	; 0x9a <delay_ms>
+ 2fc:	88 ec       	ldi	r24, 0xC8	; 200
+ 2fe:	cd de       	rcall	.-614    	; 0x9a <delay_ms>
 	delay_ms(200);
- 39a:	88 ec       	ldi	r24, 0xC8	; 200
- 39c:	7e de       	rcall	.-772    	; 0x9a <delay_ms>
+ 300:	88 ec       	ldi	r24, 0xC8	; 200
+ 302:	cb de       	rcall	.-618    	; 0x9a <delay_ms>
 	cleardisplay();
- 39e:	6a d4       	rcall	.+2260   	; 0xc74 <cleardisplay>
+ 304:	61 d4       	rcall	.+2242   	; 0xbc8 <cleardisplay>
 	draw_arrow(DIRECTION_C, GREEN);
- 3a0:	62 e0       	ldi	r22, 0x02	; 2
- 3a2:	86 2f       	mov	r24, r22
- 3a4:	3e df       	rcall	.-388    	; 0x222 <draw_arrow>
+ 306:	62 e0       	ldi	r22, 0x02	; 2
+ 308:	86 2f       	mov	r24, r22
+ 30a:	3e df       	rcall	.-388    	; 0x188 <draw_arrow>
 	delay_ms(200);
- 3a6:	88 ec       	ldi	r24, 0xC8	; 200
- 3a8:	78 de       	rcall	.-784    	; 0x9a <delay_ms>
+ 30c:	88 ec       	ldi	r24, 0xC8	; 200
+ 30e:	c5 de       	rcall	.-630    	; 0x9a <delay_ms>
 	delay_ms(200);
- 3aa:	88 ec       	ldi	r24, 0xC8	; 200
- 3ac:	76 de       	rcall	.-788    	; 0x9a <delay_ms>
+ 310:	88 ec       	ldi	r24, 0xC8	; 200
+ 312:	c3 de       	rcall	.-634    	; 0x9a <delay_ms>
 	delay_ms(200);
- 3ae:	88 ec       	ldi	r24, 0xC8	; 200
- 3b0:	74 de       	rcall	.-792    	; 0x9a <delay_ms>
+ 314:	88 ec       	ldi	r24, 0xC8	; 200
+ 316:	c1 de       	rcall	.-638    	; 0x9a <delay_ms>
 	cleardisplay();
- 3b2:	60 d4       	rcall	.+2240   	; 0xc74 <cleardisplay>
+ 318:	57 d4       	rcall	.+2222   	; 0xbc8 <cleardisplay>
 	draw_arrow(DIRECTION_D, GREEN);
- 3b4:	62 e0       	ldi	r22, 0x02	; 2
- 3b6:	83 e0       	ldi	r24, 0x03	; 3
- 3b8:	34 df       	rcall	.-408    	; 0x222 <draw_arrow>
+ 31a:	62 e0       	ldi	r22, 0x02	; 2
+ 31c:	83 e0       	ldi	r24, 0x03	; 3
+ 31e:	34 df       	rcall	.-408    	; 0x188 <draw_arrow>
 	delay_ms(200);
- 3ba:	88 ec       	ldi	r24, 0xC8	; 200
- 3bc:	6e de       	rcall	.-804    	; 0x9a <delay_ms>
+ 320:	88 ec       	ldi	r24, 0xC8	; 200
+ 322:	bb de       	rcall	.-650    	; 0x9a <delay_ms>
 	delay_ms(200);
- 3be:	88 ec       	ldi	r24, 0xC8	; 200
- 3c0:	6c de       	rcall	.-808    	; 0x9a <delay_ms>
+ 324:	88 ec       	ldi	r24, 0xC8	; 200
+ 326:	b9 de       	rcall	.-654    	; 0x9a <delay_ms>
 	delay_ms(200);
- 3c2:	88 ec       	ldi	r24, 0xC8	; 200
- 3c4:	6a de       	rcall	.-812    	; 0x9a <delay_ms>
+ 328:	88 ec       	ldi	r24, 0xC8	; 200
+ 32a:	b7 de       	rcall	.-658    	; 0x9a <delay_ms>
 	cleardisplay();
- 3c6:	56 d4       	rcall	.+2220   	; 0xc74 <cleardisplay>
- 3c8:	08 95       	ret
+ 32c:	4d d4       	rcall	.+2202   	; 0xbc8 <cleardisplay>
+ 32e:	08 95       	ret
 
-000003ca <draw_digit_vert_right>:
+00000330 <draw_digit_vert_right>:
 }
 
 
 
 void draw_digit_vert_right(int x_shift) {
- 3ca:	0f 93       	push	r16
- 3cc:	1f 93       	push	r17
+ 330:	0f 93       	push	r16
+ 332:	1f 93       	push	r17
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
 	int col3 = 2 + x_shift;
- 3ce:	8c 01       	movw	r16, r24
- 3d0:	0e 5f       	subi	r16, 0xFE	; 254
- 3d2:	1f 4f       	sbci	r17, 0xFF	; 255
+ 334:	8c 01       	movw	r16, r24
+ 336:	0e 5f       	subi	r16, 0xFE	; 254
+ 338:	1f 4f       	sbci	r17, 0xFF	; 255
 	drawpoint(col3, 0);
- 3d4:	60 e0       	ldi	r22, 0x00	; 0
- 3d6:	80 2f       	mov	r24, r16
- 3d8:	5d d4       	rcall	.+2234   	; 0xc94 <drawpoint>
+ 33a:	60 e0       	ldi	r22, 0x00	; 0
+ 33c:	80 2f       	mov	r24, r16
+ 33e:	54 d4       	rcall	.+2216   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 1);
- 3da:	61 e0       	ldi	r22, 0x01	; 1
- 3dc:	80 2f       	mov	r24, r16
- 3de:	5a d4       	rcall	.+2228   	; 0xc94 <drawpoint>
+ 340:	61 e0       	ldi	r22, 0x01	; 1
+ 342:	80 2f       	mov	r24, r16
+ 344:	51 d4       	rcall	.+2210   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 2);
- 3e0:	62 e0       	ldi	r22, 0x02	; 2
- 3e2:	80 2f       	mov	r24, r16
- 3e4:	57 d4       	rcall	.+2222   	; 0xc94 <drawpoint>
+ 346:	62 e0       	ldi	r22, 0x02	; 2
+ 348:	80 2f       	mov	r24, r16
+ 34a:	4e d4       	rcall	.+2204   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 3);
- 3e6:	63 e0       	ldi	r22, 0x03	; 3
- 3e8:	80 2f       	mov	r24, r16
- 3ea:	54 d4       	rcall	.+2216   	; 0xc94 <drawpoint>
+ 34c:	63 e0       	ldi	r22, 0x03	; 3
+ 34e:	80 2f       	mov	r24, r16
+ 350:	4b d4       	rcall	.+2198   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 3);
- 3ec:	63 e0       	ldi	r22, 0x03	; 3
- 3ee:	80 2f       	mov	r24, r16
- 3f0:	51 d4       	rcall	.+2210   	; 0xc94 <drawpoint>
+ 352:	63 e0       	ldi	r22, 0x03	; 3
+ 354:	80 2f       	mov	r24, r16
+ 356:	48 d4       	rcall	.+2192   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 4);
- 3f2:	64 e0       	ldi	r22, 0x04	; 4
- 3f4:	80 2f       	mov	r24, r16
- 3f6:	4e d4       	rcall	.+2204   	; 0xc94 <drawpoint>
- 3f8:	1f 91       	pop	r17
- 3fa:	0f 91       	pop	r16
- 3fc:	08 95       	ret
+ 358:	64 e0       	ldi	r22, 0x04	; 4
+ 35a:	80 2f       	mov	r24, r16
+ 35c:	45 d4       	rcall	.+2186   	; 0xbe8 <drawpoint>
+ 35e:	1f 91       	pop	r17
+ 360:	0f 91       	pop	r16
+ 362:	08 95       	ret
 
-000003fe <draw_digit_vert_left>:
+00000364 <draw_digit_vert_left>:
 }
 
 void draw_digit_vert_left(int x_shift) {
- 3fe:	0f 93       	push	r16
- 400:	1f 93       	push	r17
- 402:	8c 01       	movw	r16, r24
+ 364:	0f 93       	push	r16
+ 366:	1f 93       	push	r17
+ 368:	8c 01       	movw	r16, r24
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
 	int col3 = 2 + x_shift;
 	drawpoint(col1, 0);
- 404:	60 e0       	ldi	r22, 0x00	; 0
- 406:	46 d4       	rcall	.+2188   	; 0xc94 <drawpoint>
+ 36a:	60 e0       	ldi	r22, 0x00	; 0
+ 36c:	3d d4       	rcall	.+2170   	; 0xbe8 <drawpoint>
 	drawpoint(col1, 1);
- 408:	61 e0       	ldi	r22, 0x01	; 1
- 40a:	80 2f       	mov	r24, r16
- 40c:	43 d4       	rcall	.+2182   	; 0xc94 <drawpoint>
+ 36e:	61 e0       	ldi	r22, 0x01	; 1
+ 370:	80 2f       	mov	r24, r16
+ 372:	3a d4       	rcall	.+2164   	; 0xbe8 <drawpoint>
 	drawpoint(col1, 2);
- 40e:	62 e0       	ldi	r22, 0x02	; 2
- 410:	80 2f       	mov	r24, r16
- 412:	40 d4       	rcall	.+2176   	; 0xc94 <drawpoint>
+ 374:	62 e0       	ldi	r22, 0x02	; 2
+ 376:	80 2f       	mov	r24, r16
+ 378:	37 d4       	rcall	.+2158   	; 0xbe8 <drawpoint>
 	drawpoint(col1, 3);
- 414:	63 e0       	ldi	r22, 0x03	; 3
- 416:	80 2f       	mov	r24, r16
- 418:	3d d4       	rcall	.+2170   	; 0xc94 <drawpoint>
+ 37a:	63 e0       	ldi	r22, 0x03	; 3
+ 37c:	80 2f       	mov	r24, r16
+ 37e:	34 d4       	rcall	.+2152   	; 0xbe8 <drawpoint>
 	drawpoint(col1, 3);
- 41a:	63 e0       	ldi	r22, 0x03	; 3
- 41c:	80 2f       	mov	r24, r16
- 41e:	3a d4       	rcall	.+2164   	; 0xc94 <drawpoint>
+ 380:	63 e0       	ldi	r22, 0x03	; 3
+ 382:	80 2f       	mov	r24, r16
+ 384:	31 d4       	rcall	.+2146   	; 0xbe8 <drawpoint>
 	drawpoint(col1, 4);
- 420:	64 e0       	ldi	r22, 0x04	; 4
- 422:	80 2f       	mov	r24, r16
- 424:	37 d4       	rcall	.+2158   	; 0xc94 <drawpoint>
- 426:	1f 91       	pop	r17
- 428:	0f 91       	pop	r16
- 42a:	08 95       	ret
+ 386:	64 e0       	ldi	r22, 0x04	; 4
+ 388:	80 2f       	mov	r24, r16
+ 38a:	2e d4       	rcall	.+2140   	; 0xbe8 <drawpoint>
+ 38c:	1f 91       	pop	r17
+ 38e:	0f 91       	pop	r16
+ 390:	08 95       	ret
 
-0000042c <draw_digit_horiz_top>:
+00000392 <draw_digit_horiz_top>:
 }
 
 
 void draw_digit_horiz_top(int x_shift) {
- 42c:	ef 92       	push	r14
- 42e:	ff 92       	push	r15
- 430:	0f 93       	push	r16
- 432:	1f 93       	push	r17
+ 392:	ef 92       	push	r14
+ 394:	ff 92       	push	r15
+ 396:	0f 93       	push	r16
+ 398:	1f 93       	push	r17
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
- 434:	8c 01       	movw	r16, r24
- 436:	0f 5f       	subi	r16, 0xFF	; 255
- 438:	1f 4f       	sbci	r17, 0xFF	; 255
+ 39a:	8c 01       	movw	r16, r24
+ 39c:	0f 5f       	subi	r16, 0xFF	; 255
+ 39e:	1f 4f       	sbci	r17, 0xFF	; 255
 	int col3 = 2 + x_shift;
- 43a:	32 e0       	ldi	r19, 0x02	; 2
- 43c:	e3 2e       	mov	r14, r19
- 43e:	f1 2c       	mov	r15, r1
- 440:	e8 0e       	add	r14, r24
- 442:	f9 1e       	adc	r15, r25
+ 3a0:	72 e0       	ldi	r23, 0x02	; 2
+ 3a2:	e7 2e       	mov	r14, r23
+ 3a4:	f1 2c       	mov	r15, r1
+ 3a6:	e8 0e       	add	r14, r24
+ 3a8:	f9 1e       	adc	r15, r25
 	drawpoint(col1, 0);
- 444:	60 e0       	ldi	r22, 0x00	; 0
- 446:	26 d4       	rcall	.+2124   	; 0xc94 <drawpoint>
+ 3aa:	60 e0       	ldi	r22, 0x00	; 0
+ 3ac:	1d d4       	rcall	.+2106   	; 0xbe8 <drawpoint>
 	drawpoint(col2, 0);
- 448:	60 e0       	ldi	r22, 0x00	; 0
- 44a:	80 2f       	mov	r24, r16
- 44c:	23 d4       	rcall	.+2118   	; 0xc94 <drawpoint>
+ 3ae:	60 e0       	ldi	r22, 0x00	; 0
+ 3b0:	80 2f       	mov	r24, r16
+ 3b2:	1a d4       	rcall	.+2100   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 0);
- 44e:	60 e0       	ldi	r22, 0x00	; 0
- 450:	8e 2d       	mov	r24, r14
- 452:	20 d4       	rcall	.+2112   	; 0xc94 <drawpoint>
- 454:	1f 91       	pop	r17
- 456:	0f 91       	pop	r16
- 458:	ff 90       	pop	r15
- 45a:	ef 90       	pop	r14
- 45c:	08 95       	ret
+ 3b4:	60 e0       	ldi	r22, 0x00	; 0
+ 3b6:	8e 2d       	mov	r24, r14
+ 3b8:	17 d4       	rcall	.+2094   	; 0xbe8 <drawpoint>
+ 3ba:	1f 91       	pop	r17
+ 3bc:	0f 91       	pop	r16
+ 3be:	ff 90       	pop	r15
+ 3c0:	ef 90       	pop	r14
+ 3c2:	08 95       	ret
 
-0000045e <draw_digit_horiz_mid>:
+000003c4 <draw_digit_horiz_mid>:
 }
 
 
 void draw_digit_horiz_mid(int x_shift) {
- 45e:	ef 92       	push	r14
- 460:	ff 92       	push	r15
- 462:	0f 93       	push	r16
- 464:	1f 93       	push	r17
+ 3c4:	ef 92       	push	r14
+ 3c6:	ff 92       	push	r15
+ 3c8:	0f 93       	push	r16
+ 3ca:	1f 93       	push	r17
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
- 466:	8c 01       	movw	r16, r24
- 468:	0f 5f       	subi	r16, 0xFF	; 255
- 46a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3cc:	8c 01       	movw	r16, r24
+ 3ce:	0f 5f       	subi	r16, 0xFF	; 255
+ 3d0:	1f 4f       	sbci	r17, 0xFF	; 255
 	int col3 = 2 + x_shift;
- 46c:	42 e0       	ldi	r20, 0x02	; 2
- 46e:	e4 2e       	mov	r14, r20
- 470:	f1 2c       	mov	r15, r1
- 472:	e8 0e       	add	r14, r24
- 474:	f9 1e       	adc	r15, r25
+ 3d2:	e2 e0       	ldi	r30, 0x02	; 2
+ 3d4:	ee 2e       	mov	r14, r30
+ 3d6:	f1 2c       	mov	r15, r1
+ 3d8:	e8 0e       	add	r14, r24
+ 3da:	f9 1e       	adc	r15, r25
 	drawpoint(col1, 2);
- 476:	62 e0       	ldi	r22, 0x02	; 2
- 478:	0d d4       	rcall	.+2074   	; 0xc94 <drawpoint>
+ 3dc:	62 e0       	ldi	r22, 0x02	; 2
+ 3de:	04 d4       	rcall	.+2056   	; 0xbe8 <drawpoint>
 	drawpoint(col2, 2);
- 47a:	62 e0       	ldi	r22, 0x02	; 2
- 47c:	80 2f       	mov	r24, r16
- 47e:	0a d4       	rcall	.+2068   	; 0xc94 <drawpoint>
+ 3e0:	62 e0       	ldi	r22, 0x02	; 2
+ 3e2:	80 2f       	mov	r24, r16
+ 3e4:	01 d4       	rcall	.+2050   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 2);
- 480:	62 e0       	ldi	r22, 0x02	; 2
- 482:	8e 2d       	mov	r24, r14
- 484:	07 d4       	rcall	.+2062   	; 0xc94 <drawpoint>
- 486:	1f 91       	pop	r17
- 488:	0f 91       	pop	r16
- 48a:	ff 90       	pop	r15
- 48c:	ef 90       	pop	r14
- 48e:	08 95       	ret
+ 3e6:	62 e0       	ldi	r22, 0x02	; 2
+ 3e8:	8e 2d       	mov	r24, r14
+ 3ea:	fe d3       	rcall	.+2044   	; 0xbe8 <drawpoint>
+ 3ec:	1f 91       	pop	r17
+ 3ee:	0f 91       	pop	r16
+ 3f0:	ff 90       	pop	r15
+ 3f2:	ef 90       	pop	r14
+ 3f4:	08 95       	ret
 
-00000490 <draw_digit_horiz_bot>:
+000003f6 <draw_digit_horiz_bot>:
 }
 void draw_digit_horiz_bot(int x_shift) {
- 490:	ef 92       	push	r14
- 492:	ff 92       	push	r15
- 494:	0f 93       	push	r16
- 496:	1f 93       	push	r17
+ 3f6:	ef 92       	push	r14
+ 3f8:	ff 92       	push	r15
+ 3fa:	0f 93       	push	r16
+ 3fc:	1f 93       	push	r17
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
- 498:	8c 01       	movw	r16, r24
- 49a:	0f 5f       	subi	r16, 0xFF	; 255
- 49c:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3fe:	8c 01       	movw	r16, r24
+ 400:	0f 5f       	subi	r16, 0xFF	; 255
+ 402:	1f 4f       	sbci	r17, 0xFF	; 255
 	int col3 = 2 + x_shift;
- 49e:	52 e0       	ldi	r21, 0x02	; 2
- 4a0:	e5 2e       	mov	r14, r21
- 4a2:	f1 2c       	mov	r15, r1
- 4a4:	e8 0e       	add	r14, r24
- 4a6:	f9 1e       	adc	r15, r25
+ 404:	f2 e0       	ldi	r31, 0x02	; 2
+ 406:	ef 2e       	mov	r14, r31
+ 408:	f1 2c       	mov	r15, r1
+ 40a:	e8 0e       	add	r14, r24
+ 40c:	f9 1e       	adc	r15, r25
 	drawpoint(col1, 4);
- 4a8:	64 e0       	ldi	r22, 0x04	; 4
- 4aa:	f4 d3       	rcall	.+2024   	; 0xc94 <drawpoint>
+ 40e:	64 e0       	ldi	r22, 0x04	; 4
+ 410:	eb d3       	rcall	.+2006   	; 0xbe8 <drawpoint>
 	drawpoint(col2, 4);
- 4ac:	64 e0       	ldi	r22, 0x04	; 4
- 4ae:	80 2f       	mov	r24, r16
- 4b0:	f1 d3       	rcall	.+2018   	; 0xc94 <drawpoint>
+ 412:	64 e0       	ldi	r22, 0x04	; 4
+ 414:	80 2f       	mov	r24, r16
+ 416:	e8 d3       	rcall	.+2000   	; 0xbe8 <drawpoint>
 	drawpoint(col3, 4);
- 4b2:	64 e0       	ldi	r22, 0x04	; 4
- 4b4:	8e 2d       	mov	r24, r14
- 4b6:	ee d3       	rcall	.+2012   	; 0xc94 <drawpoint>
- 4b8:	1f 91       	pop	r17
- 4ba:	0f 91       	pop	r16
- 4bc:	ff 90       	pop	r15
- 4be:	ef 90       	pop	r14
- 4c0:	08 95       	ret
+ 418:	64 e0       	ldi	r22, 0x04	; 4
+ 41a:	8e 2d       	mov	r24, r14
+ 41c:	e5 d3       	rcall	.+1994   	; 0xbe8 <drawpoint>
+ 41e:	1f 91       	pop	r17
+ 420:	0f 91       	pop	r16
+ 422:	ff 90       	pop	r15
+ 424:	ef 90       	pop	r14
+ 426:	08 95       	ret
 
-000004c2 <draw_number>:
+00000428 <draw_number>:
 }
 
 
 void draw_number(int number, int x_shift) {
- 4c2:	ef 92       	push	r14
- 4c4:	ff 92       	push	r15
- 4c6:	0f 93       	push	r16
- 4c8:	1f 93       	push	r17
- 4ca:	cf 93       	push	r28
- 4cc:	df 93       	push	r29
- 4ce:	eb 01       	movw	r28, r22
+ 428:	ef 92       	push	r14
+ 42a:	ff 92       	push	r15
+ 42c:	0f 93       	push	r16
+ 42e:	1f 93       	push	r17
+ 430:	cf 93       	push	r28
+ 432:	df 93       	push	r29
+ 434:	eb 01       	movw	r28, r22
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
- 4d0:	8b 01       	movw	r16, r22
- 4d2:	0f 5f       	subi	r16, 0xFF	; 255
- 4d4:	1f 4f       	sbci	r17, 0xFF	; 255
+ 436:	8b 01       	movw	r16, r22
+ 438:	0f 5f       	subi	r16, 0xFF	; 255
+ 43a:	1f 4f       	sbci	r17, 0xFF	; 255
 	int col3 = 2 + x_shift;
- 4d6:	62 e0       	ldi	r22, 0x02	; 2
- 4d8:	e6 2e       	mov	r14, r22
- 4da:	f1 2c       	mov	r15, r1
- 4dc:	ec 0e       	add	r14, r28
- 4de:	fd 1e       	adc	r15, r29
+ 43c:	a2 e0       	ldi	r26, 0x02	; 2
+ 43e:	ea 2e       	mov	r14, r26
+ 440:	f1 2c       	mov	r15, r1
+ 442:	e6 0e       	add	r14, r22
+ 444:	f7 1e       	adc	r15, r23
 	
 	if (number == 0) {
- 4e0:	00 97       	sbiw	r24, 0x00	; 0
- 4e2:	69 f1       	breq	.+90     	; 0x53e <__stack+0x3f>
+ 446:	00 97       	sbiw	r24, 0x00	; 0
+ 448:	69 f1       	breq	.+90     	; 0x4a4 <draw_number+0x7c>
 		draw_digit_vert_left(x_shift);
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 1) {
- 4e4:	81 30       	cpi	r24, 0x01	; 1
- 4e6:	91 05       	cpc	r25, r1
- 4e8:	d1 f1       	breq	.+116    	; 0x55e <__stack+0x5f>
+ 44a:	81 30       	cpi	r24, 0x01	; 1
+ 44c:	91 05       	cpc	r25, r1
+ 44e:	d1 f1       	breq	.+116    	; 0x4c4 <draw_number+0x9c>
 		drawpoint(col2, 1);
 		drawpoint(col2, 2);
 		drawpoint(col2, 3);
 		drawpoint(col2, 4);
 	}
 	else if (number == 2) {
- 4ea:	82 30       	cpi	r24, 0x02	; 2
- 4ec:	91 05       	cpc	r25, r1
- 4ee:	09 f4       	brne	.+2      	; 0x4f2 <draw_number+0x30>
- 4f0:	46 c0       	rjmp	.+140    	; 0x57e <__stack+0x7f>
+ 450:	82 30       	cpi	r24, 0x02	; 2
+ 452:	91 05       	cpc	r25, r1
+ 454:	09 f4       	brne	.+2      	; 0x458 <draw_number+0x30>
+ 456:	46 c0       	rjmp	.+140    	; 0x4e4 <draw_number+0xbc>
 		drawpoint(col3, 1);
 		draw_digit_horiz_mid(x_shift);
 		drawpoint(col1, 3);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 3) {
- 4f2:	83 30       	cpi	r24, 0x03	; 3
- 4f4:	91 05       	cpc	r25, r1
- 4f6:	61 f1       	breq	.+88     	; 0x550 <__stack+0x51>
+ 458:	83 30       	cpi	r24, 0x03	; 3
+ 45a:	91 05       	cpc	r25, r1
+ 45c:	61 f1       	breq	.+88     	; 0x4b6 <draw_number+0x8e>
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 		draw_digit_horiz_mid(x_shift);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 4) {
- 4f8:	84 30       	cpi	r24, 0x04	; 4
- 4fa:	91 05       	cpc	r25, r1
- 4fc:	09 f4       	brne	.+2      	; 0x500 <__stack+0x1>
- 4fe:	4a c0       	rjmp	.+148    	; 0x594 <__stack+0x95>
+ 45e:	84 30       	cpi	r24, 0x04	; 4
+ 460:	91 05       	cpc	r25, r1
+ 462:	09 f4       	brne	.+2      	; 0x466 <draw_number+0x3e>
+ 464:	4a c0       	rjmp	.+148    	; 0x4fa <draw_number+0xd2>
 		drawpoint(col1, 1);
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_mid(x_shift);
 
 	}
 	else if (number == 5) {
- 500:	85 30       	cpi	r24, 0x05	; 5
- 502:	91 05       	cpc	r25, r1
- 504:	09 f4       	brne	.+2      	; 0x508 <__stack+0x9>
- 506:	51 c0       	rjmp	.+162    	; 0x5aa <__stack+0xab>
+ 466:	85 30       	cpi	r24, 0x05	; 5
+ 468:	91 05       	cpc	r25, r1
+ 46a:	09 f4       	brne	.+2      	; 0x46e <draw_number+0x46>
+ 46c:	51 c0       	rjmp	.+162    	; 0x510 <__stack+0x11>
 		drawpoint(col1, 1);
 		draw_digit_horiz_mid(x_shift);
 		drawpoint(col3, 3);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 6) {
- 508:	86 30       	cpi	r24, 0x06	; 6
- 50a:	91 05       	cpc	r25, r1
- 50c:	09 f4       	brne	.+2      	; 0x510 <__stack+0x11>
- 50e:	58 c0       	rjmp	.+176    	; 0x5c0 <__stack+0xc1>
+ 46e:	86 30       	cpi	r24, 0x06	; 6
+ 470:	91 05       	cpc	r25, r1
+ 472:	09 f4       	brne	.+2      	; 0x476 <draw_number+0x4e>
+ 474:	58 c0       	rjmp	.+176    	; 0x526 <__stack+0x27>
 		draw_digit_horiz_mid(x_shift);
 		drawpoint(col1, 3);
 		drawpoint(col3, 3);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 7) {
- 510:	87 30       	cpi	r24, 0x07	; 7
- 512:	91 05       	cpc	r25, r1
- 514:	09 f4       	brne	.+2      	; 0x518 <__stack+0x19>
- 516:	5e c0       	rjmp	.+188    	; 0x5d4 <__stack+0xd5>
+ 476:	87 30       	cpi	r24, 0x07	; 7
+ 478:	91 05       	cpc	r25, r1
+ 47a:	09 f4       	brne	.+2      	; 0x47e <draw_number+0x56>
+ 47c:	5e c0       	rjmp	.+188    	; 0x53a <__stack+0x3b>
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 	}
 	else if (number == 8) {
- 518:	88 30       	cpi	r24, 0x08	; 8
- 51a:	91 05       	cpc	r25, r1
- 51c:	b9 f0       	breq	.+46     	; 0x54c <__stack+0x4d>
+ 47e:	88 30       	cpi	r24, 0x08	; 8
+ 480:	91 05       	cpc	r25, r1
+ 482:	b9 f0       	breq	.+46     	; 0x4b2 <draw_number+0x8a>
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 		draw_digit_horiz_mid(x_shift);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 9) {
- 51e:	09 97       	sbiw	r24, 0x09	; 9
- 520:	09 f0       	breq	.+2      	; 0x524 <__stack+0x25>
- 522:	5c c0       	rjmp	.+184    	; 0x5dc <__stack+0xdd>
+ 484:	09 97       	sbiw	r24, 0x09	; 9
+ 486:	09 f0       	breq	.+2      	; 0x48a <draw_number+0x62>
+ 488:	5c c0       	rjmp	.+184    	; 0x542 <__stack+0x43>
 		draw_digit_vert_left(x_shift);
- 524:	ce 01       	movw	r24, r28
- 526:	6b df       	rcall	.-298    	; 0x3fe <draw_digit_vert_left>
+ 48a:	cb 01       	movw	r24, r22
+ 48c:	6b df       	rcall	.-298    	; 0x364 <draw_digit_vert_left>
 		drawpoint(col1, 1);
- 528:	61 e0       	ldi	r22, 0x01	; 1
- 52a:	8c 2f       	mov	r24, r28
- 52c:	b3 d3       	rcall	.+1894   	; 0xc94 <drawpoint>
+ 48e:	61 e0       	ldi	r22, 0x01	; 1
+ 490:	8c 2f       	mov	r24, r28
+ 492:	aa d3       	rcall	.+1876   	; 0xbe8 <drawpoint>
 		drawpoint(col3, 1);
- 52e:	61 e0       	ldi	r22, 0x01	; 1
- 530:	8e 2d       	mov	r24, r14
- 532:	b0 d3       	rcall	.+1888   	; 0xc94 <drawpoint>
+ 494:	61 e0       	ldi	r22, 0x01	; 1
+ 496:	8e 2d       	mov	r24, r14
+ 498:	a7 d3       	rcall	.+1870   	; 0xbe8 <drawpoint>
 		draw_digit_horiz_mid(x_shift);
- 534:	ce 01       	movw	r24, r28
- 536:	93 df       	rcall	.-218    	; 0x45e <draw_digit_horiz_mid>
+ 49a:	ce 01       	movw	r24, r28
+ 49c:	93 df       	rcall	.-218    	; 0x3c4 <draw_digit_horiz_mid>
 		draw_digit_horiz_bot(x_shift);
- 538:	ce 01       	movw	r24, r28
- 53a:	aa df       	rcall	.-172    	; 0x490 <draw_digit_horiz_bot>
- 53c:	4f c0       	rjmp	.+158    	; 0x5dc <__stack+0xdd>
+ 49e:	ce 01       	movw	r24, r28
+ 4a0:	aa df       	rcall	.-172    	; 0x3f6 <draw_digit_horiz_bot>
+ 4a2:	4f c0       	rjmp	.+158    	; 0x542 <__stack+0x43>
 	int col1 = 0 + x_shift;
 	int col2 = 1 + x_shift;
 	int col3 = 2 + x_shift;
 	
 	if (number == 0) {
 		draw_digit_vert_left(x_shift);
- 53e:	ce 01       	movw	r24, r28
- 540:	5e df       	rcall	.-324    	; 0x3fe <draw_digit_vert_left>
+ 4a4:	cb 01       	movw	r24, r22
+ 4a6:	5e df       	rcall	.-324    	; 0x364 <draw_digit_vert_left>
 		draw_digit_vert_right(x_shift);
- 542:	ce 01       	movw	r24, r28
- 544:	42 df       	rcall	.-380    	; 0x3ca <draw_digit_vert_right>
+ 4a8:	ce 01       	movw	r24, r28
+ 4aa:	42 df       	rcall	.-380    	; 0x330 <draw_digit_vert_right>
 		draw_digit_horiz_top(x_shift);
- 546:	ce 01       	movw	r24, r28
- 548:	71 df       	rcall	.-286    	; 0x42c <draw_digit_horiz_top>
- 54a:	f6 cf       	rjmp	.-20     	; 0x538 <__stack+0x39>
+ 4ac:	ce 01       	movw	r24, r28
+ 4ae:	71 df       	rcall	.-286    	; 0x392 <draw_digit_horiz_top>
+ 4b0:	f6 cf       	rjmp	.-20     	; 0x49e <draw_number+0x76>
 	else if (number == 7) {
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 	}
 	else if (number == 8) {
 		draw_digit_vert_left(x_shift);
- 54c:	ce 01       	movw	r24, r28
- 54e:	57 df       	rcall	.-338    	; 0x3fe <draw_digit_vert_left>
+ 4b2:	cb 01       	movw	r24, r22
+ 4b4:	57 df       	rcall	.-338    	; 0x364 <draw_digit_vert_left>
 		draw_digit_vert_right(x_shift);
- 550:	ce 01       	movw	r24, r28
- 552:	3b df       	rcall	.-394    	; 0x3ca <draw_digit_vert_right>
+ 4b6:	ce 01       	movw	r24, r28
+ 4b8:	3b df       	rcall	.-394    	; 0x330 <draw_digit_vert_right>
 		draw_digit_horiz_top(x_shift);
- 554:	ce 01       	movw	r24, r28
- 556:	6a df       	rcall	.-300    	; 0x42c <draw_digit_horiz_top>
+ 4ba:	ce 01       	movw	r24, r28
+ 4bc:	6a df       	rcall	.-300    	; 0x392 <draw_digit_horiz_top>
 	}
 	else if (number == 9) {
 		draw_digit_vert_left(x_shift);
 		drawpoint(col1, 1);
 		drawpoint(col3, 1);
 		draw_digit_horiz_mid(x_shift);
- 558:	ce 01       	movw	r24, r28
- 55a:	81 df       	rcall	.-254    	; 0x45e <draw_digit_horiz_mid>
- 55c:	ed cf       	rjmp	.-38     	; 0x538 <__stack+0x39>
+ 4be:	ce 01       	movw	r24, r28
+ 4c0:	81 df       	rcall	.-254    	; 0x3c4 <draw_digit_horiz_mid>
+ 4c2:	ed cf       	rjmp	.-38     	; 0x49e <draw_number+0x76>
 		draw_digit_vert_right(x_shift);
 		draw_digit_horiz_top(x_shift);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 1) {
 		drawpoint(col2, 0);
- 55e:	60 e0       	ldi	r22, 0x00	; 0
- 560:	80 2f       	mov	r24, r16
- 562:	98 d3       	rcall	.+1840   	; 0xc94 <drawpoint>
+ 4c4:	60 e0       	ldi	r22, 0x00	; 0
+ 4c6:	80 2f       	mov	r24, r16
+ 4c8:	8f d3       	rcall	.+1822   	; 0xbe8 <drawpoint>
 		drawpoint(col2, 1);
- 564:	61 e0       	ldi	r22, 0x01	; 1
- 566:	80 2f       	mov	r24, r16
- 568:	95 d3       	rcall	.+1834   	; 0xc94 <drawpoint>
+ 4ca:	61 e0       	ldi	r22, 0x01	; 1
+ 4cc:	80 2f       	mov	r24, r16
+ 4ce:	8c d3       	rcall	.+1816   	; 0xbe8 <drawpoint>
 		drawpoint(col2, 2);
- 56a:	62 e0       	ldi	r22, 0x02	; 2
- 56c:	80 2f       	mov	r24, r16
- 56e:	92 d3       	rcall	.+1828   	; 0xc94 <drawpoint>
+ 4d0:	62 e0       	ldi	r22, 0x02	; 2
+ 4d2:	80 2f       	mov	r24, r16
+ 4d4:	89 d3       	rcall	.+1810   	; 0xbe8 <drawpoint>
 		drawpoint(col2, 3);
- 570:	63 e0       	ldi	r22, 0x03	; 3
- 572:	80 2f       	mov	r24, r16
- 574:	8f d3       	rcall	.+1822   	; 0xc94 <drawpoint>
+ 4d6:	63 e0       	ldi	r22, 0x03	; 3
+ 4d8:	80 2f       	mov	r24, r16
+ 4da:	86 d3       	rcall	.+1804   	; 0xbe8 <drawpoint>
 		drawpoint(col2, 4);
- 576:	64 e0       	ldi	r22, 0x04	; 4
- 578:	80 2f       	mov	r24, r16
- 57a:	8c d3       	rcall	.+1816   	; 0xc94 <drawpoint>
- 57c:	2f c0       	rjmp	.+94     	; 0x5dc <__stack+0xdd>
+ 4dc:	64 e0       	ldi	r22, 0x04	; 4
+ 4de:	80 2f       	mov	r24, r16
+ 4e0:	83 d3       	rcall	.+1798   	; 0xbe8 <drawpoint>
+ 4e2:	2f c0       	rjmp	.+94     	; 0x542 <__stack+0x43>
 	}
 	else if (number == 2) {
 		draw_digit_horiz_top(x_shift);
- 57e:	ce 01       	movw	r24, r28
- 580:	55 df       	rcall	.-342    	; 0x42c <draw_digit_horiz_top>
+ 4e4:	cb 01       	movw	r24, r22
+ 4e6:	55 df       	rcall	.-342    	; 0x392 <draw_digit_horiz_top>
 		drawpoint(col3, 1);
- 582:	61 e0       	ldi	r22, 0x01	; 1
- 584:	8e 2d       	mov	r24, r14
- 586:	86 d3       	rcall	.+1804   	; 0xc94 <drawpoint>
+ 4e8:	61 e0       	ldi	r22, 0x01	; 1
+ 4ea:	8e 2d       	mov	r24, r14
+ 4ec:	7d d3       	rcall	.+1786   	; 0xbe8 <drawpoint>
 		draw_digit_horiz_mid(x_shift);
- 588:	ce 01       	movw	r24, r28
- 58a:	69 df       	rcall	.-302    	; 0x45e <draw_digit_horiz_mid>
+ 4ee:	ce 01       	movw	r24, r28
+ 4f0:	69 df       	rcall	.-302    	; 0x3c4 <draw_digit_horiz_mid>
 		drawpoint(col1, 3);
- 58c:	63 e0       	ldi	r22, 0x03	; 3
- 58e:	8c 2f       	mov	r24, r28
+ 4f2:	63 e0       	ldi	r22, 0x03	; 3
+ 4f4:	8c 2f       	mov	r24, r28
 	}
 	else if (number == 5) {
 		draw_digit_horiz_top(x_shift);
 		drawpoint(col1, 1);
 		draw_digit_horiz_mid(x_shift);
 		drawpoint(col3, 3);
- 590:	81 d3       	rcall	.+1794   	; 0xc94 <drawpoint>
- 592:	d2 cf       	rjmp	.-92     	; 0x538 <__stack+0x39>
+ 4f6:	78 d3       	rcall	.+1776   	; 0xbe8 <drawpoint>
+ 4f8:	d2 cf       	rjmp	.-92     	; 0x49e <draw_number+0x76>
 		draw_digit_horiz_top(x_shift);
 		draw_digit_horiz_mid(x_shift);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 4) {
 		drawpoint(col1, 0);
- 594:	60 e0       	ldi	r22, 0x00	; 0
- 596:	8c 2f       	mov	r24, r28
- 598:	7d d3       	rcall	.+1786   	; 0xc94 <drawpoint>
+ 4fa:	60 e0       	ldi	r22, 0x00	; 0
+ 4fc:	8c 2f       	mov	r24, r28
+ 4fe:	74 d3       	rcall	.+1768   	; 0xbe8 <drawpoint>
 		drawpoint(col1, 1);
- 59a:	61 e0       	ldi	r22, 0x01	; 1
- 59c:	8c 2f       	mov	r24, r28
- 59e:	7a d3       	rcall	.+1780   	; 0xc94 <drawpoint>
+ 500:	61 e0       	ldi	r22, 0x01	; 1
+ 502:	8c 2f       	mov	r24, r28
+ 504:	71 d3       	rcall	.+1762   	; 0xbe8 <drawpoint>
 		draw_digit_vert_right(x_shift);
- 5a0:	ce 01       	movw	r24, r28
- 5a2:	13 df       	rcall	.-474    	; 0x3ca <draw_digit_vert_right>
+ 506:	ce 01       	movw	r24, r28
+ 508:	13 df       	rcall	.-474    	; 0x330 <draw_digit_vert_right>
 		draw_digit_horiz_mid(x_shift);
- 5a4:	ce 01       	movw	r24, r28
- 5a6:	5b df       	rcall	.-330    	; 0x45e <draw_digit_horiz_mid>
- 5a8:	19 c0       	rjmp	.+50     	; 0x5dc <__stack+0xdd>
+ 50a:	ce 01       	movw	r24, r28
+ 50c:	5b df       	rcall	.-330    	; 0x3c4 <draw_digit_horiz_mid>
+ 50e:	19 c0       	rjmp	.+50     	; 0x542 <__stack+0x43>
 
 	}
 	else if (number == 5) {
 		draw_digit_horiz_top(x_shift);
- 5aa:	ce 01       	movw	r24, r28
- 5ac:	3f df       	rcall	.-386    	; 0x42c <draw_digit_horiz_top>
+ 510:	cb 01       	movw	r24, r22
+ 512:	3f df       	rcall	.-386    	; 0x392 <draw_digit_horiz_top>
 		drawpoint(col1, 1);
- 5ae:	61 e0       	ldi	r22, 0x01	; 1
- 5b0:	8c 2f       	mov	r24, r28
- 5b2:	70 d3       	rcall	.+1760   	; 0xc94 <drawpoint>
+ 514:	61 e0       	ldi	r22, 0x01	; 1
+ 516:	8c 2f       	mov	r24, r28
+ 518:	67 d3       	rcall	.+1742   	; 0xbe8 <drawpoint>
 		draw_digit_horiz_mid(x_shift);
- 5b4:	ce 01       	movw	r24, r28
- 5b6:	53 df       	rcall	.-346    	; 0x45e <draw_digit_horiz_mid>
+ 51a:	ce 01       	movw	r24, r28
+ 51c:	53 df       	rcall	.-346    	; 0x3c4 <draw_digit_horiz_mid>
 		drawpoint(col3, 3);
- 5b8:	63 e0       	ldi	r22, 0x03	; 3
- 5ba:	8e 2d       	mov	r24, r14
- 5bc:	6b d3       	rcall	.+1750   	; 0xc94 <drawpoint>
- 5be:	bc cf       	rjmp	.-136    	; 0x538 <__stack+0x39>
+ 51e:	63 e0       	ldi	r22, 0x03	; 3
+ 520:	8e 2d       	mov	r24, r14
+ 522:	62 d3       	rcall	.+1732   	; 0xbe8 <drawpoint>
+ 524:	bc cf       	rjmp	.-136    	; 0x49e <draw_number+0x76>
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 6) {
 		draw_digit_vert_left(x_shift);
- 5c0:	ce 01       	movw	r24, r28
- 5c2:	1d df       	rcall	.-454    	; 0x3fe <draw_digit_vert_left>
+ 526:	cb 01       	movw	r24, r22
+ 528:	1d df       	rcall	.-454    	; 0x364 <draw_digit_vert_left>
 		draw_digit_horiz_mid(x_shift);
- 5c4:	ce 01       	movw	r24, r28
- 5c6:	4b df       	rcall	.-362    	; 0x45e <draw_digit_horiz_mid>
+ 52a:	ce 01       	movw	r24, r28
+ 52c:	4b df       	rcall	.-362    	; 0x3c4 <draw_digit_horiz_mid>
 		drawpoint(col1, 3);
- 5c8:	63 e0       	ldi	r22, 0x03	; 3
- 5ca:	8c 2f       	mov	r24, r28
- 5cc:	63 d3       	rcall	.+1734   	; 0xc94 <drawpoint>
+ 52e:	63 e0       	ldi	r22, 0x03	; 3
+ 530:	8c 2f       	mov	r24, r28
+ 532:	5a d3       	rcall	.+1716   	; 0xbe8 <drawpoint>
 	}
 	else if (number == 5) {
 		draw_digit_horiz_top(x_shift);
 		drawpoint(col1, 1);
 		draw_digit_horiz_mid(x_shift);
 		drawpoint(col3, 3);
- 5ce:	63 e0       	ldi	r22, 0x03	; 3
- 5d0:	8e 2d       	mov	r24, r14
- 5d2:	f4 cf       	rjmp	.-24     	; 0x5bc <__stack+0xbd>
+ 534:	63 e0       	ldi	r22, 0x03	; 3
+ 536:	8e 2d       	mov	r24, r14
+ 538:	f4 cf       	rjmp	.-24     	; 0x522 <__stack+0x23>
 		drawpoint(col1, 3);
 		drawpoint(col3, 3);
 		draw_digit_horiz_bot(x_shift);
 	}
 	else if (number == 7) {
 		draw_digit_vert_right(x_shift);
- 5d4:	ce 01       	movw	r24, r28
- 5d6:	f9 de       	rcall	.-526    	; 0x3ca <draw_digit_vert_right>
+ 53a:	cb 01       	movw	r24, r22
+ 53c:	f9 de       	rcall	.-526    	; 0x330 <draw_digit_vert_right>
 		draw_digit_horiz_top(x_shift);
- 5d8:	ce 01       	movw	r24, r28
- 5da:	28 df       	rcall	.-432    	; 0x42c <draw_digit_horiz_top>
- 5dc:	df 91       	pop	r29
- 5de:	cf 91       	pop	r28
- 5e0:	1f 91       	pop	r17
- 5e2:	0f 91       	pop	r16
- 5e4:	ff 90       	pop	r15
- 5e6:	ef 90       	pop	r14
- 5e8:	08 95       	ret
+ 53e:	ce 01       	movw	r24, r28
+ 540:	28 df       	rcall	.-432    	; 0x392 <draw_digit_horiz_top>
+ 542:	df 91       	pop	r29
+ 544:	cf 91       	pop	r28
+ 546:	1f 91       	pop	r17
+ 548:	0f 91       	pop	r16
+ 54a:	ff 90       	pop	r15
+ 54c:	ef 90       	pop	r14
+ 54e:	08 95       	ret
 
-000005ea <gameover_screen>:
+00000550 <gameover_screen>:
 
 }
 
 
 
 void gameover_screen(int level) {
- 5ea:	ef 92       	push	r14
- 5ec:	ff 92       	push	r15
- 5ee:	0f 93       	push	r16
- 5f0:	1f 93       	push	r17
- 5f2:	7c 01       	movw	r14, r24
+ 550:	ef 92       	push	r14
+ 552:	ff 92       	push	r15
+ 554:	0f 93       	push	r16
+ 556:	1f 93       	push	r17
+ 558:	7c 01       	movw	r14, r24
 	setcolor(RED);
- 5f4:	81 e0       	ldi	r24, 0x01	; 1
- 5f6:	46 d3       	rcall	.+1676   	; 0xc84 <setcolor>
+ 55a:	81 e0       	ldi	r24, 0x01	; 1
+ 55c:	3d d3       	rcall	.+1658   	; 0xbd8 <setcolor>
 	draw_number((level % 10), 4);
- 5f8:	0a e0       	ldi	r16, 0x0A	; 10
- 5fa:	10 e0       	ldi	r17, 0x00	; 0
- 5fc:	c7 01       	movw	r24, r14
- 5fe:	b8 01       	movw	r22, r16
- 600:	81 d4       	rcall	.+2306   	; 0xf04 <__divmodhi4>
- 602:	64 e0       	ldi	r22, 0x04	; 4
- 604:	70 e0       	ldi	r23, 0x00	; 0
- 606:	5d df       	rcall	.-326    	; 0x4c2 <draw_number>
+ 55e:	0a e0       	ldi	r16, 0x0A	; 10
+ 560:	10 e0       	ldi	r17, 0x00	; 0
+ 562:	c7 01       	movw	r24, r14
+ 564:	b8 01       	movw	r22, r16
+ 566:	59 d4       	rcall	.+2226   	; 0xe1a <__divmodhi4>
+ 568:	64 e0       	ldi	r22, 0x04	; 4
+ 56a:	70 e0       	ldi	r23, 0x00	; 0
+ 56c:	5d df       	rcall	.-326    	; 0x428 <draw_number>
 	draw_number((level / 10), 0);
- 608:	c7 01       	movw	r24, r14
- 60a:	b8 01       	movw	r22, r16
- 60c:	7b d4       	rcall	.+2294   	; 0xf04 <__divmodhi4>
- 60e:	cb 01       	movw	r24, r22
- 610:	60 e0       	ldi	r22, 0x00	; 0
- 612:	70 e0       	ldi	r23, 0x00	; 0
- 614:	56 df       	rcall	.-340    	; 0x4c2 <draw_number>
- 616:	1f 91       	pop	r17
- 618:	0f 91       	pop	r16
- 61a:	ff 90       	pop	r15
- 61c:	ef 90       	pop	r14
- 61e:	08 95       	ret
+ 56e:	c7 01       	movw	r24, r14
+ 570:	b8 01       	movw	r22, r16
+ 572:	53 d4       	rcall	.+2214   	; 0xe1a <__divmodhi4>
+ 574:	cb 01       	movw	r24, r22
+ 576:	60 e0       	ldi	r22, 0x00	; 0
+ 578:	70 e0       	ldi	r23, 0x00	; 0
+ 57a:	56 df       	rcall	.-340    	; 0x428 <draw_number>
+ 57c:	1f 91       	pop	r17
+ 57e:	0f 91       	pop	r16
+ 580:	ff 90       	pop	r15
+ 582:	ef 90       	pop	r14
+ 584:	08 95       	ret
 
-00000620 <main>:
+00000586 <main>:
 
 
 
 int
 main(void)
 {
- 620:	cf ef       	ldi	r28, 0xFF	; 255
- 622:	d4 e0       	ldi	r29, 0x04	; 4
- 624:	de bf       	out	0x3e, r29	; 62
- 626:	cd bf       	out	0x3d, r28	; 61
+ 586:	cf ef       	ldi	r28, 0xFF	; 255
+ 588:	d4 e0       	ldi	r29, 0x04	; 4
+ 58a:	de bf       	out	0x3e, r29	; 62
+ 58c:	cd bf       	out	0x3d, r28	; 61
 	init_random();
- 628:	db dd       	rcall	.-1098   	; 0x1e0 <init_random>
+ 58e:	ee dd       	rcall	.-1060   	; 0x16c <init_random>
 	avrinit();
- 62a:	95 d2       	rcall	.+1322   	; 0xb56 <avrinit>
+ 590:	8c d2       	rcall	.+1304   	; 0xaaa <avrinit>
 	int cnt;
 	byte btnDown = 0;
- 62c:	dd 24       	eor	r13, r13
+ 592:	dd 24       	eor	r13, r13
 	byte level = 1;
- 62e:	f1 e0       	ldi	r31, 0x01	; 1
- 630:	cf 2e       	mov	r12, r31
+ 594:	01 e0       	ldi	r16, 0x01	; 1
+ 596:	c0 2e       	mov	r12, r16
 
 	arrows[0] = directions[next_random(4)];
- 632:	64 e0       	ldi	r22, 0x04	; 4
- 634:	70 e0       	ldi	r23, 0x00	; 0
- 636:	80 e0       	ldi	r24, 0x00	; 0
- 638:	90 e0       	ldi	r25, 0x00	; 0
- 63a:	5f dd       	rcall	.-1346   	; 0xfa <next_random>
- 63c:	dc 01       	movw	r26, r24
- 63e:	cb 01       	movw	r24, r22
- 640:	fc 01       	movw	r30, r24
- 642:	e6 5b       	subi	r30, 0xB6	; 182
- 644:	fe 4f       	sbci	r31, 0xFE	; 254
- 646:	80 81       	ld	r24, Z
- 648:	80 93 62 02 	sts	0x0262, r24
+ 598:	84 e0       	ldi	r24, 0x04	; 4
+ 59a:	af dd       	rcall	.-1186   	; 0xfa <next_random>
+ 59c:	e8 2f       	mov	r30, r24
+ 59e:	ff 27       	eor	r31, r31
+ 5a0:	e6 5b       	subi	r30, 0xB6	; 182
+ 5a2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 5a4:	80 81       	ld	r24, Z
+ 5a6:	80 93 5c 02 	sts	0x025C, r24
 
 
 	initswapbuffers();
- 64c:	06 d3       	rcall	.+1548   	; 0xc5a <initswapbuffers>
+ 5aa:	01 d3       	rcall	.+1538   	; 0xbae <initswapbuffers>
 	swapinterval(10);		// note: display refresh is 100hz (lower number speeds up game)
- 64e:	8a e0       	ldi	r24, 0x0A	; 10
- 650:	0c d3       	rcall	.+1560   	; 0xc6a <swapinterval>
+ 5ac:	8a e0       	ldi	r24, 0x0A	; 10
+ 5ae:	07 d3       	rcall	.+1550   	; 0xbbe <swapinterval>
 	cleardisplay();
- 652:	10 d3       	rcall	.+1568   	; 0xc74 <cleardisplay>
+ 5b0:	0b d3       	rcall	.+1558   	; 0xbc8 <cleardisplay>
 
 	start_timer1();			// this starts display refresh and audio processing
- 654:	68 d2       	rcall	.+1232   	; 0xb26 <start_timer1>
+ 5b2:	63 d2       	rcall	.+1222   	; 0xa7a <start_timer1>
 	
 	button_init();
- 656:	8d d2       	rcall	.+1306   	; 0xb72 <button_init>
+ 5b4:	88 d2       	rcall	.+1296   	; 0xac6 <button_init>
 
 	initaudio();			// XXX eventually, we remove this!
- 658:	af d3       	rcall	.+1886   	; 0xdb8 <initaudio>
+ 5b6:	aa d3       	rcall	.+1876   	; 0xd0c <initaudio>
 
 	//setwavetable(WT_SINE);
 	playsong(IntroSong);
- 65a:	83 e3       	ldi	r24, 0x33	; 51
- 65c:	91 e0       	ldi	r25, 0x01	; 1
- 65e:	db d3       	rcall	.+1974   	; 0xe16 <playsong>
+ 5b8:	83 e3       	ldi	r24, 0x33	; 51
+ 5ba:	91 e0       	ldi	r25, 0x01	; 1
+ 5bc:	d6 d3       	rcall	.+1964   	; 0xd6a <playsong>
 
 	startup_screen();
- 660:	8b de       	rcall	.-746    	; 0x378 <startup_screen>
+ 5be:	8f de       	rcall	.-738    	; 0x2de <startup_screen>
 
 	delay_sec(1);
- 662:	8c 2d       	mov	r24, r12
- 664:	2b dd       	rcall	.-1450   	; 0xbc <delay_sec>
+ 5c0:	8c 2d       	mov	r24, r12
+ 5c2:	7c dd       	rcall	.-1288   	; 0xbc <delay_sec>
 
 	//
 	// and now, the game
 	//
 nextlevel:
     cleardisplay();
- 666:	06 d3       	rcall	.+1548   	; 0xc74 <cleardisplay>
+ 5c4:	01 d3       	rcall	.+1538   	; 0xbc8 <cleardisplay>
     for(cnt=0; cnt<level; cnt++) {
- 668:	c0 e0       	ldi	r28, 0x00	; 0
- 66a:	d0 e0       	ldi	r29, 0x00	; 0
- 66c:	ec 2c       	mov	r14, r12
- 66e:	ff 24       	eor	r15, r15
- 670:	1e 14       	cp	r1, r14
- 672:	1f 04       	cpc	r1, r15
- 674:	34 f4       	brge	.+12     	; 0x682 <main+0x62>
+ 5c6:	c0 e0       	ldi	r28, 0x00	; 0
+ 5c8:	d0 e0       	ldi	r29, 0x00	; 0
+ 5ca:	ec 2c       	mov	r14, r12
+ 5cc:	ff 24       	eor	r15, r15
+ 5ce:	1e 14       	cp	r1, r14
+ 5d0:	1f 04       	cpc	r1, r15
+ 5d2:	34 f4       	brge	.+12     	; 0x5e0 <main+0x5a>
 		show_next_arrow(cnt);
- 676:	ce 01       	movw	r24, r28
- 678:	55 de       	rcall	.-854    	; 0x324 <show_next_arrow>
+ 5d4:	ce 01       	movw	r24, r28
+ 5d6:	59 de       	rcall	.-846    	; 0x28a <show_next_arrow>
 	//
 	// and now, the game
 	//
 nextlevel:
     cleardisplay();
     for(cnt=0; cnt<level; cnt++) {
- 67a:	21 96       	adiw	r28, 0x01	; 1
- 67c:	ce 15       	cp	r28, r14
- 67e:	df 05       	cpc	r29, r15
- 680:	d4 f3       	brlt	.-12     	; 0x676 <main+0x56>
+ 5d8:	21 96       	adiw	r28, 0x01	; 1
+ 5da:	ce 15       	cp	r28, r14
+ 5dc:	df 05       	cpc	r29, r15
+ 5de:	d4 f3       	brlt	.-12     	; 0x5d4 <main+0x4e>
 		show_next_arrow(cnt);
     }
     
     cnt = 0;
- 682:	c0 e0       	ldi	r28, 0x00	; 0
- 684:	d0 e0       	ldi	r29, 0x00	; 0
- 686:	e2 e6       	ldi	r30, 0x62	; 98
- 688:	ae 2e       	mov	r10, r30
- 68a:	e2 e0       	ldi	r30, 0x02	; 2
- 68c:	be 2e       	mov	r11, r30
- 68e:	ae 0c       	add	r10, r14
- 690:	bf 1c       	adc	r11, r15
- 692:	02 e6       	ldi	r16, 0x62	; 98
- 694:	12 e0       	ldi	r17, 0x02	; 2
+ 5e0:	c0 e0       	ldi	r28, 0x00	; 0
+ 5e2:	d0 e0       	ldi	r29, 0x00	; 0
+ 5e4:	1c e5       	ldi	r17, 0x5C	; 92
+ 5e6:	a1 2e       	mov	r10, r17
+ 5e8:	12 e0       	ldi	r17, 0x02	; 2
+ 5ea:	b1 2e       	mov	r11, r17
+ 5ec:	ae 0c       	add	r10, r14
+ 5ee:	bf 1c       	adc	r11, r15
+ 5f0:	0c e5       	ldi	r16, 0x5C	; 92
+ 5f2:	12 e0       	ldi	r17, 0x02	; 2
 
 	while(1) {
 
 		cleardisplay();
- 696:	ee d2       	rcall	.+1500   	; 0xc74 <cleardisplay>
+ 5f4:	e9 d2       	rcall	.+1490   	; 0xbc8 <cleardisplay>
 		handlebuttons();
- 698:	a1 d2       	rcall	.+1346   	; 0xbdc <handlebuttons>
+ 5f6:	9c d2       	rcall	.+1336   	; 0xb30 <handlebuttons>
 		
 		
 		if (!btnDown) {
- 69a:	dd 20       	and	r13, r13
- 69c:	09 f0       	breq	.+2      	; 0x6a0 <main+0x80>
- 69e:	44 c0       	rjmp	.+136    	; 0x728 <main+0x108>
+ 5f8:	dd 20       	and	r13, r13
+ 5fa:	09 f0       	breq	.+2      	; 0x5fe <main+0x78>
+ 5fc:	3f c0       	rjmp	.+126    	; 0x67c <main+0xf6>
 
 			if (ButtonA || ButtonB || ButtonC || ButtonD) {
- 6a0:	90 91 e4 02 	lds	r25, 0x02E4
- 6a4:	99 23       	and	r25, r25
- 6a6:	61 f4       	brne	.+24     	; 0x6c0 <main+0xa0>
- 6a8:	80 91 cd 02 	lds	r24, 0x02CD
- 6ac:	88 23       	and	r24, r24
- 6ae:	41 f4       	brne	.+16     	; 0x6c0 <main+0xa0>
- 6b0:	80 91 cc 02 	lds	r24, 0x02CC
- 6b4:	88 23       	and	r24, r24
- 6b6:	21 f4       	brne	.+8      	; 0x6c0 <main+0xa0>
- 6b8:	80 91 e8 02 	lds	r24, 0x02E8
- 6bc:	88 23       	and	r24, r24
- 6be:	29 f0       	breq	.+10     	; 0x6ca <main+0xaa>
+ 5fe:	90 91 de 02 	lds	r25, 0x02DE
+ 602:	99 23       	and	r25, r25
+ 604:	61 f4       	brne	.+24     	; 0x61e <main+0x98>
+ 606:	80 91 c7 02 	lds	r24, 0x02C7
+ 60a:	88 23       	and	r24, r24
+ 60c:	41 f4       	brne	.+16     	; 0x61e <main+0x98>
+ 60e:	80 91 c6 02 	lds	r24, 0x02C6
+ 612:	88 23       	and	r24, r24
+ 614:	21 f4       	brne	.+8      	; 0x61e <main+0x98>
+ 616:	80 91 e2 02 	lds	r24, 0x02E2
+ 61a:	88 23       	and	r24, r24
+ 61c:	29 f0       	breq	.+10     	; 0x628 <main+0xa2>
 				btnDown = 1;			
- 6c0:	71 e0       	ldi	r23, 0x01	; 1
- 6c2:	d7 2e       	mov	r13, r23
+ 61e:	b1 e0       	ldi	r27, 0x01	; 1
+ 620:	db 2e       	mov	r13, r27
 			}
 
 	
 			if (ButtonA) {
- 6c4:	99 23       	and	r25, r25
- 6c6:	09 f0       	breq	.+2      	; 0x6ca <main+0xaa>
- 6c8:	7d c0       	rjmp	.+250    	; 0x7c4 <main+0x1a4>
+ 622:	99 23       	and	r25, r25
+ 624:	09 f0       	breq	.+2      	; 0x628 <main+0xa2>
+ 626:	78 c0       	rjmp	.+240    	; 0x718 <main+0x192>
 				else {
 					goto gameover;
 				}
 	
 			}
 			if (ButtonB) {
- 6ca:	80 91 cd 02 	lds	r24, 0x02CD
- 6ce:	88 23       	and	r24, r24
- 6d0:	09 f0       	breq	.+2      	; 0x6d4 <main+0xb4>
- 6d2:	40 c0       	rjmp	.+128    	; 0x754 <main+0x134>
+ 628:	80 91 c7 02 	lds	r24, 0x02C7
+ 62c:	88 23       	and	r24, r24
+ 62e:	e1 f5       	brne	.+120    	; 0x6a8 <main+0x122>
 					goto gameover;
 				}
 	
 			}
 	
 			if (ButtonC) {
- 6d4:	80 91 cc 02 	lds	r24, 0x02CC
- 6d8:	88 23       	and	r24, r24
- 6da:	09 f0       	breq	.+2      	; 0x6de <main+0xbe>
- 6dc:	4f c0       	rjmp	.+158    	; 0x77c <main+0x15c>
+ 630:	80 91 c6 02 	lds	r24, 0x02C6
+ 634:	88 23       	and	r24, r24
+ 636:	09 f0       	breq	.+2      	; 0x63a <main+0xb4>
+ 638:	4b c0       	rjmp	.+150    	; 0x6d0 <main+0x14a>
 				else {
 					goto gameover;
 				}
 	
 			}
 			if (ButtonD) {
- 6de:	80 91 e8 02 	lds	r24, 0x02E8
- 6e2:	88 23       	and	r24, r24
- 6e4:	09 f0       	breq	.+2      	; 0x6e8 <main+0xc8>
- 6e6:	5e c0       	rjmp	.+188    	; 0x7a4 <main+0x184>
+ 63a:	80 91 e2 02 	lds	r24, 0x02E2
+ 63e:	88 23       	and	r24, r24
+ 640:	09 f0       	breq	.+2      	; 0x644 <main+0xbe>
+ 642:	5a c0       	rjmp	.+180    	; 0x6f8 <main+0x172>
 			
 			}
 			
 
 		
 			if (cnt == level) {
- 6e8:	ec 16       	cp	r14, r28
- 6ea:	fd 06       	cpc	r15, r29
- 6ec:	a1 f6       	brne	.-88     	; 0x696 <main+0x76>
+ 644:	ec 16       	cp	r14, r28
+ 646:	fd 06       	cpc	r15, r29
+ 648:	a9 f6       	brne	.-86     	; 0x5f4 <main+0x6e>
 				if (level == 99) {
- 6ee:	f3 e6       	ldi	r31, 0x63	; 99
- 6f0:	cf 16       	cp	r12, r31
- 6f2:	09 f4       	brne	.+2      	; 0x6f6 <main+0xd6>
- 6f4:	7f c0       	rjmp	.+254    	; 0x7f4 <main+0x1d4>
+ 64a:	f3 e6       	ldi	r31, 0x63	; 99
+ 64c:	cf 16       	cp	r12, r31
+ 64e:	09 f4       	brne	.+2      	; 0x652 <main+0xcc>
+ 650:	7b c0       	rjmp	.+246    	; 0x748 <main+0x1c2>
 					goto gamewin;
 				}
 				cleardisplay();
- 6f6:	be d2       	rcall	.+1404   	; 0xc74 <cleardisplay>
+ 652:	ba d2       	rcall	.+1396   	; 0xbc8 <cleardisplay>
 				delay_ms(200);
- 6f8:	88 ec       	ldi	r24, 0xC8	; 200
- 6fa:	cf dc       	rcall	.-1634   	; 0x9a <delay_ms>
+ 654:	88 ec       	ldi	r24, 0xC8	; 200
+ 656:	21 dd       	rcall	.-1470   	; 0x9a <delay_ms>
 				playsong(CORRECT_NOISE);
- 6fc:	80 e2       	ldi	r24, 0x20	; 32
- 6fe:	91 e0       	ldi	r25, 0x01	; 1
- 700:	8a d3       	rcall	.+1812   	; 0xe16 <playsong>
+ 658:	80 e2       	ldi	r24, 0x20	; 32
+ 65a:	91 e0       	ldi	r25, 0x01	; 1
+ 65c:	86 d3       	rcall	.+1804   	; 0xd6a <playsong>
 				level++;
- 702:	c3 94       	inc	r12
+ 65e:	c3 94       	inc	r12
 				arrows[cnt] = directions[next_random(4)];
- 704:	64 e0       	ldi	r22, 0x04	; 4
- 706:	70 e0       	ldi	r23, 0x00	; 0
- 708:	80 e0       	ldi	r24, 0x00	; 0
- 70a:	90 e0       	ldi	r25, 0x00	; 0
- 70c:	f6 dc       	rcall	.-1556   	; 0xfa <next_random>
- 70e:	dc 01       	movw	r26, r24
- 710:	cb 01       	movw	r24, r22
- 712:	fc 01       	movw	r30, r24
- 714:	e6 5b       	subi	r30, 0xB6	; 182
- 716:	fe 4f       	sbci	r31, 0xFE	; 254
- 718:	80 81       	ld	r24, Z
- 71a:	f5 01       	movw	r30, r10
- 71c:	80 83       	st	Z, r24
+ 660:	84 e0       	ldi	r24, 0x04	; 4
+ 662:	4b dd       	rcall	.-1386   	; 0xfa <next_random>
+ 664:	e8 2f       	mov	r30, r24
+ 666:	ff 27       	eor	r31, r31
+ 668:	e6 5b       	subi	r30, 0xB6	; 182
+ 66a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 66c:	80 81       	ld	r24, Z
+ 66e:	f5 01       	movw	r30, r10
+ 670:	80 83       	st	Z, r24
 				delay_ms(200);
- 71e:	88 ec       	ldi	r24, 0xC8	; 200
- 720:	bc dc       	rcall	.-1672   	; 0x9a <delay_ms>
+ 672:	88 ec       	ldi	r24, 0xC8	; 200
+ 674:	12 dd       	rcall	.-1500   	; 0x9a <delay_ms>
 				delay_ms(200);
- 722:	88 ec       	ldi	r24, 0xC8	; 200
- 724:	ba dc       	rcall	.-1676   	; 0x9a <delay_ms>
- 726:	9f cf       	rjmp	.-194    	; 0x666 <main+0x46>
+ 676:	88 ec       	ldi	r24, 0xC8	; 200
+ 678:	10 dd       	rcall	.-1504   	; 0x9a <delay_ms>
+ 67a:	a4 cf       	rjmp	.-184    	; 0x5c4 <main+0x3e>
 				goto nextlevel;
 			}
 
 		}
 		else {
 			if (!ButtonA && !ButtonB && !ButtonC && !ButtonD) {
- 728:	80 91 e4 02 	lds	r24, 0x02E4
- 72c:	88 23       	and	r24, r24
- 72e:	09 f0       	breq	.+2      	; 0x732 <main+0x112>
- 730:	b2 cf       	rjmp	.-156    	; 0x696 <main+0x76>
- 732:	80 91 cd 02 	lds	r24, 0x02CD
- 736:	88 23       	and	r24, r24
- 738:	09 f0       	breq	.+2      	; 0x73c <main+0x11c>
- 73a:	ad cf       	rjmp	.-166    	; 0x696 <main+0x76>
- 73c:	80 91 cc 02 	lds	r24, 0x02CC
- 740:	88 23       	and	r24, r24
- 742:	09 f0       	breq	.+2      	; 0x746 <main+0x126>
- 744:	a8 cf       	rjmp	.-176    	; 0x696 <main+0x76>
- 746:	80 91 e8 02 	lds	r24, 0x02E8
- 74a:	88 23       	and	r24, r24
- 74c:	09 f0       	breq	.+2      	; 0x750 <main+0x130>
- 74e:	a3 cf       	rjmp	.-186    	; 0x696 <main+0x76>
+ 67c:	80 91 de 02 	lds	r24, 0x02DE
+ 680:	88 23       	and	r24, r24
+ 682:	09 f0       	breq	.+2      	; 0x686 <main+0x100>
+ 684:	b7 cf       	rjmp	.-146    	; 0x5f4 <main+0x6e>
+ 686:	80 91 c7 02 	lds	r24, 0x02C7
+ 68a:	88 23       	and	r24, r24
+ 68c:	09 f0       	breq	.+2      	; 0x690 <main+0x10a>
+ 68e:	b2 cf       	rjmp	.-156    	; 0x5f4 <main+0x6e>
+ 690:	80 91 c6 02 	lds	r24, 0x02C6
+ 694:	88 23       	and	r24, r24
+ 696:	09 f0       	breq	.+2      	; 0x69a <main+0x114>
+ 698:	ad cf       	rjmp	.-166    	; 0x5f4 <main+0x6e>
+ 69a:	80 91 e2 02 	lds	r24, 0x02E2
+ 69e:	88 23       	and	r24, r24
+ 6a0:	09 f0       	breq	.+2      	; 0x6a4 <main+0x11e>
+ 6a2:	a8 cf       	rjmp	.-176    	; 0x5f4 <main+0x6e>
 				btnDown = 0;
- 750:	d8 2e       	mov	r13, r24
- 752:	a1 cf       	rjmp	.-190    	; 0x696 <main+0x76>
+ 6a4:	d8 2e       	mov	r13, r24
+ 6a6:	a6 cf       	rjmp	.-180    	; 0x5f4 <main+0x6e>
 					goto gameover;
 				}
 	
 			}
 			if (ButtonB) {
 				draw_arrow(DIRECTION_B, YELLOW);
- 754:	63 e0       	ldi	r22, 0x03	; 3
- 756:	81 e0       	ldi	r24, 0x01	; 1
- 758:	64 dd       	rcall	.-1336   	; 0x222 <draw_arrow>
+ 6a8:	63 e0       	ldi	r22, 0x03	; 3
+ 6aa:	81 e0       	ldi	r24, 0x01	; 1
+ 6ac:	6d dd       	rcall	.-1318   	; 0x188 <draw_arrow>
 				playsong(DIRECTION_B_NOISE);
- 75a:	8d e2       	ldi	r24, 0x2D	; 45
- 75c:	91 e0       	ldi	r25, 0x01	; 1
- 75e:	5b d3       	rcall	.+1718   	; 0xe16 <playsong>
+ 6ae:	8d e2       	ldi	r24, 0x2D	; 45
+ 6b0:	91 e0       	ldi	r25, 0x01	; 1
+ 6b2:	5b d3       	rcall	.+1718   	; 0xd6a <playsong>
 				delay_ms(100);
- 760:	84 e6       	ldi	r24, 0x64	; 100
- 762:	9b dc       	rcall	.-1738   	; 0x9a <delay_ms>
+ 6b4:	84 e6       	ldi	r24, 0x64	; 100
+ 6b6:	f1 dc       	rcall	.-1566   	; 0x9a <delay_ms>
 				if (arrows[cnt] == DIRECTION_B) {
- 764:	f8 01       	movw	r30, r16
- 766:	80 81       	ld	r24, Z
- 768:	81 30       	cpi	r24, 0x01	; 1
- 76a:	e1 f5       	brne	.+120    	; 0x7e4 <main+0x1c4>
+ 6b8:	f8 01       	movw	r30, r16
+ 6ba:	80 81       	ld	r24, Z
+ 6bc:	81 30       	cpi	r24, 0x01	; 1
+ 6be:	e1 f5       	brne	.+120    	; 0x738 <main+0x1b2>
 					cnt++;
- 76c:	21 96       	adiw	r28, 0x01	; 1
- 76e:	0f 5f       	subi	r16, 0xFF	; 255
- 770:	1f 4f       	sbci	r17, 0xFF	; 255
+ 6c0:	21 96       	adiw	r28, 0x01	; 1
+ 6c2:	0f 5f       	subi	r16, 0xFF	; 255
+ 6c4:	1f 4f       	sbci	r17, 0xFF	; 255
 					goto gameover;
 				}
 	
 			}
 	
 			if (ButtonC) {
- 772:	80 91 cc 02 	lds	r24, 0x02CC
- 776:	88 23       	and	r24, r24
- 778:	09 f4       	brne	.+2      	; 0x77c <main+0x15c>
- 77a:	b1 cf       	rjmp	.-158    	; 0x6de <main+0xbe>
+ 6c6:	80 91 c6 02 	lds	r24, 0x02C6
+ 6ca:	88 23       	and	r24, r24
+ 6cc:	09 f4       	brne	.+2      	; 0x6d0 <main+0x14a>
+ 6ce:	b5 cf       	rjmp	.-150    	; 0x63a <main+0xb4>
 				draw_arrow(DIRECTION_C, YELLOW);
- 77c:	63 e0       	ldi	r22, 0x03	; 3
- 77e:	82 e0       	ldi	r24, 0x02	; 2
- 780:	50 dd       	rcall	.-1376   	; 0x222 <draw_arrow>
+ 6d0:	63 e0       	ldi	r22, 0x03	; 3
+ 6d2:	82 e0       	ldi	r24, 0x02	; 2
+ 6d4:	59 dd       	rcall	.-1358   	; 0x188 <draw_arrow>
 				playsong(DIRECTION_C_NOISE);
- 782:	8a e2       	ldi	r24, 0x2A	; 42
- 784:	91 e0       	ldi	r25, 0x01	; 1
- 786:	47 d3       	rcall	.+1678   	; 0xe16 <playsong>
+ 6d6:	8a e2       	ldi	r24, 0x2A	; 42
+ 6d8:	91 e0       	ldi	r25, 0x01	; 1
+ 6da:	47 d3       	rcall	.+1678   	; 0xd6a <playsong>
 				delay_ms(100);
- 788:	84 e6       	ldi	r24, 0x64	; 100
- 78a:	87 dc       	rcall	.-1778   	; 0x9a <delay_ms>
+ 6dc:	84 e6       	ldi	r24, 0x64	; 100
+ 6de:	dd dc       	rcall	.-1606   	; 0x9a <delay_ms>
 				if (arrows[cnt] == DIRECTION_C) {
- 78c:	f8 01       	movw	r30, r16
- 78e:	80 81       	ld	r24, Z
- 790:	82 30       	cpi	r24, 0x02	; 2
- 792:	41 f5       	brne	.+80     	; 0x7e4 <main+0x1c4>
+ 6e0:	f8 01       	movw	r30, r16
+ 6e2:	80 81       	ld	r24, Z
+ 6e4:	82 30       	cpi	r24, 0x02	; 2
+ 6e6:	41 f5       	brne	.+80     	; 0x738 <main+0x1b2>
 					cnt++;
- 794:	21 96       	adiw	r28, 0x01	; 1
- 796:	0f 5f       	subi	r16, 0xFF	; 255
- 798:	1f 4f       	sbci	r17, 0xFF	; 255
+ 6e8:	21 96       	adiw	r28, 0x01	; 1
+ 6ea:	0f 5f       	subi	r16, 0xFF	; 255
+ 6ec:	1f 4f       	sbci	r17, 0xFF	; 255
 				else {
 					goto gameover;
 				}
 	
 			}
 			if (ButtonD) {
- 79a:	80 91 e8 02 	lds	r24, 0x02E8
- 79e:	88 23       	and	r24, r24
- 7a0:	09 f4       	brne	.+2      	; 0x7a4 <main+0x184>
- 7a2:	a2 cf       	rjmp	.-188    	; 0x6e8 <main+0xc8>
+ 6ee:	80 91 e2 02 	lds	r24, 0x02E2
+ 6f2:	88 23       	and	r24, r24
+ 6f4:	09 f4       	brne	.+2      	; 0x6f8 <main+0x172>
+ 6f6:	a6 cf       	rjmp	.-180    	; 0x644 <main+0xbe>
 				draw_arrow(DIRECTION_D, YELLOW);
- 7a4:	63 e0       	ldi	r22, 0x03	; 3
- 7a6:	86 2f       	mov	r24, r22
- 7a8:	3c dd       	rcall	.-1416   	; 0x222 <draw_arrow>
+ 6f8:	63 e0       	ldi	r22, 0x03	; 3
+ 6fa:	86 2f       	mov	r24, r22
+ 6fc:	45 dd       	rcall	.-1398   	; 0x188 <draw_arrow>
 				playsong(DIRECTION_D_NOISE);
- 7aa:	87 e2       	ldi	r24, 0x27	; 39
- 7ac:	91 e0       	ldi	r25, 0x01	; 1
- 7ae:	33 d3       	rcall	.+1638   	; 0xe16 <playsong>
+ 6fe:	87 e2       	ldi	r24, 0x27	; 39
+ 700:	91 e0       	ldi	r25, 0x01	; 1
+ 702:	33 d3       	rcall	.+1638   	; 0xd6a <playsong>
 				delay_ms(100);
- 7b0:	84 e6       	ldi	r24, 0x64	; 100
- 7b2:	73 dc       	rcall	.-1818   	; 0x9a <delay_ms>
+ 704:	84 e6       	ldi	r24, 0x64	; 100
+ 706:	c9 dc       	rcall	.-1646   	; 0x9a <delay_ms>
 				if (arrows[cnt] == DIRECTION_D) {
- 7b4:	f8 01       	movw	r30, r16
- 7b6:	80 81       	ld	r24, Z
- 7b8:	83 30       	cpi	r24, 0x03	; 3
- 7ba:	a1 f4       	brne	.+40     	; 0x7e4 <main+0x1c4>
+ 708:	f8 01       	movw	r30, r16
+ 70a:	80 81       	ld	r24, Z
+ 70c:	83 30       	cpi	r24, 0x03	; 3
+ 70e:	a1 f4       	brne	.+40     	; 0x738 <main+0x1b2>
 					cnt++;
- 7bc:	21 96       	adiw	r28, 0x01	; 1
- 7be:	0f 5f       	subi	r16, 0xFF	; 255
- 7c0:	1f 4f       	sbci	r17, 0xFF	; 255
- 7c2:	92 cf       	rjmp	.-220    	; 0x6e8 <main+0xc8>
+ 710:	21 96       	adiw	r28, 0x01	; 1
+ 712:	0f 5f       	subi	r16, 0xFF	; 255
+ 714:	1f 4f       	sbci	r17, 0xFF	; 255
+ 716:	96 cf       	rjmp	.-212    	; 0x644 <main+0xbe>
 				btnDown = 1;			
 			}
 
 	
 			if (ButtonA) {
 				draw_arrow(DIRECTION_A, YELLOW);
- 7c4:	63 e0       	ldi	r22, 0x03	; 3
- 7c6:	80 e0       	ldi	r24, 0x00	; 0
- 7c8:	2c dd       	rcall	.-1448   	; 0x222 <draw_arrow>
+ 718:	63 e0       	ldi	r22, 0x03	; 3
+ 71a:	80 e0       	ldi	r24, 0x00	; 0
+ 71c:	35 dd       	rcall	.-1430   	; 0x188 <draw_arrow>
 				playsong(DIRECTION_A_NOISE);
- 7ca:	80 e3       	ldi	r24, 0x30	; 48
- 7cc:	91 e0       	ldi	r25, 0x01	; 1
- 7ce:	23 d3       	rcall	.+1606   	; 0xe16 <playsong>
+ 71e:	80 e3       	ldi	r24, 0x30	; 48
+ 720:	91 e0       	ldi	r25, 0x01	; 1
+ 722:	23 d3       	rcall	.+1606   	; 0xd6a <playsong>
 				delay_ms(100);
- 7d0:	84 e6       	ldi	r24, 0x64	; 100
- 7d2:	63 dc       	rcall	.-1850   	; 0x9a <delay_ms>
+ 724:	84 e6       	ldi	r24, 0x64	; 100
+ 726:	b9 dc       	rcall	.-1678   	; 0x9a <delay_ms>
 				if (arrows[cnt] == DIRECTION_A) {
- 7d4:	f8 01       	movw	r30, r16
- 7d6:	80 81       	ld	r24, Z
- 7d8:	88 23       	and	r24, r24
- 7da:	21 f4       	brne	.+8      	; 0x7e4 <main+0x1c4>
+ 728:	f8 01       	movw	r30, r16
+ 72a:	80 81       	ld	r24, Z
+ 72c:	88 23       	and	r24, r24
+ 72e:	21 f4       	brne	.+8      	; 0x738 <main+0x1b2>
 					cnt++;
- 7dc:	21 96       	adiw	r28, 0x01	; 1
- 7de:	0f 5f       	subi	r16, 0xFF	; 255
- 7e0:	1f 4f       	sbci	r17, 0xFF	; 255
- 7e2:	73 cf       	rjmp	.-282    	; 0x6ca <main+0xaa>
+ 730:	21 96       	adiw	r28, 0x01	; 1
+ 732:	0f 5f       	subi	r16, 0xFF	; 255
+ 734:	1f 4f       	sbci	r17, 0xFF	; 255
+ 736:	78 cf       	rjmp	.-272    	; 0x628 <main+0xa2>
 	gameover_screen(level);
 	return (0);
 
 
 gameover:
 	cleardisplay();
- 7e4:	47 d2       	rcall	.+1166   	; 0xc74 <cleardisplay>
+ 738:	47 d2       	rcall	.+1166   	; 0xbc8 <cleardisplay>
 	delay_ms(200);
- 7e6:	88 ec       	ldi	r24, 0xC8	; 200
- 7e8:	58 dc       	rcall	.-1872   	; 0x9a <delay_ms>
+ 73a:	88 ec       	ldi	r24, 0xC8	; 200
+ 73c:	ae dc       	rcall	.-1700   	; 0x9a <delay_ms>
 	delay_ms(200);
- 7ea:	88 ec       	ldi	r24, 0xC8	; 200
- 7ec:	56 dc       	rcall	.-1876   	; 0x9a <delay_ms>
+ 73e:	88 ec       	ldi	r24, 0xC8	; 200
+ 740:	ac dc       	rcall	.-1704   	; 0x9a <delay_ms>
 	playsong(TapsSong);
- 7ee:	80 e0       	ldi	r24, 0x00	; 0
- 7f0:	91 e0       	ldi	r25, 0x01	; 1
- 7f2:	03 c0       	rjmp	.+6      	; 0x7fa <main+0x1da>
+ 742:	80 e0       	ldi	r24, 0x00	; 0
+ 744:	91 e0       	ldi	r25, 0x01	; 1
+ 746:	03 c0       	rjmp	.+6      	; 0x74e <main+0x1c8>
 		
 
     }
 
 gamewin:
 	cleardisplay();
- 7f4:	3f d2       	rcall	.+1150   	; 0xc74 <cleardisplay>
+ 748:	3f d2       	rcall	.+1150   	; 0xbc8 <cleardisplay>
 	//do something;
 	playsong(WIN_NOISE);
- 7f6:	8d e0       	ldi	r24, 0x0D	; 13
- 7f8:	91 e0       	ldi	r25, 0x01	; 1
+ 74a:	8d e0       	ldi	r24, 0x0D	; 13
+ 74c:	91 e0       	ldi	r25, 0x01	; 1
 
 gameover:
 	cleardisplay();
 	delay_ms(200);
 	delay_ms(200);
 	playsong(TapsSong);
- 7fa:	0d d3       	rcall	.+1562   	; 0xe16 <playsong>
+ 74e:	0d d3       	rcall	.+1562   	; 0xd6a <playsong>
 	gameover_screen(level);
- 7fc:	c7 01       	movw	r24, r14
- 7fe:	f5 de       	rcall	.-534    	; 0x5ea <gameover_screen>
+ 750:	c7 01       	movw	r24, r14
+ 752:	fe de       	rcall	.-516    	; 0x550 <gameover_screen>
 	return (0);
 }
- 800:	80 e0       	ldi	r24, 0x00	; 0
- 802:	90 e0       	ldi	r25, 0x00	; 0
- 804:	c8 c3       	rjmp	.+1936   	; 0xf96 <_exit>
+ 754:	80 e0       	ldi	r24, 0x00	; 0
+ 756:	90 e0       	ldi	r25, 0x00	; 0
+ 758:	87 c3       	rjmp	.+1806   	; 0xe68 <_exit>
 
-00000806 <do_audio_isr>:
+0000075a <do_audio_isr>:
 
     // The PWM value is loaded into the timer compare register at the beginning of the ISR if we are playing a song.
     // This PWM value was calculated in the previous pass through the ISR.
 
     // turn off audio if we have played the last note in the song table in the last pass through the ISR
     if ( CurNote == N_END ) {                  // if we reached the end of the song table
- 806:	80 91 c9 02 	lds	r24, 0x02C9
- 80a:	88 23       	and	r24, r24
- 80c:	39 f4       	brne	.+14     	; 0x81c <do_audio_isr+0x16>
+ 75a:	80 91 c3 02 	lds	r24, 0x02C3
+ 75e:	88 23       	and	r24, r24
+ 760:	39 f4       	brne	.+14     	; 0x770 <do_audio_isr+0x16>
         SongPlayFlag = 0;                 // stop playing song when reach end of song table    
- 80e:	80 93 e5 02 	sts	0x02E5, r24
+ 762:	80 93 df 02 	sts	0x02DF, r24
         TCCR1A &= ~_BV(COM1A1);           // turn off audio by turning off compare
- 812:	80 91 80 00 	lds	r24, 0x0080
- 816:	8f 77       	andi	r24, 0x7F	; 127
- 818:	80 93 80 00 	sts	0x0080, r24
+ 766:	80 91 80 00 	lds	r24, 0x0080
+ 76a:	8f 77       	andi	r24, 0x7F	; 127
+ 76c:	80 93 80 00 	sts	0x0080, r24
         //CurNote = 0;
     }
 
     // if we are playing a song, then calculate the PWM value to play the next time we get into the ISR
     if (SongPlayFlag) {          // only handle audio if we're playing a song (SongPlayFlag is set by main to start playing audio, and it is cleared by ISR when all events in active song table are completed)
- 81c:	80 91 e5 02 	lds	r24, 0x02E5
- 820:	88 23       	and	r24, r24
- 822:	09 f4       	brne	.+2      	; 0x826 <do_audio_isr+0x20>
- 824:	b9 c0       	rjmp	.+370    	; 0x998 <do_audio_isr+0x192>
+ 770:	80 91 df 02 	lds	r24, 0x02DF
+ 774:	88 23       	and	r24, r24
+ 776:	09 f4       	brne	.+2      	; 0x77a <do_audio_isr+0x20>
+ 778:	b9 c0       	rjmp	.+370    	; 0x8ec <do_audio_isr+0x192>
 
         // if the Note to play is a Rest, then turn the speaker off
         if ( CurNote == N_REST )
- 826:	80 91 c9 02 	lds	r24, 0x02C9
- 82a:	8f 3f       	cpi	r24, 0xFF	; 255
- 82c:	09 f4       	brne	.+2      	; 0x830 <do_audio_isr+0x2a>
- 82e:	cf c0       	rjmp	.+414    	; 0x9ce <do_audio_isr+0x1c8>
+ 77a:	80 91 c3 02 	lds	r24, 0x02C3
+ 77e:	8f 3f       	cpi	r24, 0xFF	; 255
+ 780:	09 f4       	brne	.+2      	; 0x784 <do_audio_isr+0x2a>
+ 782:	cf c0       	rjmp	.+414    	; 0x922 <do_audio_isr+0x1c8>
             TCCR1A &= ~_BV(COM1A1);  // turn off audio by turning off compare
         // otherwise, start playing the note by putting the PWM value in the timer compare register, and turing on the speaker
         else {
             TCCR1A |= _BV(COM1A1);   // make sure audio is turned on by turning on compare reg
- 830:	80 91 80 00 	lds	r24, 0x0080
- 834:	80 68       	ori	r24, 0x80	; 128
- 836:	80 93 80 00 	sts	0x0080, r24
+ 784:	80 91 80 00 	lds	r24, 0x0080
+ 788:	80 68       	ori	r24, 0x80	; 128
+ 78a:	80 93 80 00 	sts	0x0080, r24
             OCR1A = PWMval;          // set the PWM time to next value (that was calculated on the previous pass through the ISR)
- 83a:	80 91 e1 02 	lds	r24, 0x02E1
- 83e:	90 91 e2 02 	lds	r25, 0x02E2
- 842:	90 93 89 00 	sts	0x0089, r25
- 846:	80 93 88 00 	sts	0x0088, r24
+ 78e:	80 91 db 02 	lds	r24, 0x02DB
+ 792:	90 91 dc 02 	lds	r25, 0x02DC
+ 796:	90 93 89 00 	sts	0x0089, r25
+ 79a:	80 93 88 00 	sts	0x0088, r24
         }
 
         // calculate the next PWM value (this value will be used next time we get a timer interrrupt)
     
         // first, get the two values from the wavetable that we'll interpolating between
         Wptr2 = WtabCount.integ + WtabDelta.integ;
- 84a:	50 91 de 02 	lds	r21, 0x02DE
- 84e:	40 91 c7 02 	lds	r20, 0x02C7
- 852:	65 2f       	mov	r22, r21
- 854:	64 0f       	add	r22, r20
- 856:	71 2d       	mov	r23, r1
- 858:	71 1d       	adc	r23, r1
- 85a:	db 01       	movw	r26, r22
+ 79e:	50 91 d8 02 	lds	r21, 0x02D8
+ 7a2:	40 91 c1 02 	lds	r20, 0x02C1
+ 7a6:	65 2f       	mov	r22, r21
+ 7a8:	64 0f       	add	r22, r20
+ 7aa:	71 2d       	mov	r23, r1
+ 7ac:	71 1d       	adc	r23, r1
+ 7ae:	db 01       	movw	r26, r22
         temp = WtabCount.fract + WtabDelta.fract;
- 85c:	90 91 df 02 	lds	r25, 0x02DF
- 860:	80 91 c8 02 	lds	r24, 0x02C8
- 864:	69 2f       	mov	r22, r25
- 866:	68 0f       	add	r22, r24
- 868:	71 2d       	mov	r23, r1
- 86a:	71 1d       	adc	r23, r1
- 86c:	9b 01       	movw	r18, r22
+ 7b0:	90 91 d9 02 	lds	r25, 0x02D9
+ 7b4:	80 91 c2 02 	lds	r24, 0x02C2
+ 7b8:	69 2f       	mov	r22, r25
+ 7ba:	68 0f       	add	r22, r24
+ 7bc:	71 2d       	mov	r23, r1
+ 7be:	71 1d       	adc	r23, r1
+ 7c0:	9b 01       	movw	r18, r22
         if ( temp >= 256) Wptr2 += 1;   // if both fractional parts add to 1 or more, get next byte in wavetable for Val2
- 86e:	6f 3f       	cpi	r22, 0xFF	; 255
- 870:	71 05       	cpc	r23, r1
- 872:	11 f0       	breq	.+4      	; 0x878 <do_audio_isr+0x72>
- 874:	08 f0       	brcs	.+2      	; 0x878 <do_audio_isr+0x72>
- 876:	11 96       	adiw	r26, 0x01	; 1
+ 7c2:	6f 3f       	cpi	r22, 0xFF	; 255
+ 7c4:	71 05       	cpc	r23, r1
+ 7c6:	11 f0       	breq	.+4      	; 0x7cc <do_audio_isr+0x72>
+ 7c8:	08 f0       	brcs	.+2      	; 0x7cc <do_audio_isr+0x72>
+ 7ca:	11 96       	adiw	r26, 0x01	; 1
         if ( temp > 0) Wptr2 += 1;      // if there is a fractional part, get next byte in wavetable for Val2
- 878:	21 15       	cp	r18, r1
- 87a:	31 05       	cpc	r19, r1
- 87c:	09 f0       	breq	.+2      	; 0x880 <do_audio_isr+0x7a>
- 87e:	11 96       	adiw	r26, 0x01	; 1
+ 7cc:	21 15       	cp	r18, r1
+ 7ce:	31 05       	cpc	r19, r1
+ 7d0:	09 f0       	breq	.+2      	; 0x7d4 <do_audio_isr+0x7a>
+ 7d2:	11 96       	adiw	r26, 0x01	; 1
         Wptr1 = Wptr2 - 1;              // the first value is always the byte before the second value
- 880:	cd 01       	movw	r24, r26
- 882:	01 97       	sbiw	r24, 0x01	; 1
+ 7d4:	cd 01       	movw	r24, r26
+ 7d6:	01 97       	sbiw	r24, 0x01	; 1
         if ( Wptr2 >= WTABSIZE) Wptr2 -= WTABSIZE;  // wrap around to the beginning of the wavetable if we reached the end of it
- 884:	a0 32       	cpi	r26, 0x20	; 32
- 886:	b1 05       	cpc	r27, r1
- 888:	08 f0       	brcs	.+2      	; 0x88c <do_audio_isr+0x86>
- 88a:	90 97       	sbiw	r26, 0x20	; 32
+ 7d8:	a0 32       	cpi	r26, 0x20	; 32
+ 7da:	b1 05       	cpc	r27, r1
+ 7dc:	08 f0       	brcs	.+2      	; 0x7e0 <do_audio_isr+0x86>
+ 7de:	90 97       	sbiw	r26, 0x20	; 32
         if ( Wptr1 >= WTABSIZE) Wptr1 -= WTABSIZE;  // wrap around to the beginning of the wavetable if we reached the end of it
- 88c:	80 32       	cpi	r24, 0x20	; 32
- 88e:	91 05       	cpc	r25, r1
- 890:	08 f0       	brcs	.+2      	; 0x894 <do_audio_isr+0x8e>
- 892:	80 97       	sbiw	r24, 0x20	; 32
+ 7e0:	80 32       	cpi	r24, 0x20	; 32
+ 7e2:	91 05       	cpc	r25, r1
+ 7e4:	08 f0       	brcs	.+2      	; 0x7e8 <do_audio_isr+0x8e>
+ 7e6:	80 97       	sbiw	r24, 0x20	; 32
         WtabVal2 = wavPtr[Wptr2];       // get the second value from the wavetable
- 894:	e0 91 cf 02 	lds	r30, 0x02CF
- 898:	f0 91 d0 02 	lds	r31, 0x02D0
- 89c:	ae 0f       	add	r26, r30
- 89e:	bf 1f       	adc	r27, r31
- 8a0:	6c 91       	ld	r22, X
+ 7e8:	e0 91 c9 02 	lds	r30, 0x02C9
+ 7ec:	f0 91 ca 02 	lds	r31, 0x02CA
+ 7f0:	ae 0f       	add	r26, r30
+ 7f2:	bf 1f       	adc	r27, r31
+ 7f4:	6c 91       	ld	r22, X
         WtabVal1 = wavPtr[Wptr1];       // get the first value from the wavetable
- 8a2:	e8 0f       	add	r30, r24
- 8a4:	f9 1f       	adc	r31, r25
- 8a6:	e0 81       	ld	r30, Z
+ 7f6:	e8 0f       	add	r30, r24
+ 7f8:	f9 1f       	adc	r31, r25
+ 7fa:	e0 81       	ld	r30, Z
     
         // increment the Count by the Delta (fixed-point math)
         WtabCount.integ += WtabDelta.integ;
- 8a8:	85 2f       	mov	r24, r21
- 8aa:	84 0f       	add	r24, r20
+ 7fc:	85 2f       	mov	r24, r21
+ 7fe:	84 0f       	add	r24, r20
         temp = WtabCount.fract + WtabDelta.fract;  // we need to put this value in "temp" since "temp" is an int (16-bit value) and the fract parts of WtabCount and WtabDelta are 8-bit values
         // if the fractional part became 1 or beyond, then increment the integ part and correct the fractional part
         if ( temp >= 256 ) {                       // (256 is the equivalent of "1" for the fractional part)
- 8ac:	2f 3f       	cpi	r18, 0xFF	; 255
- 8ae:	31 05       	cpc	r19, r1
- 8b0:	21 f0       	breq	.+8      	; 0x8ba <do_audio_isr+0xb4>
- 8b2:	18 f0       	brcs	.+6      	; 0x8ba <do_audio_isr+0xb4>
+ 800:	2f 3f       	cpi	r18, 0xFF	; 255
+ 802:	31 05       	cpc	r19, r1
+ 804:	21 f0       	breq	.+8      	; 0x80e <do_audio_isr+0xb4>
+ 806:	18 f0       	brcs	.+6      	; 0x80e <do_audio_isr+0xb4>
             WtabCount.integ += 1;
- 8b4:	8f 5f       	subi	r24, 0xFF	; 255
+ 808:	8f 5f       	subi	r24, 0xFF	; 255
             temp -= 256;
- 8b6:	20 50       	subi	r18, 0x00	; 0
- 8b8:	31 40       	sbci	r19, 0x01	; 1
+ 80a:	20 50       	subi	r18, 0x00	; 0
+ 80c:	31 40       	sbci	r19, 0x01	; 1
         }
         WtabCount.fract = temp;
- 8ba:	20 93 df 02 	sts	0x02DF, r18
+ 80e:	20 93 d9 02 	sts	0x02D9, r18
         // if the counter is beyond the end of the table, then wrap it around to the beginning of the table
         if ( WtabCount.integ >= WTABSIZE) {
- 8be:	80 32       	cpi	r24, 0x20	; 32
- 8c0:	08 f0       	brcs	.+2      	; 0x8c4 <do_audio_isr+0xbe>
+ 812:	80 32       	cpi	r24, 0x20	; 32
+ 814:	08 f0       	brcs	.+2      	; 0x818 <do_audio_isr+0xbe>
             WtabCount.integ -= WTABSIZE;
- 8c2:	80 52       	subi	r24, 0x20	; 32
- 8c4:	80 93 de 02 	sts	0x02DE, r24
+ 816:	80 52       	subi	r24, 0x20	; 32
+ 818:	80 93 d8 02 	sts	0x02D8, r24
         // now interpolate between the two values
         // NOTE: we are limited to WtabDelta between 1.0000 and 1.996 [ i.e. integ=1, fract=(0 to 255) ]
         // this calculates the following:  
         //     if WtabVal2>WtabVal1:   PWMval = WtabVal1 + [(WtabVal2 - WtabVal1) * WtabCount]
         //     if WtabVal2<=WtabVal1:  PWMval = WtabVal1 - [(WtabVal1 - WtabVal2) * WtabCount]
         if (WtabVal2 > WtabVal1)
- 8c8:	e6 17       	cp	r30, r22
- 8ca:	08 f0       	brcs	.+2      	; 0x8ce <do_audio_isr+0xc8>
- 8cc:	77 c0       	rjmp	.+238    	; 0x9bc <do_audio_isr+0x1b6>
+ 81c:	e6 17       	cp	r30, r22
+ 81e:	08 f0       	brcs	.+2      	; 0x822 <do_audio_isr+0xc8>
+ 820:	77 c0       	rjmp	.+238    	; 0x910 <do_audio_isr+0x1b6>
             temp = (WtabVal2 - WtabVal1) * WtabCount.fract;
- 8ce:	86 2f       	mov	r24, r22
- 8d0:	99 27       	eor	r25, r25
- 8d2:	4e 2f       	mov	r20, r30
- 8d4:	55 27       	eor	r21, r21
- 8d6:	84 1b       	sub	r24, r20
- 8d8:	95 0b       	sbc	r25, r21
- 8da:	20 91 df 02 	lds	r18, 0x02DF
- 8de:	33 27       	eor	r19, r19
+ 822:	86 2f       	mov	r24, r22
+ 824:	99 27       	eor	r25, r25
+ 826:	4e 2f       	mov	r20, r30
+ 828:	55 27       	eor	r21, r21
+ 82a:	84 1b       	sub	r24, r20
+ 82c:	95 0b       	sbc	r25, r21
+ 82e:	20 91 d9 02 	lds	r18, 0x02D9
+ 832:	33 27       	eor	r19, r19
         else
             temp = (WtabVal1 - WtabVal2) * WtabCount.fract;
- 8e0:	28 9f       	mul	r18, r24
- 8e2:	d0 01       	movw	r26, r0
- 8e4:	29 9f       	mul	r18, r25
- 8e6:	b0 0d       	add	r27, r0
- 8e8:	38 9f       	mul	r19, r24
- 8ea:	b0 0d       	add	r27, r0
- 8ec:	11 24       	eor	r1, r1
+ 834:	28 9f       	mul	r18, r24
+ 836:	d0 01       	movw	r26, r0
+ 838:	29 9f       	mul	r18, r25
+ 83a:	b0 0d       	add	r27, r0
+ 83c:	38 9f       	mul	r19, r24
+ 83e:	b0 0d       	add	r27, r0
+ 840:	11 24       	eor	r1, r1
         // round up if the fractional part of the result is 128 (80 hex) or more (i.e., "0.5" or more)
         if ( (temp && 0x00ff) < 0x0080 ) 
             temp = temp / 256;
- 8ee:	2b 2f       	mov	r18, r27
- 8f0:	33 27       	eor	r19, r19
+ 842:	2b 2f       	mov	r18, r27
+ 844:	33 27       	eor	r19, r19
         else
             temp = (temp / 256) + 1;
         // update PWMval
         if (WtabVal2 > WtabVal1) 
- 8f2:	e6 17       	cp	r30, r22
- 8f4:	08 f0       	brcs	.+2      	; 0x8f8 <do_audio_isr+0xf2>
- 8f6:	51 c0       	rjmp	.+162    	; 0x99a <do_audio_isr+0x194>
+ 846:	e6 17       	cp	r30, r22
+ 848:	08 f0       	brcs	.+2      	; 0x84c <do_audio_isr+0xf2>
+ 84a:	51 c0       	rjmp	.+162    	; 0x8ee <do_audio_isr+0x194>
             PWMval = WtabVal1 + temp;
- 8f8:	42 0f       	add	r20, r18
- 8fa:	53 1f       	adc	r21, r19
+ 84c:	42 0f       	add	r20, r18
+ 84e:	53 1f       	adc	r21, r19
         else 
             PWMval = WtabVal1 - temp;
- 8fc:	50 93 e2 02 	sts	0x02E2, r21
- 900:	40 93 e1 02 	sts	0x02E1, r20
+ 850:	50 93 dc 02 	sts	0x02DC, r21
+ 854:	40 93 db 02 	sts	0x02DB, r20
         if (PWMval < 0) PWMval = 0;    // PWM should never go below zero if the above math is good, but I put this check here just in case
- 904:	80 91 e1 02 	lds	r24, 0x02E1
- 908:	90 91 e2 02 	lds	r25, 0x02E2
- 90c:	97 fd       	sbrc	r25, 7
- 90e:	51 c0       	rjmp	.+162    	; 0x9b2 <do_audio_isr+0x1ac>
+ 858:	80 91 db 02 	lds	r24, 0x02DB
+ 85c:	90 91 dc 02 	lds	r25, 0x02DC
+ 860:	97 fd       	sbrc	r25, 7
+ 862:	51 c0       	rjmp	.+162    	; 0x906 <do_audio_isr+0x1ac>
     
         // Wdur keeps track of the number of times through the ISR that we play a note (i.e., the duration of the sound)
         // If the duration is completed for playing this note (i.e., Wdur < 0), then we'll add a short pause after it to separate it from the next note
         if (Wdur > 0) {                // if the duration count is still above 0, then decrement it
- 910:	80 91 d1 02 	lds	r24, 0x02D1
- 914:	90 91 d2 02 	lds	r25, 0x02D2
- 918:	00 97       	sbiw	r24, 0x00	; 0
- 91a:	31 f0       	breq	.+12     	; 0x928 <do_audio_isr+0x122>
+ 864:	80 91 cb 02 	lds	r24, 0x02CB
+ 868:	90 91 cc 02 	lds	r25, 0x02CC
+ 86c:	00 97       	sbiw	r24, 0x00	; 0
+ 86e:	31 f0       	breq	.+12     	; 0x87c <do_audio_isr+0x122>
             Wdur--;
- 91c:	01 97       	sbiw	r24, 0x01	; 1
- 91e:	90 93 d2 02 	sts	0x02D2, r25
- 922:	80 93 d1 02 	sts	0x02D1, r24
- 926:	08 95       	ret
+ 870:	01 97       	sbiw	r24, 0x01	; 1
+ 872:	90 93 cc 02 	sts	0x02CC, r25
+ 876:	80 93 cb 02 	sts	0x02CB, r24
+ 87a:	08 95       	ret
             
         } 
         else {                         // else we have finished playing this note from the wavetable
             // start a slight pause after the note (to distinguish it from the note to follow)
             if (Wnote_sep > 0) {                      // we'll keep playing no sound until we've gone through the ISR NOTE_SEP times, making a pause after playing the previously played note
- 928:	80 91 e6 02 	lds	r24, 0x02E6
- 92c:	90 91 e7 02 	lds	r25, 0x02E7
- 930:	00 97       	sbiw	r24, 0x00	; 0
- 932:	09 f0       	breq	.+2      	; 0x936 <do_audio_isr+0x130>
- 934:	52 c0       	rjmp	.+164    	; 0x9da <do_audio_isr+0x1d4>
+ 87c:	80 91 e0 02 	lds	r24, 0x02E0
+ 880:	90 91 e1 02 	lds	r25, 0x02E1
+ 884:	00 97       	sbiw	r24, 0x00	; 0
+ 886:	09 f0       	breq	.+2      	; 0x88a <do_audio_isr+0x130>
+ 888:	52 c0       	rjmp	.+164    	; 0x92e <do_audio_isr+0x1d4>
             // if we're done with note separation pause, then set up the next note to play for the next time through the ISR
             else {
             	uint16_t tmp;
 				uint8_t note, dur;
 
                 Wnote_sep = NOTE_SEP;                 // reset note separation value
- 936:	88 ec       	ldi	r24, 0xC8	; 200
- 938:	90 e0       	ldi	r25, 0x00	; 0
- 93a:	90 93 e7 02 	sts	0x02E7, r25
- 93e:	80 93 e6 02 	sts	0x02E6, r24
+ 88a:	88 ec       	ldi	r24, 0xC8	; 200
+ 88c:	90 e0       	ldi	r25, 0x00	; 0
+ 88e:	90 93 e1 02 	sts	0x02E1, r25
+ 892:	80 93 e0 02 	sts	0x02E0, r24
                 DDRB |= _BV(1);                       // turn SPKR (OC1A) port back on
- 942:	21 9a       	sbi	0x04, 1	; 4
+ 896:	21 9a       	sbi	0x04, 1	; 4
                 //Disp[8] = 0x00;                     // XXX debug: turn off the one pixel
 
 				// next time through the ISR we'll start playing the next note in the song table
 
 				// note: this code is repeated inside playsong() - must match!!
 				note = *songPtr++;
- 944:	a0 91 e9 02 	lds	r26, 0x02E9
- 948:	b0 91 ea 02 	lds	r27, 0x02EA
- 94c:	4d 91       	ld	r20, X+
- 94e:	b0 93 ea 02 	sts	0x02EA, r27
- 952:	a0 93 e9 02 	sts	0x02E9, r26
+ 898:	a0 91 e3 02 	lds	r26, 0x02E3
+ 89c:	b0 91 e4 02 	lds	r27, 0x02E4
+ 8a0:	4d 91       	ld	r20, X+
+ 8a2:	b0 93 e4 02 	sts	0x02E4, r27
+ 8a6:	a0 93 e3 02 	sts	0x02E3, r26
 				tmp = GETNOTEDELTA(note);
- 956:	e4 2f       	mov	r30, r20
- 958:	ff 27       	eor	r31, r31
- 95a:	ee 0f       	add	r30, r30
- 95c:	ff 1f       	adc	r31, r31
- 95e:	e2 58       	subi	r30, 0x82	; 130
- 960:	fe 4f       	sbci	r31, 0xFE	; 254
- 962:	20 81       	ld	r18, Z
- 964:	31 81       	ldd	r19, Z+1	; 0x01
+ 8aa:	e4 2f       	mov	r30, r20
+ 8ac:	ff 27       	eor	r31, r31
+ 8ae:	ee 0f       	add	r30, r30
+ 8b0:	ff 1f       	adc	r31, r31
+ 8b2:	e8 58       	subi	r30, 0x88	; 136
+ 8b4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 8b6:	20 81       	ld	r18, Z
+ 8b8:	31 81       	ldd	r19, Z+1	; 0x01
 				WtabDelta.integ = (uint8_t)((tmp >> 8) & 0xff);		// high byte
- 966:	83 2f       	mov	r24, r19
- 968:	99 27       	eor	r25, r25
- 96a:	80 93 c7 02 	sts	0x02C7, r24
+ 8ba:	83 2f       	mov	r24, r19
+ 8bc:	99 27       	eor	r25, r25
+ 8be:	80 93 c1 02 	sts	0x02C1, r24
 				WtabDelta.fract = (uint8_t)(tmp & 0xff);			// low byte
- 96e:	20 93 c8 02 	sts	0x02C8, r18
+ 8c2:	20 93 c2 02 	sts	0x02C2, r18
 				dur = *songPtr++;
- 972:	8d 91       	ld	r24, X+
- 974:	b0 93 ea 02 	sts	0x02EA, r27
- 978:	a0 93 e9 02 	sts	0x02E9, r26
+ 8c6:	8d 91       	ld	r24, X+
+ 8c8:	b0 93 e4 02 	sts	0x02E4, r27
+ 8cc:	a0 93 e3 02 	sts	0x02E3, r26
 				CurNote = note;						// set 1st note to play, and
- 97c:	40 93 c9 02 	sts	0x02C9, r20
+ 8d0:	40 93 c3 02 	sts	0x02C3, r20
 				Wdur = GETDURATION(dur);   			// its duration.
- 980:	e8 2f       	mov	r30, r24
- 982:	ff 27       	eor	r31, r31
- 984:	ee 0f       	add	r30, r30
- 986:	ff 1f       	adc	r31, r31
- 988:	ec 5a       	subi	r30, 0xAC	; 172
- 98a:	fe 4f       	sbci	r31, 0xFE	; 254
- 98c:	80 81       	ld	r24, Z
- 98e:	91 81       	ldd	r25, Z+1	; 0x01
- 990:	90 93 d2 02 	sts	0x02D2, r25
- 994:	80 93 d1 02 	sts	0x02D1, r24
- 998:	08 95       	ret
+ 8d4:	e8 2f       	mov	r30, r24
+ 8d6:	ff 27       	eor	r31, r31
+ 8d8:	ee 0f       	add	r30, r30
+ 8da:	ff 1f       	adc	r31, r31
+ 8dc:	e2 5b       	subi	r30, 0xB2	; 178
+ 8de:	fe 4f       	sbci	r31, 0xFE	; 254
+ 8e0:	80 81       	ld	r24, Z
+ 8e2:	91 81       	ldd	r25, Z+1	; 0x01
+ 8e4:	90 93 cc 02 	sts	0x02CC, r25
+ 8e8:	80 93 cb 02 	sts	0x02CB, r24
+ 8ec:	08 95       	ret
             temp = (temp / 256) + 1;
         // update PWMval
         if (WtabVal2 > WtabVal1) 
             PWMval = WtabVal1 + temp;
         else 
             PWMval = WtabVal1 - temp;
- 99a:	42 1b       	sub	r20, r18
- 99c:	53 0b       	sbc	r21, r19
- 99e:	50 93 e2 02 	sts	0x02E2, r21
- 9a2:	40 93 e1 02 	sts	0x02E1, r20
+ 8ee:	42 1b       	sub	r20, r18
+ 8f0:	53 0b       	sbc	r21, r19
+ 8f2:	50 93 dc 02 	sts	0x02DC, r21
+ 8f6:	40 93 db 02 	sts	0x02DB, r20
         if (PWMval < 0) PWMval = 0;    // PWM should never go below zero if the above math is good, but I put this check here just in case
- 9a6:	80 91 e1 02 	lds	r24, 0x02E1
- 9aa:	90 91 e2 02 	lds	r25, 0x02E2
- 9ae:	97 ff       	sbrs	r25, 7
- 9b0:	af cf       	rjmp	.-162    	; 0x910 <do_audio_isr+0x10a>
- 9b2:	10 92 e2 02 	sts	0x02E2, r1
- 9b6:	10 92 e1 02 	sts	0x02E1, r1
- 9ba:	aa cf       	rjmp	.-172    	; 0x910 <do_audio_isr+0x10a>
+ 8fa:	80 91 db 02 	lds	r24, 0x02DB
+ 8fe:	90 91 dc 02 	lds	r25, 0x02DC
+ 902:	97 ff       	sbrs	r25, 7
+ 904:	af cf       	rjmp	.-162    	; 0x864 <do_audio_isr+0x10a>
+ 906:	10 92 dc 02 	sts	0x02DC, r1
+ 90a:	10 92 db 02 	sts	0x02DB, r1
+ 90e:	aa cf       	rjmp	.-172    	; 0x864 <do_audio_isr+0x10a>
         //     if WtabVal2>WtabVal1:   PWMval = WtabVal1 + [(WtabVal2 - WtabVal1) * WtabCount]
         //     if WtabVal2<=WtabVal1:  PWMval = WtabVal1 - [(WtabVal1 - WtabVal2) * WtabCount]
         if (WtabVal2 > WtabVal1)
             temp = (WtabVal2 - WtabVal1) * WtabCount.fract;
         else
             temp = (WtabVal1 - WtabVal2) * WtabCount.fract;
- 9bc:	4e 2f       	mov	r20, r30
- 9be:	55 27       	eor	r21, r21
- 9c0:	9a 01       	movw	r18, r20
- 9c2:	26 1b       	sub	r18, r22
- 9c4:	31 09       	sbc	r19, r1
- 9c6:	80 91 df 02 	lds	r24, 0x02DF
- 9ca:	99 27       	eor	r25, r25
- 9cc:	89 cf       	rjmp	.-238    	; 0x8e0 <do_audio_isr+0xda>
+ 910:	4e 2f       	mov	r20, r30
+ 912:	55 27       	eor	r21, r21
+ 914:	9a 01       	movw	r18, r20
+ 916:	26 1b       	sub	r18, r22
+ 918:	31 09       	sbc	r19, r1
+ 91a:	80 91 d9 02 	lds	r24, 0x02D9
+ 91e:	99 27       	eor	r25, r25
+ 920:	89 cf       	rjmp	.-238    	; 0x834 <do_audio_isr+0xda>
     // if we are playing a song, then calculate the PWM value to play the next time we get into the ISR
     if (SongPlayFlag) {          // only handle audio if we're playing a song (SongPlayFlag is set by main to start playing audio, and it is cleared by ISR when all events in active song table are completed)
 
         // if the Note to play is a Rest, then turn the speaker off
         if ( CurNote == N_REST )
             TCCR1A &= ~_BV(COM1A1);  // turn off audio by turning off compare
- 9ce:	80 91 80 00 	lds	r24, 0x0080
- 9d2:	8f 77       	andi	r24, 0x7F	; 127
- 9d4:	80 93 80 00 	sts	0x0080, r24
- 9d8:	38 cf       	rjmp	.-400    	; 0x84a <do_audio_isr+0x44>
+ 922:	80 91 80 00 	lds	r24, 0x0080
+ 926:	8f 77       	andi	r24, 0x7F	; 127
+ 928:	80 93 80 00 	sts	0x0080, r24
+ 92c:	38 cf       	rjmp	.-400    	; 0x79e <do_audio_isr+0x44>
             
         } 
         else {                         // else we have finished playing this note from the wavetable
             // start a slight pause after the note (to distinguish it from the note to follow)
             if (Wnote_sep > 0) {                      // we'll keep playing no sound until we've gone through the ISR NOTE_SEP times, making a pause after playing the previously played note
                 Wnote_sep--;    
- 9da:	01 97       	sbiw	r24, 0x01	; 1
- 9dc:	90 93 e7 02 	sts	0x02E7, r25
- 9e0:	80 93 e6 02 	sts	0x02E6, r24
+ 92e:	01 97       	sbiw	r24, 0x01	; 1
+ 930:	90 93 e1 02 	sts	0x02E1, r25
+ 934:	80 93 e0 02 	sts	0x02E0, r24
                 //Disp[8] = 0x40;                     // XXX debug: turn on one pixel
                 DDRB &= ~_BV(1);                      // turn off SPKR (OC1A) port
- 9e4:	21 98       	cbi	0x04, 1	; 4
- 9e6:	08 95       	ret
+ 938:	21 98       	cbi	0x04, 1	; 4
+ 93a:	08 95       	ret
 
-000009e8 <__vector_13>:
+0000093c <__vector_13>:
     }
 }
 
 
 ISR(TIMER1_OVF_vect)
 {
- 9e8:	1f 92       	push	r1
- 9ea:	0f 92       	push	r0
- 9ec:	0f b6       	in	r0, 0x3f	; 63
- 9ee:	0f 92       	push	r0
- 9f0:	11 24       	eor	r1, r1
- 9f2:	2f 93       	push	r18
- 9f4:	3f 93       	push	r19
- 9f6:	4f 93       	push	r20
- 9f8:	5f 93       	push	r21
- 9fa:	6f 93       	push	r22
- 9fc:	7f 93       	push	r23
- 9fe:	8f 93       	push	r24
- a00:	9f 93       	push	r25
- a02:	af 93       	push	r26
- a04:	bf 93       	push	r27
- a06:	ef 93       	push	r30
- a08:	ff 93       	push	r31
+ 93c:	1f 92       	push	r1
+ 93e:	0f 92       	push	r0
+ 940:	0f b6       	in	r0, 0x3f	; 63
+ 942:	0f 92       	push	r0
+ 944:	11 24       	eor	r1, r1
+ 946:	2f 93       	push	r18
+ 948:	3f 93       	push	r19
+ 94a:	4f 93       	push	r20
+ 94c:	5f 93       	push	r21
+ 94e:	6f 93       	push	r22
+ 950:	7f 93       	push	r23
+ 952:	8f 93       	push	r24
+ 954:	9f 93       	push	r25
+ 956:	af 93       	push	r26
+ 958:	bf 93       	push	r27
+ 95a:	ef 93       	push	r30
+ 95c:	ff 93       	push	r31
 
 	// first, handle audio
 	do_audio_isr();
- a0a:	fd de       	rcall	.-518    	; 0x806 <do_audio_isr>
+ 95e:	fd de       	rcall	.-518    	; 0x75a <do_audio_isr>
 
 
 	// next, handle the display
 
 	if (--Rcount == 0) {		// do we display a new row this time?  (only every 20 or so)
- a0c:	80 91 61 02 	lds	r24, 0x0261
- a10:	81 50       	subi	r24, 0x01	; 1
- a12:	80 93 61 02 	sts	0x0261, r24
- a16:	80 91 61 02 	lds	r24, 0x0261
- a1a:	88 23       	and	r24, r24
- a1c:	09 f0       	breq	.+2      	; 0xa20 <__vector_13+0x38>
- a1e:	72 c0       	rjmp	.+228    	; 0xb04 <__vector_13+0x11c>
+ 960:	80 91 5b 02 	lds	r24, 0x025B
+ 964:	81 50       	subi	r24, 0x01	; 1
+ 966:	80 93 5b 02 	sts	0x025B, r24
+ 96a:	80 91 5b 02 	lds	r24, 0x025B
+ 96e:	88 23       	and	r24, r24
+ 970:	09 f0       	breq	.+2      	; 0x974 <__vector_13+0x38>
+ 972:	72 c0       	rjmp	.+228    	; 0xa58 <__vector_13+0x11c>
 		Rcount = 20;
- a20:	84 e1       	ldi	r24, 0x14	; 20
- a22:	80 93 61 02 	sts	0x0261, r24
+ 974:	84 e1       	ldi	r24, 0x14	; 20
+ 976:	80 93 5b 02 	sts	0x025B, r24
 
 		//
 		// we display green columns (5) followed by the red columns (5).
 		// each will stay on for "Rcount" ticks (20 ticks is about 1ms).
 		//
 		switch (CurRow) {
- a26:	80 91 ce 02 	lds	r24, 0x02CE
- a2a:	99 27       	eor	r25, r25
- a2c:	aa 27       	eor	r26, r26
- a2e:	bb 27       	eor	r27, r27
- a30:	fc 01       	movw	r30, r24
- a32:	0a 97       	sbiw	r24, 0x0a	; 10
- a34:	f0 f0       	brcs	.+60     	; 0xa72 <__vector_13+0x8a>
+ 97a:	80 91 c8 02 	lds	r24, 0x02C8
+ 97e:	99 27       	eor	r25, r25
+ 980:	aa 27       	eor	r26, r26
+ 982:	bb 27       	eor	r27, r27
+ 984:	fc 01       	movw	r30, r24
+ 986:	0a 97       	sbiw	r24, 0x0a	; 10
+ 988:	f0 f0       	brcs	.+60     	; 0x9c6 <__vector_13+0x8a>
 				break;
 
 		}	// switch
 
 
 		CurRow++;
- a36:	80 91 ce 02 	lds	r24, 0x02CE
- a3a:	8f 5f       	subi	r24, 0xFF	; 255
- a3c:	80 93 ce 02 	sts	0x02CE, r24
+ 98a:	80 91 c8 02 	lds	r24, 0x02C8
+ 98e:	8f 5f       	subi	r24, 0xFF	; 255
+ 990:	80 93 c8 02 	sts	0x02C8, r24
 		if (CurRow >= 10) {
- a40:	80 91 ce 02 	lds	r24, 0x02CE
- a44:	8a 30       	cpi	r24, 0x0A	; 10
- a46:	08 f4       	brcc	.+2      	; 0xa4a <__vector_13+0x62>
- a48:	5d c0       	rjmp	.+186    	; 0xb04 <__vector_13+0x11c>
+ 994:	80 91 c8 02 	lds	r24, 0x02C8
+ 998:	8a 30       	cpi	r24, 0x0A	; 10
+ 99a:	08 f4       	brcc	.+2      	; 0x99e <__vector_13+0x62>
+ 99c:	5d c0       	rjmp	.+186    	; 0xa58 <__vector_13+0x11c>
 			CurRow = 0;
- a4a:	10 92 ce 02 	sts	0x02CE, r1
+ 99e:	10 92 c8 02 	sts	0x02C8, r1
 			if (--SwapCounter == 0) {			// we count down display cycles...
- a4e:	80 91 e3 02 	lds	r24, 0x02E3
- a52:	81 50       	subi	r24, 0x01	; 1
- a54:	80 93 e3 02 	sts	0x02E3, r24
- a58:	80 91 e3 02 	lds	r24, 0x02E3
- a5c:	88 23       	and	r24, r24
- a5e:	09 f0       	breq	.+2      	; 0xa62 <__vector_13+0x7a>
- a60:	51 c0       	rjmp	.+162    	; 0xb04 <__vector_13+0x11c>
+ 9a2:	80 91 dd 02 	lds	r24, 0x02DD
+ 9a6:	81 50       	subi	r24, 0x01	; 1
+ 9a8:	80 93 dd 02 	sts	0x02DD, r24
+ 9ac:	80 91 dd 02 	lds	r24, 0x02DD
+ 9b0:	88 23       	and	r24, r24
+ 9b2:	09 f0       	breq	.+2      	; 0x9b6 <__vector_13+0x7a>
+ 9b4:	51 c0       	rjmp	.+162    	; 0xa58 <__vector_13+0x11c>
 				SwapCounter = SwapInterval;
- a62:	80 91 dd 02 	lds	r24, 0x02DD
- a66:	80 93 e3 02 	sts	0x02E3, r24
+ 9b6:	80 91 d7 02 	lds	r24, 0x02D7
+ 9ba:	80 93 dd 02 	sts	0x02DD, r24
 				SwapRelease = 1;				// now mark the end of the display cycle
- a6a:	81 e0       	ldi	r24, 0x01	; 1
- a6c:	80 93 e0 02 	sts	0x02E0, r24
- a70:	49 c0       	rjmp	.+146    	; 0xb04 <__vector_13+0x11c>
+ 9be:	81 e0       	ldi	r24, 0x01	; 1
+ 9c0:	80 93 da 02 	sts	0x02DA, r24
+ 9c4:	49 c0       	rjmp	.+146    	; 0xa58 <__vector_13+0x11c>
 
 		//
 		// we display green columns (5) followed by the red columns (5).
 		// each will stay on for "Rcount" ticks (20 ticks is about 1ms).
 		//
 		switch (CurRow) {
- a72:	e6 5e       	subi	r30, 0xE6	; 230
- a74:	ff 4f       	sbci	r31, 0xFF	; 255
- a76:	09 94       	ijmp
+ 9c6:	e6 5e       	subi	r30, 0xE6	; 230
+ 9c8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9ca:	09 94       	ijmp
 	if (pin < 8) {
 		_output_low(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
- a78:	2e 98       	cbi	0x05, 6	; 5
+ 9cc:	2e 98       	cbi	0x05, 6	; 5
 				output_high(RC4);
 				break;
 
 			case 9:
 				output_low(RC4);
 				PORTD = Disp[9] | 0x80;
- a7a:	80 91 dc 02 	lds	r24, 0x02DC
- a7e:	80 68       	ori	r24, 0x80	; 128
- a80:	8b b9       	out	0x0b, r24	; 11
+ 9ce:	80 91 d6 02 	lds	r24, 0x02D6
+ 9d2:	80 68       	ori	r24, 0x80	; 128
+ 9d4:	8b b9       	out	0x0b, r24	; 11
 	if (pin < 8) {
 		_output_high(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
- a82:	2f 9a       	sbi	0x05, 7	; 5
- a84:	d8 cf       	rjmp	.-80     	; 0xa36 <__vector_13+0x4e>
+ 9d6:	2f 9a       	sbi	0x05, 7	; 5
+ 9d8:	d8 cf       	rjmp	.-80     	; 0x98a <__vector_13+0x4e>
 	if (pin < 8) {
 		_output_low(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
- a86:	2f 98       	cbi	0x05, 7	; 5
+ 9da:	2f 98       	cbi	0x05, 7	; 5
 		// each will stay on for "Rcount" ticks (20 ticks is about 1ms).
 		//
 		switch (CurRow) {
 			case 0:
 				output_low(RC5);
 				PORTD = Disp[0] | 0x80;		// note: keep PD7 high (pullup for SW4)
- a88:	80 91 d3 02 	lds	r24, 0x02D3
- a8c:	80 68       	ori	r24, 0x80	; 128
- a8e:	8b b9       	out	0x0b, r24	; 11
+ 9dc:	80 91 cd 02 	lds	r24, 0x02CD
+ 9e0:	80 68       	ori	r24, 0x80	; 128
+ 9e2:	8b b9       	out	0x0b, r24	; 11
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_high(PORTC,(pin-16));
- a90:	41 9a       	sbi	0x08, 1	; 8
- a92:	d1 cf       	rjmp	.-94     	; 0xa36 <__vector_13+0x4e>
+ 9e4:	41 9a       	sbi	0x08, 1	; 8
+ 9e6:	d1 cf       	rjmp	.-94     	; 0x98a <__vector_13+0x4e>
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_low(PORTC,(pin-16));
- a94:	41 98       	cbi	0x08, 1	; 8
+ 9e8:	41 98       	cbi	0x08, 1	; 8
 				output_high(GC1);
 				break;
 
 			case 1:
 				output_low(GC1);
 				PORTD = Disp[1] | 0x80;
- a96:	80 91 d4 02 	lds	r24, 0x02D4
- a9a:	80 68       	ori	r24, 0x80	; 128
- a9c:	8b b9       	out	0x0b, r24	; 11
+ 9ea:	80 91 ce 02 	lds	r24, 0x02CE
+ 9ee:	80 68       	ori	r24, 0x80	; 128
+ 9f0:	8b b9       	out	0x0b, r24	; 11
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_high(PORTC,(pin-16));
- a9e:	42 9a       	sbi	0x08, 2	; 8
- aa0:	ca cf       	rjmp	.-108    	; 0xa36 <__vector_13+0x4e>
+ 9f2:	42 9a       	sbi	0x08, 2	; 8
+ 9f4:	ca cf       	rjmp	.-108    	; 0x98a <__vector_13+0x4e>
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_low(PORTC,(pin-16));
- aa2:	42 98       	cbi	0x08, 2	; 8
+ 9f6:	42 98       	cbi	0x08, 2	; 8
 				output_high(GC2);
 				break;
 
 			case 2:
 				output_low(GC2);
 				PORTD = Disp[2] | 0x80;
- aa4:	80 91 d5 02 	lds	r24, 0x02D5
- aa8:	80 68       	ori	r24, 0x80	; 128
- aaa:	8b b9       	out	0x0b, r24	; 11
+ 9f8:	80 91 cf 02 	lds	r24, 0x02CF
+ 9fc:	80 68       	ori	r24, 0x80	; 128
+ 9fe:	8b b9       	out	0x0b, r24	; 11
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_high(PORTC,(pin-16));
- aac:	43 9a       	sbi	0x08, 3	; 8
- aae:	c3 cf       	rjmp	.-122    	; 0xa36 <__vector_13+0x4e>
+ a00:	43 9a       	sbi	0x08, 3	; 8
+ a02:	c3 cf       	rjmp	.-122    	; 0x98a <__vector_13+0x4e>
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_low(PORTC,(pin-16));
- ab0:	43 98       	cbi	0x08, 3	; 8
+ a04:	43 98       	cbi	0x08, 3	; 8
 				output_high(GC3);
 				break;
 
 			case 3:
 				output_low(GC3);
 				PORTD = Disp[3] | 0x80;
- ab2:	80 91 d6 02 	lds	r24, 0x02D6
- ab6:	80 68       	ori	r24, 0x80	; 128
- ab8:	8b b9       	out	0x0b, r24	; 11
+ a06:	80 91 d0 02 	lds	r24, 0x02D0
+ a0a:	80 68       	ori	r24, 0x80	; 128
+ a0c:	8b b9       	out	0x0b, r24	; 11
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_high(PORTC,(pin-16));
- aba:	44 9a       	sbi	0x08, 4	; 8
- abc:	bc cf       	rjmp	.-136    	; 0xa36 <__vector_13+0x4e>
+ a0e:	44 9a       	sbi	0x08, 4	; 8
+ a10:	bc cf       	rjmp	.-136    	; 0x98a <__vector_13+0x4e>
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_low(PORTC,(pin-16));
- abe:	44 98       	cbi	0x08, 4	; 8
+ a12:	44 98       	cbi	0x08, 4	; 8
 				output_high(GC4);
 				break;
 
 			case 4:
 				output_low(GC4);
 				PORTD = Disp[4] | 0x80;
- ac0:	80 91 d7 02 	lds	r24, 0x02D7
- ac4:	80 68       	ori	r24, 0x80	; 128
- ac6:	8b b9       	out	0x0b, r24	; 11
+ a14:	80 91 d1 02 	lds	r24, 0x02D1
+ a18:	80 68       	ori	r24, 0x80	; 128
+ a1a:	8b b9       	out	0x0b, r24	; 11
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_high(PORTC,(pin-16));
- ac8:	45 9a       	sbi	0x08, 5	; 8
- aca:	b5 cf       	rjmp	.-150    	; 0xa36 <__vector_13+0x4e>
+ a1c:	45 9a       	sbi	0x08, 5	; 8
+ a1e:	b5 cf       	rjmp	.-150    	; 0x98a <__vector_13+0x4e>
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
 	} else if (pin >= 16 && pin < 24) {
 		_output_low(PORTC,(pin-16));
- acc:	45 98       	cbi	0x08, 5	; 8
+ a20:	45 98       	cbi	0x08, 5	; 8
 				output_high(GC5);
 				break;
 
 			case 5:
 				output_low(GC5);
 				PORTD = Disp[5] | 0x80;
- ace:	80 91 d8 02 	lds	r24, 0x02D8
- ad2:	80 68       	ori	r24, 0x80	; 128
- ad4:	8b b9       	out	0x0b, r24	; 11
+ a22:	80 91 d2 02 	lds	r24, 0x02D2
+ a26:	80 68       	ori	r24, 0x80	; 128
+ a28:	8b b9       	out	0x0b, r24	; 11
 	if (pin < 8) {
 		_output_high(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
- ad6:	2b 9a       	sbi	0x05, 3	; 5
- ad8:	ae cf       	rjmp	.-164    	; 0xa36 <__vector_13+0x4e>
+ a2a:	2b 9a       	sbi	0x05, 3	; 5
+ a2c:	ae cf       	rjmp	.-164    	; 0x98a <__vector_13+0x4e>
 	if (pin < 8) {
 		_output_low(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
- ada:	2b 98       	cbi	0x05, 3	; 5
+ a2e:	2b 98       	cbi	0x05, 3	; 5
 				output_high(RC1);
 				break;
 
 			case 6:
 				output_low(RC1);
 				PORTD = Disp[6] | 0x80;
- adc:	80 91 d9 02 	lds	r24, 0x02D9
- ae0:	80 68       	ori	r24, 0x80	; 128
- ae2:	8b b9       	out	0x0b, r24	; 11
+ a30:	80 91 d3 02 	lds	r24, 0x02D3
+ a34:	80 68       	ori	r24, 0x80	; 128
+ a36:	8b b9       	out	0x0b, r24	; 11
 	if (pin < 8) {
 		_output_high(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
- ae4:	2c 9a       	sbi	0x05, 4	; 5
- ae6:	a7 cf       	rjmp	.-178    	; 0xa36 <__vector_13+0x4e>
+ a38:	2c 9a       	sbi	0x05, 4	; 5
+ a3a:	a7 cf       	rjmp	.-178    	; 0x98a <__vector_13+0x4e>
 	if (pin < 8) {
 		_output_low(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
- ae8:	2c 98       	cbi	0x05, 4	; 5
+ a3c:	2c 98       	cbi	0x05, 4	; 5
 				output_high(RC2);
 				break;
 
 			case 7:
 				output_low(RC2);
 				PORTD = Disp[7] | 0x80;
- aea:	80 91 da 02 	lds	r24, 0x02DA
- aee:	80 68       	ori	r24, 0x80	; 128
- af0:	8b b9       	out	0x0b, r24	; 11
+ a3e:	80 91 d4 02 	lds	r24, 0x02D4
+ a42:	80 68       	ori	r24, 0x80	; 128
+ a44:	8b b9       	out	0x0b, r24	; 11
 	if (pin < 8) {
 		_output_high(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
- af2:	2d 9a       	sbi	0x05, 5	; 5
- af4:	a0 cf       	rjmp	.-192    	; 0xa36 <__vector_13+0x4e>
+ a46:	2d 9a       	sbi	0x05, 5	; 5
+ a48:	a0 cf       	rjmp	.-192    	; 0x98a <__vector_13+0x4e>
 	if (pin < 8) {
 		_output_low(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_low(PORTB,(pin-8));
- af6:	2d 98       	cbi	0x05, 5	; 5
+ a4a:	2d 98       	cbi	0x05, 5	; 5
 				output_high(RC3);
 				break;
 
 			case 8:
 				output_low(RC3);
 				PORTD = Disp[8] | 0x80;
- af8:	80 91 db 02 	lds	r24, 0x02DB
- afc:	80 68       	ori	r24, 0x80	; 128
- afe:	8b b9       	out	0x0b, r24	; 11
+ a4c:	80 91 d5 02 	lds	r24, 0x02D5
+ a50:	80 68       	ori	r24, 0x80	; 128
+ a52:	8b b9       	out	0x0b, r24	; 11
 	if (pin < 8) {
 		_output_high(PORTA,pin);
 	} else
 #endif
 	if (pin >= 8 && pin < 16) {
 		_output_high(PORTB,(pin-8));
- b00:	2e 9a       	sbi	0x05, 6	; 5
- b02:	99 cf       	rjmp	.-206    	; 0xa36 <__vector_13+0x4e>
- b04:	ff 91       	pop	r31
- b06:	ef 91       	pop	r30
- b08:	bf 91       	pop	r27
- b0a:	af 91       	pop	r26
- b0c:	9f 91       	pop	r25
- b0e:	8f 91       	pop	r24
- b10:	7f 91       	pop	r23
- b12:	6f 91       	pop	r22
- b14:	5f 91       	pop	r21
- b16:	4f 91       	pop	r20
- b18:	3f 91       	pop	r19
- b1a:	2f 91       	pop	r18
- b1c:	0f 90       	pop	r0
- b1e:	0f be       	out	0x3f, r0	; 63
- b20:	0f 90       	pop	r0
- b22:	1f 90       	pop	r1
- b24:	18 95       	reti
+ a54:	2e 9a       	sbi	0x05, 6	; 5
+ a56:	99 cf       	rjmp	.-206    	; 0x98a <__vector_13+0x4e>
+ a58:	ff 91       	pop	r31
+ a5a:	ef 91       	pop	r30
+ a5c:	bf 91       	pop	r27
+ a5e:	af 91       	pop	r26
+ a60:	9f 91       	pop	r25
+ a62:	8f 91       	pop	r24
+ a64:	7f 91       	pop	r23
+ a66:	6f 91       	pop	r22
+ a68:	5f 91       	pop	r21
+ a6a:	4f 91       	pop	r20
+ a6c:	3f 91       	pop	r19
+ a6e:	2f 91       	pop	r18
+ a70:	0f 90       	pop	r0
+ a72:	0f be       	out	0x3f, r0	; 63
+ a74:	0f 90       	pop	r0
+ a76:	1f 90       	pop	r1
+ a78:	18 95       	reti
 
-00000b26 <start_timer1>:
+00000a7a <start_timer1>:
 {
 
 	// initialize ICR1, which sets the "TOP" value for the counter to interrupt and start over
 	// note: value of 50-1 ==> 20khz (assumes 8mhz clock, prescaled by 1/8)
 	//ICR1 = 50-1;
 	ICR1 = 50-1;
- b26:	81 e3       	ldi	r24, 0x31	; 49
- b28:	90 e0       	ldi	r25, 0x00	; 0
- b2a:	90 93 87 00 	sts	0x0087, r25
- b2e:	80 93 86 00 	sts	0x0086, r24
+ a7a:	81 e3       	ldi	r24, 0x31	; 49
+ a7c:	90 e0       	ldi	r25, 0x00	; 0
+ a7e:	90 93 87 00 	sts	0x0087, r25
+ a82:	80 93 86 00 	sts	0x0086, r24
 	OCR1A = 25;
- b32:	89 e1       	ldi	r24, 0x19	; 25
- b34:	90 e0       	ldi	r25, 0x00	; 0
- b36:	90 93 89 00 	sts	0x0089, r25
- b3a:	80 93 88 00 	sts	0x0088, r24
+ a86:	89 e1       	ldi	r24, 0x19	; 25
+ a88:	90 e0       	ldi	r25, 0x00	; 0
+ a8a:	90 93 89 00 	sts	0x0089, r25
+ a8e:	80 93 88 00 	sts	0x0088, r24
 	// start timer:
 	// set fast PWM, mode 14
 	// and set prescaler to system clock/8
 	//
 
 	TCCR1A = _BV(COM1A1) | _BV(WGM11);			// note: COM1A1 enables the compare match against OCR1A
- b3e:	82 e8       	ldi	r24, 0x82	; 130
- b40:	80 93 80 00 	sts	0x0080, r24
+ a92:	82 e8       	ldi	r24, 0x82	; 130
+ a94:	80 93 80 00 	sts	0x0080, r24
 
 	TCCR1B = _BV(WGM13) | _BV(WGM12) | _BV(CS11);
- b44:	8a e1       	ldi	r24, 0x1A	; 26
- b46:	80 93 81 00 	sts	0x0081, r24
+ a98:	8a e1       	ldi	r24, 0x1A	; 26
+ a9a:	80 93 81 00 	sts	0x0081, r24
 
 	TIMSK1 |= _BV(TOIE1);		// enable timer1 overflow interrupt
- b4a:	80 91 6f 00 	lds	r24, 0x006F
- b4e:	81 60       	ori	r24, 0x01	; 1
- b50:	80 93 6f 00 	sts	0x006F, r24
- b54:	08 95       	ret
+ a9e:	80 91 6f 00 	lds	r24, 0x006F
+ aa2:	81 60       	ori	r24, 0x01	; 1
+ aa4:	80 93 6f 00 	sts	0x006F, r24
+ aa8:	08 95       	ret
 
-00000b56 <avrinit>:
+00000aaa <avrinit>:
 	// note: DDR pins are set to "1" to be an output, "0" for input.
 
 	//          76543210
 	//PORTB = 0b00000101;		// initial: pullups on inputs
 	//DDRB  = 0b11111010;		// inputs: SW1 (PB0), SW2 (PB2); outputs: SPKR (PB1), RC1-RC5 (PB3-PB7)
 	PORTB = 0x05;			// (see above)
- b56:	85 e0       	ldi	r24, 0x05	; 5
- b58:	85 b9       	out	0x05, r24	; 5
+ aaa:	85 e0       	ldi	r24, 0x05	; 5
+ aac:	85 b9       	out	0x05, r24	; 5
 	DDRB  = 0xFA;			// (see above)
- b5a:	8a ef       	ldi	r24, 0xFA	; 250
- b5c:	84 b9       	out	0x04, r24	; 4
+ aae:	8a ef       	ldi	r24, 0xFA	; 250
+ ab0:	84 b9       	out	0x04, r24	; 4
 	
 	//          76543210
 	//PORTC = 0b00000001;		// initial: pullups on inputs
 	//DDRC  = 0b11111110;		// inputs: SW3 (PC0); outputs: GC1-GC5 (PC1-PC5)
 	PORTC = 0x01;		// (see above)
- b5e:	81 e0       	ldi	r24, 0x01	; 1
- b60:	88 b9       	out	0x08, r24	; 8
+ ab2:	81 e0       	ldi	r24, 0x01	; 1
+ ab4:	88 b9       	out	0x08, r24	; 8
 	DDRC  = 0xFE;		// (see above)
- b62:	8e ef       	ldi	r24, 0xFE	; 254
- b64:	87 b9       	out	0x07, r24	; 7
+ ab6:	8e ef       	ldi	r24, 0xFE	; 254
+ ab8:	87 b9       	out	0x07, r24	; 7
 	
 	//          76543210
 	//PORTD = 0b10000000;		// initial: pullups on inputs
 	//DDRD  = 0b01111111;		// inputs: SW4 (PD7) outputs: ROW1-ROW7 (PD0-PD6)
 
 	PORTD = 0x80;		// (see above)
- b66:	80 e8       	ldi	r24, 0x80	; 128
- b68:	8b b9       	out	0x0b, r24	; 11
+ aba:	80 e8       	ldi	r24, 0x80	; 128
+ abc:	8b b9       	out	0x0b, r24	; 11
 	DDRD  = 0x7F;		// (see above)
- b6a:	8f e7       	ldi	r24, 0x7F	; 127
- b6c:	8a b9       	out	0x0a, r24	; 10
+ abe:	8f e7       	ldi	r24, 0x7F	; 127
+ ac0:	8a b9       	out	0x0a, r24	; 10
 
 
 	sei();					// enable interrupts (individual interrupts still need to be enabled)
- b6e:	78 94       	sei
- b70:	08 95       	ret
+ ac2:	78 94       	sei
+ ac4:	08 95       	ret
 
-00000b72 <button_init>:
+00000ac6 <button_init>:
 }
 
 
 void button_init(void)
 {
 	ButtonA = 0;
- b72:	10 92 e4 02 	sts	0x02E4, r1
+ ac6:	10 92 de 02 	sts	0x02DE, r1
 	ButtonB = 0;
- b76:	10 92 cd 02 	sts	0x02CD, r1
+ aca:	10 92 c7 02 	sts	0x02C7, r1
 	ButtonC = 0;
- b7a:	10 92 cc 02 	sts	0x02CC, r1
+ ace:	10 92 c6 02 	sts	0x02C6, r1
 	ButtonD = 0;
- b7e:	10 92 e8 02 	sts	0x02E8, r1
+ ad2:	10 92 e2 02 	sts	0x02E2, r1
 	ButtonAEvent = 0;
- b82:	10 92 ca 02 	sts	0x02CA, r1
+ ad6:	10 92 c4 02 	sts	0x02C4, r1
 	ButtonBEvent = 0;
- b86:	10 92 c6 02 	sts	0x02C6, r1
+ ada:	10 92 c0 02 	sts	0x02C0, r1
 	ButtonCEvent = 0;
- b8a:	10 92 cb 02 	sts	0x02CB, r1
+ ade:	10 92 c5 02 	sts	0x02C5, r1
 	ButtonDEvent = 0;
- b8e:	10 92 eb 02 	sts	0x02EB, r1
- b92:	08 95       	ret
+ ae2:	10 92 e5 02 	sts	0x02E5, r1
+ ae6:	08 95       	ret
 
-00000b94 <poll_buttons>:
+00000ae8 <poll_buttons>:
 
 void poll_buttons(void)
 {
 	// clear the state of a button, if it has been released
 
 	if (ButtonA) {
- b94:	80 91 e4 02 	lds	r24, 0x02E4
- b98:	88 23       	and	r24, r24
- b9a:	11 f0       	breq	.+4      	; 0xba0 <poll_buttons+0xc>
+ ae8:	80 91 de 02 	lds	r24, 0x02DE
+ aec:	88 23       	and	r24, r24
+ aee:	11 f0       	breq	.+4      	; 0xaf4 <poll_buttons+0xc>
 //	returns the value of the input pin (but does not shift it!)
 //
 //	note: the most efficient code is generated when testing the return value against 0.
 //
 static inline unsigned char input_test(unsigned char pin)
 {
- b9c:	18 99       	sbic	0x03, 0	; 3
- b9e:	1b c0       	rjmp	.+54     	; 0xbd6 <poll_buttons+0x42>
+ af0:	18 99       	sbic	0x03, 0	; 3
+ af2:	1b c0       	rjmp	.+54     	; 0xb2a <poll_buttons+0x42>
 		if (!button_pressed(SW1)) {
 			ButtonA = 0;
 		}
 	}
 	if (ButtonB) {
- ba0:	80 91 cd 02 	lds	r24, 0x02CD
- ba4:	88 23       	and	r24, r24
- ba6:	11 f0       	breq	.+4      	; 0xbac <poll_buttons+0x18>
- ba8:	1a 99       	sbic	0x03, 2	; 3
- baa:	12 c0       	rjmp	.+36     	; 0xbd0 <poll_buttons+0x3c>
+ af4:	80 91 c7 02 	lds	r24, 0x02C7
+ af8:	88 23       	and	r24, r24
+ afa:	11 f0       	breq	.+4      	; 0xb00 <poll_buttons+0x18>
+ afc:	1a 99       	sbic	0x03, 2	; 3
+ afe:	12 c0       	rjmp	.+36     	; 0xb24 <poll_buttons+0x3c>
 		if (!button_pressed(SW2)) {
 			ButtonB = 0;
 		}
 	}
 	if (ButtonC) {
- bac:	80 91 cc 02 	lds	r24, 0x02CC
- bb0:	88 23       	and	r24, r24
- bb2:	11 f0       	breq	.+4      	; 0xbb8 <poll_buttons+0x24>
- bb4:	30 99       	sbic	0x06, 0	; 6
- bb6:	09 c0       	rjmp	.+18     	; 0xbca <poll_buttons+0x36>
+ b00:	80 91 c6 02 	lds	r24, 0x02C6
+ b04:	88 23       	and	r24, r24
+ b06:	11 f0       	breq	.+4      	; 0xb0c <poll_buttons+0x24>
+ b08:	30 99       	sbic	0x06, 0	; 6
+ b0a:	09 c0       	rjmp	.+18     	; 0xb1e <poll_buttons+0x36>
 		if (!button_pressed(SW3)) {
 			ButtonC = 0;
 		}
 	}
 	if (ButtonD) {
- bb8:	80 91 e8 02 	lds	r24, 0x02E8
- bbc:	88 23       	and	r24, r24
- bbe:	21 f0       	breq	.+8      	; 0xbc8 <poll_buttons+0x34>
- bc0:	4f 9b       	sbis	0x09, 7	; 9
- bc2:	02 c0       	rjmp	.+4      	; 0xbc8 <poll_buttons+0x34>
+ b0c:	80 91 e2 02 	lds	r24, 0x02E2
+ b10:	88 23       	and	r24, r24
+ b12:	21 f0       	breq	.+8      	; 0xb1c <poll_buttons+0x34>
+ b14:	4f 9b       	sbis	0x09, 7	; 9
+ b16:	02 c0       	rjmp	.+4      	; 0xb1c <poll_buttons+0x34>
 		if (!button_pressed(SW4)) {
 			ButtonD = 0;
- bc4:	10 92 e8 02 	sts	0x02E8, r1
- bc8:	08 95       	ret
+ b18:	10 92 e2 02 	sts	0x02E2, r1
+ b1c:	08 95       	ret
 			ButtonB = 0;
 		}
 	}
 	if (ButtonC) {
 		if (!button_pressed(SW3)) {
 			ButtonC = 0;
- bca:	10 92 cc 02 	sts	0x02CC, r1
- bce:	f4 cf       	rjmp	.-24     	; 0xbb8 <poll_buttons+0x24>
+ b1e:	10 92 c6 02 	sts	0x02C6, r1
+ b22:	f4 cf       	rjmp	.-24     	; 0xb0c <poll_buttons+0x24>
 			ButtonA = 0;
 		}
 	}
 	if (ButtonB) {
 		if (!button_pressed(SW2)) {
 			ButtonB = 0;
- bd0:	10 92 cd 02 	sts	0x02CD, r1
- bd4:	eb cf       	rjmp	.-42     	; 0xbac <poll_buttons+0x18>
+ b24:	10 92 c7 02 	sts	0x02C7, r1
+ b28:	eb cf       	rjmp	.-42     	; 0xb00 <poll_buttons+0x18>
 {
 	// clear the state of a button, if it has been released
 
 	if (ButtonA) {
 		if (!button_pressed(SW1)) {
 			ButtonA = 0;
- bd6:	10 92 e4 02 	sts	0x02E4, r1
- bda:	e2 cf       	rjmp	.-60     	; 0xba0 <poll_buttons+0xc>
+ b2a:	10 92 de 02 	sts	0x02DE, r1
+ b2e:	e2 cf       	rjmp	.-60     	; 0xaf4 <poll_buttons+0xc>
 
-00000bdc <handlebuttons>:
+00000b30 <handlebuttons>:
 // this watches for button "events" and performs actions accordingly.
 //
 void handlebuttons(void)
 {
 
 	if (!ButtonA && button_pressed(SW1)) {
- bdc:	80 91 e4 02 	lds	r24, 0x02E4
- be0:	88 23       	and	r24, r24
- be2:	41 f4       	brne	.+16     	; 0xbf4 <handlebuttons+0x18>
- be4:	18 99       	sbic	0x03, 0	; 3
- be6:	06 c0       	rjmp	.+12     	; 0xbf4 <handlebuttons+0x18>
+ b30:	80 91 de 02 	lds	r24, 0x02DE
+ b34:	88 23       	and	r24, r24
+ b36:	41 f4       	brne	.+16     	; 0xb48 <handlebuttons+0x18>
+ b38:	18 99       	sbic	0x03, 0	; 3
+ b3a:	06 c0       	rjmp	.+12     	; 0xb48 <handlebuttons+0x18>
 	
 		ButtonA = 1;
- be8:	81 e0       	ldi	r24, 0x01	; 1
- bea:	80 93 e4 02 	sts	0x02E4, r24
+ b3c:	81 e0       	ldi	r24, 0x01	; 1
+ b3e:	80 93 de 02 	sts	0x02DE, r24
 
 		// action
 		ButtonAEvent = 1;
- bee:	80 93 ca 02 	sts	0x02CA, r24
- bf2:	08 95       	ret
+ b42:	80 93 c4 02 	sts	0x02C4, r24
+ b46:	08 95       	ret
 
 	} else if (!ButtonB && button_pressed(SW2)) {
- bf4:	80 91 cd 02 	lds	r24, 0x02CD
- bf8:	88 23       	and	r24, r24
- bfa:	91 f0       	breq	.+36     	; 0xc20 <handlebuttons+0x44>
+ b48:	80 91 c7 02 	lds	r24, 0x02C7
+ b4c:	88 23       	and	r24, r24
+ b4e:	91 f0       	breq	.+36     	; 0xb74 <handlebuttons+0x44>
 		ButtonB = 1;
 	
 		// action
 		ButtonBEvent = 1;
 		
 	} else if (!ButtonC && button_pressed(SW3)) {
- bfc:	80 91 cc 02 	lds	r24, 0x02CC
- c00:	88 23       	and	r24, r24
- c02:	11 f4       	brne	.+4      	; 0xc08 <handlebuttons+0x2c>
- c04:	30 9b       	sbis	0x06, 0	; 6
- c06:	16 c0       	rjmp	.+44     	; 0xc34 <handlebuttons+0x58>
+ b50:	80 91 c6 02 	lds	r24, 0x02C6
+ b54:	88 23       	and	r24, r24
+ b56:	11 f4       	brne	.+4      	; 0xb5c <handlebuttons+0x2c>
+ b58:	30 9b       	sbis	0x06, 0	; 6
+ b5a:	16 c0       	rjmp	.+44     	; 0xb88 <handlebuttons+0x58>
 		ButtonC = 1;
 	
 		// action
 		ButtonCEvent = 1;
 		
 	} else if (!ButtonD && button_pressed(SW4)) {
- c08:	80 91 e8 02 	lds	r24, 0x02E8
- c0c:	88 23       	and	r24, r24
- c0e:	81 f4       	brne	.+32     	; 0xc30 <handlebuttons+0x54>
- c10:	4f 99       	sbic	0x09, 7	; 9
- c12:	0e c0       	rjmp	.+28     	; 0xc30 <handlebuttons+0x54>
+ b5c:	80 91 e2 02 	lds	r24, 0x02E2
+ b60:	88 23       	and	r24, r24
+ b62:	81 f4       	brne	.+32     	; 0xb84 <handlebuttons+0x54>
+ b64:	4f 99       	sbic	0x09, 7	; 9
+ b66:	0e c0       	rjmp	.+28     	; 0xb84 <handlebuttons+0x54>
 
 		ButtonD = 1;
- c14:	81 e0       	ldi	r24, 0x01	; 1
- c16:	80 93 e8 02 	sts	0x02E8, r24
+ b68:	81 e0       	ldi	r24, 0x01	; 1
+ b6a:	80 93 e2 02 	sts	0x02E2, r24
 	
 		// action
 		ButtonDEvent = 1;
- c1a:	80 93 eb 02 	sts	0x02EB, r24
- c1e:	08 95       	ret
- c20:	1a 99       	sbic	0x03, 2	; 3
- c22:	ec cf       	rjmp	.-40     	; 0xbfc <handlebuttons+0x20>
+ b6e:	80 93 e5 02 	sts	0x02E5, r24
+ b72:	08 95       	ret
+ b74:	1a 99       	sbic	0x03, 2	; 3
+ b76:	ec cf       	rjmp	.-40     	; 0xb50 <handlebuttons+0x20>
 		// action
 		ButtonAEvent = 1;
 
 	} else if (!ButtonB && button_pressed(SW2)) {
 
 		ButtonB = 1;
- c24:	81 e0       	ldi	r24, 0x01	; 1
- c26:	80 93 cd 02 	sts	0x02CD, r24
+ b78:	81 e0       	ldi	r24, 0x01	; 1
+ b7a:	80 93 c7 02 	sts	0x02C7, r24
 	
 		// action
 		ButtonBEvent = 1;
- c2a:	80 93 c6 02 	sts	0x02C6, r24
- c2e:	08 95       	ret
+ b7e:	80 93 c0 02 	sts	0x02C0, r24
+ b82:	08 95       	ret
 	
 		// action
 		ButtonDEvent = 1;
 		
 	} else {
 		poll_buttons();
- c30:	b1 df       	rcall	.-158    	; 0xb94 <poll_buttons>
- c32:	08 95       	ret
+ b84:	b1 df       	rcall	.-158    	; 0xae8 <poll_buttons>
+ b86:	08 95       	ret
 		// action
 		ButtonBEvent = 1;
 		
 	} else if (!ButtonC && button_pressed(SW3)) {
 
 		ButtonC = 1;
- c34:	81 e0       	ldi	r24, 0x01	; 1
- c36:	80 93 cc 02 	sts	0x02CC, r24
+ b88:	81 e0       	ldi	r24, 0x01	; 1
+ b8a:	80 93 c6 02 	sts	0x02C6, r24
 	
 		// action
 		ButtonCEvent = 1;
- c3a:	80 93 cb 02 	sts	0x02CB, r24
- c3e:	08 95       	ret
+ b8e:	80 93 c5 02 	sts	0x02C5, r24
+ b92:	08 95       	ret
 
-00000c40 <swapbuffers>:
+00000b94 <swapbuffers>:
  *
  */
 void swapbuffers(void)
 {
 	while (!SwapRelease) {		// spin until this flag is set
 		NOP();
- c40:	80 91 e0 02 	lds	r24, 0x02E0
- c44:	88 23       	and	r24, r24
- c46:	29 f4       	brne	.+10     	; 0xc52 <swapbuffers+0x12>
- c48:	00 00       	nop
- c4a:	80 91 e0 02 	lds	r24, 0x02E0
- c4e:	88 23       	and	r24, r24
- c50:	d9 f3       	breq	.-10     	; 0xc48 <swapbuffers+0x8>
+ b94:	80 91 da 02 	lds	r24, 0x02DA
+ b98:	88 23       	and	r24, r24
+ b9a:	29 f4       	brne	.+10     	; 0xba6 <swapbuffers+0x12>
+ b9c:	00 00       	nop
+ b9e:	80 91 da 02 	lds	r24, 0x02DA
+ ba2:	88 23       	and	r24, r24
+ ba4:	d9 f3       	breq	.-10     	; 0xb9c <swapbuffers+0x8>
 	}
 	NOP();
- c52:	00 00       	nop
+ ba6:	00 00       	nop
 	SwapRelease = 0;			// clear flag (for next time)
- c54:	10 92 e0 02 	sts	0x02E0, r1
- c58:	08 95       	ret
+ ba8:	10 92 da 02 	sts	0x02DA, r1
+ bac:	08 95       	ret
 
-00000c5a <initswapbuffers>:
+00000bae <initswapbuffers>:
 }
 
 void initswapbuffers(void)
 {
 	SwapRelease = 0;
- c5a:	10 92 e0 02 	sts	0x02E0, r1
+ bae:	10 92 da 02 	sts	0x02DA, r1
 	SwapInterval = 1;
- c5e:	81 e0       	ldi	r24, 0x01	; 1
- c60:	80 93 dd 02 	sts	0x02DD, r24
+ bb2:	81 e0       	ldi	r24, 0x01	; 1
+ bb4:	80 93 d7 02 	sts	0x02D7, r24
 	SwapCounter = 1;
- c64:	80 93 e3 02 	sts	0x02E3, r24
- c68:	08 95       	ret
+ bb8:	80 93 dd 02 	sts	0x02DD, r24
+ bbc:	08 95       	ret
 
-00000c6a <swapinterval>:
+00000bbe <swapinterval>:
 }
 
 void swapinterval(uint8_t i)
 {
 	if (i != 0) {
- c6a:	88 23       	and	r24, r24
- c6c:	11 f0       	breq	.+4      	; 0xc72 <swapinterval+0x8>
+ bbe:	88 23       	and	r24, r24
+ bc0:	11 f0       	breq	.+4      	; 0xbc6 <swapinterval+0x8>
 		SwapInterval = i;
- c6e:	80 93 dd 02 	sts	0x02DD, r24
- c72:	08 95       	ret
+ bc2:	80 93 d7 02 	sts	0x02D7, r24
+ bc6:	08 95       	ret
 
-00000c74 <cleardisplay>:
+00000bc8 <cleardisplay>:
 	}
 }
 
 
 void cleardisplay(void)
 {
- c74:	e3 ed       	ldi	r30, 0xD3	; 211
- c76:	f2 e0       	ldi	r31, 0x02	; 2
- c78:	89 e0       	ldi	r24, 0x09	; 9
+ bc8:	ed ec       	ldi	r30, 0xCD	; 205
+ bca:	f2 e0       	ldi	r31, 0x02	; 2
+ bcc:	89 e0       	ldi	r24, 0x09	; 9
 	uint8_t i;
 
 	// initialize display buffer
 
 	for (i = 0; i < 10; i++) {
 		Disp[i] = 0x0;
- c7a:	11 92       	st	Z+, r1
+ bce:	11 92       	st	Z+, r1
 {
 	uint8_t i;
 
 	// initialize display buffer
 
 	for (i = 0; i < 10; i++) {
- c7c:	81 50       	subi	r24, 0x01	; 1
- c7e:	87 ff       	sbrs	r24, 7
- c80:	fc cf       	rjmp	.-8      	; 0xc7a <cleardisplay+0x6>
- c82:	08 95       	ret
+ bd0:	81 50       	subi	r24, 0x01	; 1
+ bd2:	87 ff       	sbrs	r24, 7
+ bd4:	fc cf       	rjmp	.-8      	; 0xbce <cleardisplay+0x6>
+ bd6:	08 95       	ret
 
-00000c84 <setcolor>:
+00000bd8 <setcolor>:
 //
 // set the current color (RED, GREEN, ...)
 //
 void setcolor(uint8_t c)
 {
 	_CurColor = 0x3 & c;
- c84:	83 70       	andi	r24, 0x03	; 3
- c86:	80 93 60 02 	sts	0x0260, r24
- c8a:	08 95       	ret
+ bd8:	83 70       	andi	r24, 0x03	; 3
+ bda:	80 93 5a 02 	sts	0x025A, r24
+ bde:	08 95       	ret
 
-00000c8c <getcolor>:
+00000be0 <getcolor>:
 //
 // get the current color (returns it).
 //
 uint8_t getcolor(void)
 {
 	return _CurColor;
- c8c:	80 91 60 02 	lds	r24, 0x0260
+ be0:	80 91 5a 02 	lds	r24, 0x025A
 }
- c90:	99 27       	eor	r25, r25
- c92:	08 95       	ret
+ be4:	99 27       	eor	r25, r25
+ be6:	08 95       	ret
 
-00000c94 <drawpoint>:
+00000be8 <drawpoint>:
 //
 //	note: upper left is (0 0) and lower right is (6 4)
 //
 //
 void drawpoint(uint8_t x, uint8_t y)
 {
- c94:	28 2f       	mov	r18, r24
+ be8:	28 2f       	mov	r18, r24
 	uint8_t bits;
 
 	if ((x < 7) && (y < 5)) {	// clipping
- c96:	87 30       	cpi	r24, 0x07	; 7
- c98:	38 f5       	brcc	.+78     	; 0xce8 <drawpoint+0x54>
- c9a:	65 30       	cpi	r22, 0x05	; 5
- c9c:	28 f5       	brcc	.+74     	; 0xce8 <drawpoint+0x54>
+ bea:	87 30       	cpi	r24, 0x07	; 7
+ bec:	38 f5       	brcc	.+78     	; 0xc3c <drawpoint+0x54>
+ bee:	65 30       	cpi	r22, 0x05	; 5
+ bf0:	28 f5       	brcc	.+74     	; 0xc3c <drawpoint+0x54>
 		bits = 0x40 >> x;
- c9e:	80 e4       	ldi	r24, 0x40	; 64
- ca0:	90 e0       	ldi	r25, 0x00	; 0
- ca2:	02 c0       	rjmp	.+4      	; 0xca8 <drawpoint+0x14>
- ca4:	95 95       	asr	r25
- ca6:	87 95       	ror	r24
- ca8:	2a 95       	dec	r18
- caa:	e2 f7       	brpl	.-8      	; 0xca4 <drawpoint+0x10>
- cac:	28 2f       	mov	r18, r24
+ bf2:	80 e4       	ldi	r24, 0x40	; 64
+ bf4:	90 e0       	ldi	r25, 0x00	; 0
+ bf6:	02 c0       	rjmp	.+4      	; 0xbfc <drawpoint+0x14>
+ bf8:	95 95       	asr	r25
+ bfa:	87 95       	ror	r24
+ bfc:	2a 95       	dec	r18
+ bfe:	e2 f7       	brpl	.-8      	; 0xbf8 <drawpoint+0x10>
+ c00:	28 2f       	mov	r18, r24
 		if (_CurColor & 0x1) {	// red plane
- cae:	30 91 60 02 	lds	r19, 0x0260
- cb2:	30 fd       	sbrc	r19, 0
- cb4:	1a c0       	rjmp	.+52     	; 0xcea <drawpoint+0x56>
+ c02:	30 91 5a 02 	lds	r19, 0x025A
+ c06:	30 fd       	sbrc	r19, 0
+ c08:	1a c0       	rjmp	.+52     	; 0xc3e <drawpoint+0x56>
 			Disp[y+5] |= bits;
 		} else {
 			Disp[y+5] &= ~bits;
- cb6:	77 27       	eor	r23, r23
- cb8:	fb 01       	movw	r30, r22
- cba:	ed 52       	subi	r30, 0x2D	; 45
- cbc:	fd 4f       	sbci	r31, 0xFD	; 253
- cbe:	98 2f       	mov	r25, r24
- cc0:	90 95       	com	r25
- cc2:	85 81       	ldd	r24, Z+5	; 0x05
- cc4:	89 23       	and	r24, r25
- cc6:	85 83       	std	Z+5, r24	; 0x05
+ c0a:	77 27       	eor	r23, r23
+ c0c:	fb 01       	movw	r30, r22
+ c0e:	e3 53       	subi	r30, 0x33	; 51
+ c10:	fd 4f       	sbci	r31, 0xFD	; 253
+ c12:	98 2f       	mov	r25, r24
+ c14:	90 95       	com	r25
+ c16:	85 81       	ldd	r24, Z+5	; 0x05
+ c18:	89 23       	and	r24, r25
+ c1a:	85 83       	std	Z+5, r24	; 0x05
 		}
 		if (_CurColor & 0x2) {	// green plane
- cc8:	31 ff       	sbrs	r19, 1
- cca:	07 c0       	rjmp	.+14     	; 0xcda <drawpoint+0x46>
+ c1c:	31 ff       	sbrs	r19, 1
+ c1e:	07 c0       	rjmp	.+14     	; 0xc2e <drawpoint+0x46>
 			Disp[y] |= bits;
- ccc:	fb 01       	movw	r30, r22
- cce:	ed 52       	subi	r30, 0x2D	; 45
- cd0:	fd 4f       	sbci	r31, 0xFD	; 253
- cd2:	80 81       	ld	r24, Z
- cd4:	82 2b       	or	r24, r18
- cd6:	80 83       	st	Z, r24
- cd8:	08 95       	ret
+ c20:	fb 01       	movw	r30, r22
+ c22:	e3 53       	subi	r30, 0x33	; 51
+ c24:	fd 4f       	sbci	r31, 0xFD	; 253
+ c26:	80 81       	ld	r24, Z
+ c28:	82 2b       	or	r24, r18
+ c2a:	80 83       	st	Z, r24
+ c2c:	08 95       	ret
 		} else {
 			Disp[y] &= ~bits;
- cda:	fb 01       	movw	r30, r22
- cdc:	ed 52       	subi	r30, 0x2D	; 45
- cde:	fd 4f       	sbci	r31, 0xFD	; 253
- ce0:	20 95       	com	r18
- ce2:	80 81       	ld	r24, Z
- ce4:	82 23       	and	r24, r18
- ce6:	80 83       	st	Z, r24
- ce8:	08 95       	ret
+ c2e:	fb 01       	movw	r30, r22
+ c30:	e3 53       	subi	r30, 0x33	; 51
+ c32:	fd 4f       	sbci	r31, 0xFD	; 253
+ c34:	20 95       	com	r18
+ c36:	80 81       	ld	r24, Z
+ c38:	82 23       	and	r24, r18
+ c3a:	80 83       	st	Z, r24
+ c3c:	08 95       	ret
 	uint8_t bits;
 
 	if ((x < 7) && (y < 5)) {	// clipping
 		bits = 0x40 >> x;
 		if (_CurColor & 0x1) {	// red plane
 			Disp[y+5] |= bits;
- cea:	77 27       	eor	r23, r23
- cec:	fb 01       	movw	r30, r22
- cee:	ed 52       	subi	r30, 0x2D	; 45
- cf0:	fd 4f       	sbci	r31, 0xFD	; 253
- cf2:	85 81       	ldd	r24, Z+5	; 0x05
- cf4:	82 2b       	or	r24, r18
- cf6:	e7 cf       	rjmp	.-50     	; 0xcc6 <drawpoint+0x32>
+ c3e:	77 27       	eor	r23, r23
+ c40:	fb 01       	movw	r30, r22
+ c42:	e3 53       	subi	r30, 0x33	; 51
+ c44:	fd 4f       	sbci	r31, 0xFD	; 253
+ c46:	85 81       	ldd	r24, Z+5	; 0x05
+ c48:	82 2b       	or	r24, r18
+ c4a:	e7 cf       	rjmp	.-50     	; 0xc1a <drawpoint+0x32>
 
-00000cf8 <drawfilledrect>:
+00000c4c <drawfilledrect>:
 //	draw a filled rectangle from (x1 y1) to (x2 y2)
 //
 //	XXX probably could be optimized more
 //
 void drawfilledrect(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2)
 {
- cf8:	0f 93       	push	r16
- cfa:	1f 93       	push	r17
- cfc:	cf 93       	push	r28
- cfe:	df 93       	push	r29
- d00:	18 2f       	mov	r17, r24
- d02:	02 2f       	mov	r16, r18
+ c4c:	0f 93       	push	r16
+ c4e:	1f 93       	push	r17
+ c50:	cf 93       	push	r28
+ c52:	df 93       	push	r29
+ c54:	18 2f       	mov	r17, r24
+ c56:	02 2f       	mov	r16, r18
 	uint8_t bits;
 	uint8_t x, y, tmp;
 
 	if ((x1 < 7) && (y1 < 5) && (x2 < 7) && (y2 < 5)) {	// clipping
- d04:	87 30       	cpi	r24, 0x07	; 7
- d06:	08 f0       	brcs	.+2      	; 0xd0a <drawfilledrect+0x12>
- d08:	52 c0       	rjmp	.+164    	; 0xdae <drawfilledrect+0xb6>
- d0a:	65 30       	cpi	r22, 0x05	; 5
- d0c:	08 f0       	brcs	.+2      	; 0xd10 <drawfilledrect+0x18>
- d0e:	4f c0       	rjmp	.+158    	; 0xdae <drawfilledrect+0xb6>
- d10:	47 30       	cpi	r20, 0x07	; 7
- d12:	08 f0       	brcs	.+2      	; 0xd16 <drawfilledrect+0x1e>
- d14:	4c c0       	rjmp	.+152    	; 0xdae <drawfilledrect+0xb6>
- d16:	25 30       	cpi	r18, 0x05	; 5
- d18:	08 f0       	brcs	.+2      	; 0xd1c <drawfilledrect+0x24>
- d1a:	49 c0       	rjmp	.+146    	; 0xdae <drawfilledrect+0xb6>
+ c58:	87 30       	cpi	r24, 0x07	; 7
+ c5a:	08 f0       	brcs	.+2      	; 0xc5e <drawfilledrect+0x12>
+ c5c:	52 c0       	rjmp	.+164    	; 0xd02 <drawfilledrect+0xb6>
+ c5e:	65 30       	cpi	r22, 0x05	; 5
+ c60:	08 f0       	brcs	.+2      	; 0xc64 <drawfilledrect+0x18>
+ c62:	4f c0       	rjmp	.+158    	; 0xd02 <drawfilledrect+0xb6>
+ c64:	47 30       	cpi	r20, 0x07	; 7
+ c66:	08 f0       	brcs	.+2      	; 0xc6a <drawfilledrect+0x1e>
+ c68:	4c c0       	rjmp	.+152    	; 0xd02 <drawfilledrect+0xb6>
+ c6a:	25 30       	cpi	r18, 0x05	; 5
+ c6c:	08 f0       	brcs	.+2      	; 0xc70 <drawfilledrect+0x24>
+ c6e:	49 c0       	rjmp	.+146    	; 0xd02 <drawfilledrect+0xb6>
 		if (x1 > x2) {
- d1c:	48 17       	cp	r20, r24
- d1e:	08 f4       	brcc	.+2      	; 0xd22 <drawfilledrect+0x2a>
- d20:	43 c0       	rjmp	.+134    	; 0xda8 <drawfilledrect+0xb0>
+ c70:	48 17       	cp	r20, r24
+ c72:	08 f4       	brcc	.+2      	; 0xc76 <drawfilledrect+0x2a>
+ c74:	43 c0       	rjmp	.+134    	; 0xcfc <drawfilledrect+0xb0>
 			tmp = x1;
 			x1 = x2;
 			x2 = tmp;
 		}
 		if (y1 > y2) {
- d22:	06 17       	cp	r16, r22
- d24:	18 f4       	brcc	.+6      	; 0xd2c <drawfilledrect+0x34>
+ c76:	06 17       	cp	r16, r22
+ c78:	18 f4       	brcc	.+6      	; 0xc80 <drawfilledrect+0x34>
 			tmp = y1;
- d26:	86 2f       	mov	r24, r22
+ c7a:	86 2f       	mov	r24, r22
 			y1 = y2;
- d28:	60 2f       	mov	r22, r16
+ c7c:	60 2f       	mov	r22, r16
 			y2 = tmp;
- d2a:	08 2f       	mov	r16, r24
+ c7e:	08 2f       	mov	r16, r24
 		}
 		for (y = y1; y <= y2; y++) {
- d2c:	26 2f       	mov	r18, r22
- d2e:	06 17       	cp	r16, r22
- d30:	f0 f1       	brcs	.+124    	; 0xdae <drawfilledrect+0xb6>
- d32:	80 91 60 02 	lds	r24, 0x0260
- d36:	99 27       	eor	r25, r25
- d38:	bc 01       	movw	r22, r24
- d3a:	61 70       	andi	r22, 0x01	; 1
- d3c:	70 70       	andi	r23, 0x00	; 0
- d3e:	dc 01       	movw	r26, r24
- d40:	a2 70       	andi	r26, 0x02	; 2
- d42:	b0 70       	andi	r27, 0x00	; 0
+ c80:	26 2f       	mov	r18, r22
+ c82:	06 17       	cp	r16, r22
+ c84:	f0 f1       	brcs	.+124    	; 0xd02 <drawfilledrect+0xb6>
+ c86:	80 91 5a 02 	lds	r24, 0x025A
+ c8a:	99 27       	eor	r25, r25
+ c8c:	bc 01       	movw	r22, r24
+ c8e:	61 70       	andi	r22, 0x01	; 1
+ c90:	70 70       	andi	r23, 0x00	; 0
+ c92:	dc 01       	movw	r26, r24
+ c94:	a2 70       	andi	r26, 0x02	; 2
+ c96:	b0 70       	andi	r27, 0x00	; 0
 			for (x = x1; x <= x2; x++) {
- d44:	51 2f       	mov	r21, r17
- d46:	41 17       	cp	r20, r17
- d48:	58 f1       	brcs	.+86     	; 0xda0 <drawfilledrect+0xa8>
- d4a:	e2 2f       	mov	r30, r18
- d4c:	ff 27       	eor	r31, r31
- d4e:	c0 e4       	ldi	r28, 0x40	; 64
- d50:	d0 e0       	ldi	r29, 0x00	; 0
- d52:	ed 52       	subi	r30, 0x2D	; 45
- d54:	fd 4f       	sbci	r31, 0xFD	; 253
- d56:	0b c0       	rjmp	.+22     	; 0xd6e <drawfilledrect+0x76>
+ c98:	51 2f       	mov	r21, r17
+ c9a:	41 17       	cp	r20, r17
+ c9c:	58 f1       	brcs	.+86     	; 0xcf4 <drawfilledrect+0xa8>
+ c9e:	e2 2f       	mov	r30, r18
+ ca0:	ff 27       	eor	r31, r31
+ ca2:	c0 e4       	ldi	r28, 0x40	; 64
+ ca4:	d0 e0       	ldi	r29, 0x00	; 0
+ ca6:	e3 53       	subi	r30, 0x33	; 51
+ ca8:	fd 4f       	sbci	r31, 0xFD	; 253
+ caa:	0b c0       	rjmp	.+22     	; 0xcc2 <drawfilledrect+0x76>
 				bits = 0x40 >> x;
 				if (_CurColor & 0x1) {	// red plane
 					Disp[y+5] |= bits;
- d58:	85 81       	ldd	r24, Z+5	; 0x05
- d5a:	83 2b       	or	r24, r19
+ cac:	85 81       	ldd	r24, Z+5	; 0x05
+ cae:	83 2b       	or	r24, r19
 				} else {
 					Disp[y+5] &= ~bits;
- d5c:	85 83       	std	Z+5, r24	; 0x05
+ cb0:	85 83       	std	Z+5, r24	; 0x05
 				}
 				if (_CurColor & 0x2) {	// green plane
- d5e:	10 97       	sbiw	r26, 0x00	; 0
- d60:	c1 f0       	breq	.+48     	; 0xd92 <drawfilledrect+0x9a>
+ cb2:	10 97       	sbiw	r26, 0x00	; 0
+ cb4:	c1 f0       	breq	.+48     	; 0xce6 <drawfilledrect+0x9a>
 					Disp[y] |= bits;
- d62:	80 81       	ld	r24, Z
- d64:	83 2b       	or	r24, r19
+ cb6:	80 81       	ld	r24, Z
+ cb8:	83 2b       	or	r24, r19
 				} else {
 					Disp[y] &= ~bits;
- d66:	80 83       	st	Z, r24
+ cba:	80 83       	st	Z, r24
 			tmp = y1;
 			y1 = y2;
 			y2 = tmp;
 		}
 		for (y = y1; y <= y2; y++) {
 			for (x = x1; x <= x2; x++) {
- d68:	5f 5f       	subi	r21, 0xFF	; 255
- d6a:	45 17       	cp	r20, r21
- d6c:	c8 f0       	brcs	.+50     	; 0xda0 <drawfilledrect+0xa8>
+ cbc:	5f 5f       	subi	r21, 0xFF	; 255
+ cbe:	45 17       	cp	r20, r21
+ cc0:	c8 f0       	brcs	.+50     	; 0xcf4 <drawfilledrect+0xa8>
 				bits = 0x40 >> x;
- d6e:	ce 01       	movw	r24, r28
- d70:	05 2e       	mov	r0, r21
- d72:	02 c0       	rjmp	.+4      	; 0xd78 <drawfilledrect+0x80>
- d74:	95 95       	asr	r25
- d76:	87 95       	ror	r24
- d78:	0a 94       	dec	r0
- d7a:	e2 f7       	brpl	.-8      	; 0xd74 <drawfilledrect+0x7c>
- d7c:	38 2f       	mov	r19, r24
+ cc2:	ce 01       	movw	r24, r28
+ cc4:	05 2e       	mov	r0, r21
+ cc6:	02 c0       	rjmp	.+4      	; 0xccc <drawfilledrect+0x80>
+ cc8:	95 95       	asr	r25
+ cca:	87 95       	ror	r24
+ ccc:	0a 94       	dec	r0
+ cce:	e2 f7       	brpl	.-8      	; 0xcc8 <drawfilledrect+0x7c>
+ cd0:	38 2f       	mov	r19, r24
 				if (_CurColor & 0x1) {	// red plane
- d7e:	61 15       	cp	r22, r1
- d80:	71 05       	cpc	r23, r1
- d82:	51 f7       	brne	.-44     	; 0xd58 <drawfilledrect+0x60>
+ cd2:	61 15       	cp	r22, r1
+ cd4:	71 05       	cpc	r23, r1
+ cd6:	51 f7       	brne	.-44     	; 0xcac <drawfilledrect+0x60>
 					Disp[y+5] |= bits;
 				} else {
 					Disp[y+5] &= ~bits;
- d84:	98 2f       	mov	r25, r24
- d86:	90 95       	com	r25
- d88:	85 81       	ldd	r24, Z+5	; 0x05
- d8a:	89 23       	and	r24, r25
- d8c:	85 83       	std	Z+5, r24	; 0x05
+ cd8:	98 2f       	mov	r25, r24
+ cda:	90 95       	com	r25
+ cdc:	85 81       	ldd	r24, Z+5	; 0x05
+ cde:	89 23       	and	r24, r25
+ ce0:	85 83       	std	Z+5, r24	; 0x05
 				}
 				if (_CurColor & 0x2) {	// green plane
- d8e:	10 97       	sbiw	r26, 0x00	; 0
- d90:	41 f7       	brne	.-48     	; 0xd62 <drawfilledrect+0x6a>
+ ce2:	10 97       	sbiw	r26, 0x00	; 0
+ ce4:	41 f7       	brne	.-48     	; 0xcb6 <drawfilledrect+0x6a>
 					Disp[y] |= bits;
 				} else {
 					Disp[y] &= ~bits;
- d92:	30 95       	com	r19
- d94:	80 81       	ld	r24, Z
- d96:	83 23       	and	r24, r19
- d98:	80 83       	st	Z, r24
+ ce6:	30 95       	com	r19
+ ce8:	80 81       	ld	r24, Z
+ cea:	83 23       	and	r24, r19
+ cec:	80 83       	st	Z, r24
 			tmp = y1;
 			y1 = y2;
 			y2 = tmp;
 		}
 		for (y = y1; y <= y2; y++) {
 			for (x = x1; x <= x2; x++) {
- d9a:	5f 5f       	subi	r21, 0xFF	; 255
- d9c:	45 17       	cp	r20, r21
- d9e:	38 f7       	brcc	.-50     	; 0xd6e <drawfilledrect+0x76>
+ cee:	5f 5f       	subi	r21, 0xFF	; 255
+ cf0:	45 17       	cp	r20, r21
+ cf2:	38 f7       	brcc	.-50     	; 0xcc2 <drawfilledrect+0x76>
 		if (y1 > y2) {
 			tmp = y1;
 			y1 = y2;
 			y2 = tmp;
 		}
 		for (y = y1; y <= y2; y++) {
- da0:	2f 5f       	subi	r18, 0xFF	; 255
- da2:	02 17       	cp	r16, r18
- da4:	78 f6       	brcc	.-98     	; 0xd44 <drawfilledrect+0x4c>
- da6:	03 c0       	rjmp	.+6      	; 0xdae <drawfilledrect+0xb6>
+ cf4:	2f 5f       	subi	r18, 0xFF	; 255
+ cf6:	02 17       	cp	r16, r18
+ cf8:	78 f6       	brcc	.-98     	; 0xc98 <drawfilledrect+0x4c>
+ cfa:	03 c0       	rjmp	.+6      	; 0xd02 <drawfilledrect+0xb6>
 	uint8_t x, y, tmp;
 
 	if ((x1 < 7) && (y1 < 5) && (x2 < 7) && (y2 < 5)) {	// clipping
 		if (x1 > x2) {
 			tmp = x1;
 			x1 = x2;
- da8:	14 2f       	mov	r17, r20
+ cfc:	14 2f       	mov	r17, r20
 			x2 = tmp;
- daa:	48 2f       	mov	r20, r24
- dac:	ba cf       	rjmp	.-140    	; 0xd22 <drawfilledrect+0x2a>
- dae:	df 91       	pop	r29
- db0:	cf 91       	pop	r28
- db2:	1f 91       	pop	r17
- db4:	0f 91       	pop	r16
- db6:	08 95       	ret
+ cfe:	48 2f       	mov	r20, r24
+ d00:	ba cf       	rjmp	.-140    	; 0xc76 <drawfilledrect+0x2a>
+ d02:	df 91       	pop	r29
+ d04:	cf 91       	pop	r28
+ d06:	1f 91       	pop	r17
+ d08:	0f 91       	pop	r16
+ d0a:	08 95       	ret
 
-00000db8 <initaudio>:
+00000d0c <initaudio>:
 // a simple API for making sounds.
 
 void initaudio(void)
 {
 	// default wavetable (WT_SAWTOOTH)
 	wavPtr = SawWtable;
- db8:	80 e2       	ldi	r24, 0x20	; 32
- dba:	92 e0       	ldi	r25, 0x02	; 2
- dbc:	90 93 d0 02 	sts	0x02D0, r25
- dc0:	80 93 cf 02 	sts	0x02CF, r24
+ d0c:	8a e1       	ldi	r24, 0x1A	; 26
+ d0e:	92 e0       	ldi	r25, 0x02	; 2
+ d10:	90 93 ca 02 	sts	0x02CA, r25
+ d14:	80 93 c9 02 	sts	0x02C9, r24
 	
 	// default tempo
 	//XXX
 	
 	SongPlayFlag = 0;
- dc4:	10 92 e5 02 	sts	0x02E5, r1
+ d18:	10 92 df 02 	sts	0x02DF, r1
 	PWMval = wavPtr[0];		// initialize to first entry of table
- dc8:	80 91 20 02 	lds	r24, 0x0220
- dcc:	99 27       	eor	r25, r25
- dce:	90 93 e2 02 	sts	0x02E2, r25
- dd2:	80 93 e1 02 	sts	0x02E1, r24
- dd6:	08 95       	ret
+ d1c:	80 91 1a 02 	lds	r24, 0x021A
+ d20:	99 27       	eor	r25, r25
+ d22:	90 93 dc 02 	sts	0x02DC, r25
+ d26:	80 93 db 02 	sts	0x02DB, r24
+ d2a:	08 95       	ret
 
-00000dd8 <settempo>:
+00000d2c <settempo>:
 //
 // sets tempo for playnote function.
 // the default tempo is 72 beats per minute.
 //
 void settempo(byte bpm)
 {
- dd8:	08 95       	ret
+ d2c:	08 95       	ret
 
-00000dda <setwavetable>:
+00000d2e <setwavetable>:
 // from the API all tables are just referenced by named constants.
 // WT_SAWTOOTH is the default.
 //
 void setwavetable(byte wtable)
 {
 	if (wtable == WT_SINE) {
- dda:	82 30       	cpi	r24, 0x02	; 2
- ddc:	29 f0       	breq	.+10     	; 0xde8 <setwavetable+0xe>
+ d2e:	82 30       	cpi	r24, 0x02	; 2
+ d30:	29 f0       	breq	.+10     	; 0xd3c <setwavetable+0xe>
 		wavPtr = SineWtable;
 	} else if (wtable == WT_SAWTOOTH) {
- dde:	81 30       	cpi	r24, 0x01	; 1
- de0:	51 f0       	breq	.+20     	; 0xdf6 <setwavetable+0x1c>
+ d32:	81 30       	cpi	r24, 0x01	; 1
+ d34:	51 f0       	breq	.+20     	; 0xd4a <setwavetable+0x1c>
 		wavPtr = SawWtable;
 	} else if (wtable == WT_SQUARE) {
- de2:	83 30       	cpi	r24, 0x03	; 3
- de4:	79 f0       	breq	.+30     	; 0xe04 <setwavetable+0x2a>
- de6:	08 95       	ret
+ d36:	83 30       	cpi	r24, 0x03	; 3
+ d38:	79 f0       	breq	.+30     	; 0xd58 <setwavetable+0x2a>
+ d3a:	08 95       	ret
 // WT_SAWTOOTH is the default.
 //
 void setwavetable(byte wtable)
 {
 	if (wtable == WT_SINE) {
 		wavPtr = SineWtable;
- de8:	80 e4       	ldi	r24, 0x40	; 64
- dea:	92 e0       	ldi	r25, 0x02	; 2
+ d3c:	8a e3       	ldi	r24, 0x3A	; 58
+ d3e:	92 e0       	ldi	r25, 0x02	; 2
 	} else if (wtable == WT_SAWTOOTH) {
 		wavPtr = SawWtable;
- dec:	90 93 d0 02 	sts	0x02D0, r25
- df0:	80 93 cf 02 	sts	0x02CF, r24
- df4:	08 95       	ret
- df6:	80 e2       	ldi	r24, 0x20	; 32
- df8:	92 e0       	ldi	r25, 0x02	; 2
- dfa:	90 93 d0 02 	sts	0x02D0, r25
- dfe:	80 93 cf 02 	sts	0x02CF, r24
- e02:	08 95       	ret
+ d40:	90 93 ca 02 	sts	0x02CA, r25
+ d44:	80 93 c9 02 	sts	0x02C9, r24
+ d48:	08 95       	ret
+ d4a:	8a e1       	ldi	r24, 0x1A	; 26
+ d4c:	92 e0       	ldi	r25, 0x02	; 2
+ d4e:	90 93 ca 02 	sts	0x02CA, r25
+ d52:	80 93 c9 02 	sts	0x02C9, r24
+ d56:	08 95       	ret
 	} else if (wtable == WT_SQUARE) {
 		wavPtr = SquareWtable;
- e04:	80 e0       	ldi	r24, 0x00	; 0
- e06:	92 e0       	ldi	r25, 0x02	; 2
- e08:	90 93 d0 02 	sts	0x02D0, r25
- e0c:	80 93 cf 02 	sts	0x02CF, r24
- e10:	08 95       	ret
+ d58:	8a ef       	ldi	r24, 0xFA	; 250
+ d5a:	91 e0       	ldi	r25, 0x01	; 1
+ d5c:	90 93 ca 02 	sts	0x02CA, r25
+ d60:	80 93 c9 02 	sts	0x02C9, r24
+ d64:	08 95       	ret
 
-00000e12 <playsound>:
+00000d66 <playsound>:
 //
 // play a tone with pitch in Hz, and dur in ms.
 // the current wavetable is used.
 //
 void playsound(int pitch, int dur)
 {
- e12:	08 95       	ret
+ d66:	08 95       	ret
 
-00000e14 <playnote>:
+00000d68 <playnote>:
 // duration dur (predefined constants like N_QUARTER, etc.)
 // the current wavetable is used.
 //
 // XXX NYI !!
 void playnote(byte note, byte dur)
 {}
- e14:	08 95       	ret
+ d68:	08 95       	ret
 
-00000e16 <playsong>:
+00000d6a <playsong>:
 // and must end with the byte N_END.
 //
 // XXX do we correctly handle the case where this is called when a song is currently playing?
 //
 void playsong(byte *songtable)
 {
- e16:	cf 93       	push	r28
- e18:	df 93       	push	r29
- e1a:	ec 01       	movw	r28, r24
+ d6a:	cf 93       	push	r28
+ d6c:	df 93       	push	r29
+ d6e:	ec 01       	movw	r28, r24
 	uint16_t tmp;
 	uint8_t note, dur;
 
 	if (songtable == NULL) {		// error check
- e1c:	00 97       	sbiw	r24, 0x00	; 0
- e1e:	09 f4       	brne	.+2      	; 0xe22 <playsong+0xc>
- e20:	41 c0       	rjmp	.+130    	; 0xea4 <playsong+0x8e>
+ d70:	00 97       	sbiw	r24, 0x00	; 0
+ d72:	09 f4       	brne	.+2      	; 0xd76 <playsong+0xc>
+ d74:	41 c0       	rjmp	.+130    	; 0xdf8 <playsong+0x8e>
 		return;
 	}
 	
 	SongPlayFlag = 0;				// just in case a song is currently playing
- e22:	10 92 e5 02 	sts	0x02E5, r1
+ d76:	10 92 df 02 	sts	0x02DF, r1
 
 	songPtr = songtable;			// set pointer to the song table array
- e26:	90 93 ea 02 	sts	0x02EA, r25
- e2a:	80 93 e9 02 	sts	0x02E9, r24
+ d7a:	90 93 e4 02 	sts	0x02E4, r25
+ d7e:	80 93 e3 02 	sts	0x02E3, r24
 
 	note = *songPtr++;
- e2e:	dc 01       	movw	r26, r24
- e30:	4d 91       	ld	r20, X+
- e32:	b0 93 ea 02 	sts	0x02EA, r27
- e36:	a0 93 e9 02 	sts	0x02E9, r26
+ d82:	dc 01       	movw	r26, r24
+ d84:	4d 91       	ld	r20, X+
+ d86:	b0 93 e4 02 	sts	0x02E4, r27
+ d8a:	a0 93 e3 02 	sts	0x02E3, r26
 	if (note != N_END) {
- e3a:	44 23       	and	r20, r20
- e3c:	99 f1       	breq	.+102    	; 0xea4 <playsong+0x8e>
+ d8e:	44 23       	and	r20, r20
+ d90:	99 f1       	breq	.+102    	; 0xdf8 <playsong+0x8e>
 
 		// note: this code is repeated inside ISR - must match!!
 		tmp = GETNOTEDELTA(note);
- e3e:	e4 2f       	mov	r30, r20
- e40:	ff 27       	eor	r31, r31
- e42:	ee 0f       	add	r30, r30
- e44:	ff 1f       	adc	r31, r31
- e46:	e2 58       	subi	r30, 0x82	; 130
- e48:	fe 4f       	sbci	r31, 0xFE	; 254
- e4a:	20 81       	ld	r18, Z
- e4c:	31 81       	ldd	r19, Z+1	; 0x01
+ d92:	e4 2f       	mov	r30, r20
+ d94:	ff 27       	eor	r31, r31
+ d96:	ee 0f       	add	r30, r30
+ d98:	ff 1f       	adc	r31, r31
+ d9a:	e8 58       	subi	r30, 0x88	; 136
+ d9c:	fe 4f       	sbci	r31, 0xFE	; 254
+ d9e:	20 81       	ld	r18, Z
+ da0:	31 81       	ldd	r19, Z+1	; 0x01
 		WtabDelta.integ = (uint8_t)((tmp >> 8) & 0xff);		// high byte
- e4e:	83 2f       	mov	r24, r19
- e50:	99 27       	eor	r25, r25
- e52:	80 93 c7 02 	sts	0x02C7, r24
+ da2:	83 2f       	mov	r24, r19
+ da4:	99 27       	eor	r25, r25
+ da6:	80 93 c1 02 	sts	0x02C1, r24
 		WtabDelta.fract = (uint8_t)(tmp & 0xff);			// low byte
- e56:	20 93 c8 02 	sts	0x02C8, r18
+ daa:	20 93 c2 02 	sts	0x02C2, r18
 		dur = *songPtr++;
- e5a:	89 81       	ldd	r24, Y+1	; 0x01
- e5c:	11 96       	adiw	r26, 0x01	; 1
- e5e:	b0 93 ea 02 	sts	0x02EA, r27
- e62:	a0 93 e9 02 	sts	0x02E9, r26
+ dae:	89 81       	ldd	r24, Y+1	; 0x01
+ db0:	11 96       	adiw	r26, 0x01	; 1
+ db2:	b0 93 e4 02 	sts	0x02E4, r27
+ db6:	a0 93 e3 02 	sts	0x02E3, r26
 		CurNote = note;						// set 1st note to play, and
- e66:	40 93 c9 02 	sts	0x02C9, r20
+ dba:	40 93 c3 02 	sts	0x02C3, r20
 		Wdur = GETDURATION(dur);   			// its duration.
- e6a:	e8 2f       	mov	r30, r24
- e6c:	ff 27       	eor	r31, r31
- e6e:	ee 0f       	add	r30, r30
- e70:	ff 1f       	adc	r31, r31
- e72:	ec 5a       	subi	r30, 0xAC	; 172
- e74:	fe 4f       	sbci	r31, 0xFE	; 254
- e76:	80 81       	ld	r24, Z
- e78:	91 81       	ldd	r25, Z+1	; 0x01
- e7a:	90 93 d2 02 	sts	0x02D2, r25
- e7e:	80 93 d1 02 	sts	0x02D1, r24
+ dbe:	e8 2f       	mov	r30, r24
+ dc0:	ff 27       	eor	r31, r31
+ dc2:	ee 0f       	add	r30, r30
+ dc4:	ff 1f       	adc	r31, r31
+ dc6:	e2 5b       	subi	r30, 0xB2	; 178
+ dc8:	fe 4f       	sbci	r31, 0xFE	; 254
+ dca:	80 81       	ld	r24, Z
+ dcc:	91 81       	ldd	r25, Z+1	; 0x01
+ dce:	90 93 cc 02 	sts	0x02CC, r25
+ dd2:	80 93 cb 02 	sts	0x02CB, r24
 
 		WtabCount.integ = 0;				// we will start playing from start of current wavetable
- e82:	10 92 de 02 	sts	0x02DE, r1
+ dd6:	10 92 d8 02 	sts	0x02D8, r1
 		WtabCount.fract = 0;
- e86:	10 92 df 02 	sts	0x02DF, r1
+ dda:	10 92 d9 02 	sts	0x02D9, r1
 		PWMval = wavPtr[0];					// initialize to first entry of table
- e8a:	e0 91 cf 02 	lds	r30, 0x02CF
- e8e:	f0 91 d0 02 	lds	r31, 0x02D0
- e92:	80 81       	ld	r24, Z
- e94:	99 27       	eor	r25, r25
- e96:	90 93 e2 02 	sts	0x02E2, r25
- e9a:	80 93 e1 02 	sts	0x02E1, r24
+ dde:	e0 91 c9 02 	lds	r30, 0x02C9
+ de2:	f0 91 ca 02 	lds	r31, 0x02CA
+ de6:	80 81       	ld	r24, Z
+ de8:	99 27       	eor	r25, r25
+ dea:	90 93 dc 02 	sts	0x02DC, r25
+ dee:	80 93 db 02 	sts	0x02DB, r24
 		SongPlayFlag = 1;					// start playing song
- e9e:	81 e0       	ldi	r24, 0x01	; 1
- ea0:	80 93 e5 02 	sts	0x02E5, r24
- ea4:	df 91       	pop	r29
- ea6:	cf 91       	pop	r28
- ea8:	08 95       	ret
+ df2:	81 e0       	ldi	r24, 0x01	; 1
+ df4:	80 93 df 02 	sts	0x02DF, r24
+ df8:	df 91       	pop	r29
+ dfa:	cf 91       	pop	r28
+ dfc:	08 95       	ret
 
-00000eaa <isaudioplaying>:
+00000dfe <isaudioplaying>:
 //
 // this returns 1 if audio is playing, 0 otherwise.
 //
 byte isaudioplaying(void)
 {
 	return SongPlayFlag;
- eaa:	80 91 e5 02 	lds	r24, 0x02E5
+ dfe:	80 91 df 02 	lds	r24, 0x02DF
 }
- eae:	99 27       	eor	r25, r25
- eb0:	08 95       	ret
+ e02:	99 27       	eor	r25, r25
+ e04:	08 95       	ret
 
-00000eb2 <waitaudio>:
+00000e06 <waitaudio>:
 // this waits until audio (e.g. note or song) is finished, then returns.
 //
 void waitaudio(void)
 {
 	while (SongPlayFlag) {
 		NOP();
- eb2:	80 91 e5 02 	lds	r24, 0x02E5
- eb6:	88 23       	and	r24, r24
- eb8:	29 f0       	breq	.+10     	; 0xec4 <waitaudio+0x12>
- eba:	00 00       	nop
- ebc:	80 91 e5 02 	lds	r24, 0x02E5
- ec0:	88 23       	and	r24, r24
- ec2:	d9 f7       	brne	.-10     	; 0xeba <waitaudio+0x8>
- ec4:	08 95       	ret
+ e06:	80 91 df 02 	lds	r24, 0x02DF
+ e0a:	88 23       	and	r24, r24
+ e0c:	29 f0       	breq	.+10     	; 0xe18 <waitaudio+0x12>
+ e0e:	00 00       	nop
+ e10:	80 91 df 02 	lds	r24, 0x02DF
+ e14:	88 23       	and	r24, r24
+ e16:	d9 f7       	brne	.-10     	; 0xe0e <waitaudio+0x8>
+ e18:	08 95       	ret
 
-00000ec6 <__mulsi3>:
- ec6:	62 9f       	mul	r22, r18
- ec8:	d0 01       	movw	r26, r0
- eca:	73 9f       	mul	r23, r19
- ecc:	f0 01       	movw	r30, r0
- ece:	82 9f       	mul	r24, r18
- ed0:	e0 0d       	add	r30, r0
- ed2:	f1 1d       	adc	r31, r1
- ed4:	64 9f       	mul	r22, r20
- ed6:	e0 0d       	add	r30, r0
- ed8:	f1 1d       	adc	r31, r1
- eda:	92 9f       	mul	r25, r18
- edc:	f0 0d       	add	r31, r0
- ede:	83 9f       	mul	r24, r19
- ee0:	f0 0d       	add	r31, r0
- ee2:	74 9f       	mul	r23, r20
- ee4:	f0 0d       	add	r31, r0
- ee6:	65 9f       	mul	r22, r21
- ee8:	f0 0d       	add	r31, r0
- eea:	99 27       	eor	r25, r25
- eec:	72 9f       	mul	r23, r18
- eee:	b0 0d       	add	r27, r0
- ef0:	e1 1d       	adc	r30, r1
- ef2:	f9 1f       	adc	r31, r25
- ef4:	63 9f       	mul	r22, r19
- ef6:	b0 0d       	add	r27, r0
- ef8:	e1 1d       	adc	r30, r1
- efa:	f9 1f       	adc	r31, r25
- efc:	bd 01       	movw	r22, r26
- efe:	cf 01       	movw	r24, r30
- f00:	11 24       	eor	r1, r1
- f02:	08 95       	ret
+00000e1a <__divmodhi4>:
+ e1a:	97 fb       	bst	r25, 7
+ e1c:	09 2e       	mov	r0, r25
+ e1e:	07 26       	eor	r0, r23
+ e20:	0a d0       	rcall	.+20     	; 0xe36 <__divmodhi4_neg1>
+ e22:	77 fd       	sbrc	r23, 7
+ e24:	04 d0       	rcall	.+8      	; 0xe2e <__divmodhi4_neg2>
+ e26:	0c d0       	rcall	.+24     	; 0xe40 <__udivmodhi4>
+ e28:	06 d0       	rcall	.+12     	; 0xe36 <__divmodhi4_neg1>
+ e2a:	00 20       	and	r0, r0
+ e2c:	1a f4       	brpl	.+6      	; 0xe34 <__divmodhi4_exit>
 
-00000f04 <__divmodhi4>:
- f04:	97 fb       	bst	r25, 7
- f06:	09 2e       	mov	r0, r25
- f08:	07 26       	eor	r0, r23
- f0a:	0a d0       	rcall	.+20     	; 0xf20 <__divmodhi4_neg1>
- f0c:	77 fd       	sbrc	r23, 7
- f0e:	04 d0       	rcall	.+8      	; 0xf18 <__divmodhi4_neg2>
- f10:	2e d0       	rcall	.+92     	; 0xf6e <__udivmodhi4>
- f12:	06 d0       	rcall	.+12     	; 0xf20 <__divmodhi4_neg1>
- f14:	00 20       	and	r0, r0
- f16:	1a f4       	brpl	.+6      	; 0xf1e <__divmodhi4_exit>
+00000e2e <__divmodhi4_neg2>:
+ e2e:	70 95       	com	r23
+ e30:	61 95       	neg	r22
+ e32:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00000f18 <__divmodhi4_neg2>:
- f18:	70 95       	com	r23
- f1a:	61 95       	neg	r22
- f1c:	7f 4f       	sbci	r23, 0xFF	; 255
+00000e34 <__divmodhi4_exit>:
+ e34:	08 95       	ret
 
-00000f1e <__divmodhi4_exit>:
- f1e:	08 95       	ret
+00000e36 <__divmodhi4_neg1>:
+ e36:	f6 f7       	brtc	.-4      	; 0xe34 <__divmodhi4_exit>
+ e38:	90 95       	com	r25
+ e3a:	81 95       	neg	r24
+ e3c:	9f 4f       	sbci	r25, 0xFF	; 255
+ e3e:	08 95       	ret
 
-00000f20 <__divmodhi4_neg1>:
- f20:	f6 f7       	brtc	.-4      	; 0xf1e <__divmodhi4_exit>
- f22:	90 95       	com	r25
- f24:	81 95       	neg	r24
- f26:	9f 4f       	sbci	r25, 0xFF	; 255
- f28:	08 95       	ret
+00000e40 <__udivmodhi4>:
+ e40:	aa 1b       	sub	r26, r26
+ e42:	bb 1b       	sub	r27, r27
+ e44:	51 e1       	ldi	r21, 0x11	; 17
+ e46:	07 c0       	rjmp	.+14     	; 0xe56 <__udivmodhi4_ep>
 
-00000f2a <__udivmodsi4>:
- f2a:	a1 e2       	ldi	r26, 0x21	; 33
- f2c:	1a 2e       	mov	r1, r26
- f2e:	aa 1b       	sub	r26, r26
- f30:	bb 1b       	sub	r27, r27
- f32:	fd 01       	movw	r30, r26
- f34:	0d c0       	rjmp	.+26     	; 0xf50 <__udivmodsi4_ep>
+00000e48 <__udivmodhi4_loop>:
+ e48:	aa 1f       	adc	r26, r26
+ e4a:	bb 1f       	adc	r27, r27
+ e4c:	a6 17       	cp	r26, r22
+ e4e:	b7 07       	cpc	r27, r23
+ e50:	10 f0       	brcs	.+4      	; 0xe56 <__udivmodhi4_ep>
+ e52:	a6 1b       	sub	r26, r22
+ e54:	b7 0b       	sbc	r27, r23
 
-00000f36 <__udivmodsi4_loop>:
- f36:	aa 1f       	adc	r26, r26
- f38:	bb 1f       	adc	r27, r27
- f3a:	ee 1f       	adc	r30, r30
- f3c:	ff 1f       	adc	r31, r31
- f3e:	a2 17       	cp	r26, r18
- f40:	b3 07       	cpc	r27, r19
- f42:	e4 07       	cpc	r30, r20
- f44:	f5 07       	cpc	r31, r21
- f46:	20 f0       	brcs	.+8      	; 0xf50 <__udivmodsi4_ep>
- f48:	a2 1b       	sub	r26, r18
- f4a:	b3 0b       	sbc	r27, r19
- f4c:	e4 0b       	sbc	r30, r20
- f4e:	f5 0b       	sbc	r31, r21
+00000e56 <__udivmodhi4_ep>:
+ e56:	88 1f       	adc	r24, r24
+ e58:	99 1f       	adc	r25, r25
+ e5a:	5a 95       	dec	r21
+ e5c:	a9 f7       	brne	.-22     	; 0xe48 <__udivmodhi4_loop>
+ e5e:	80 95       	com	r24
+ e60:	90 95       	com	r25
+ e62:	bc 01       	movw	r22, r24
+ e64:	cd 01       	movw	r24, r26
+ e66:	08 95       	ret
 
-00000f50 <__udivmodsi4_ep>:
- f50:	66 1f       	adc	r22, r22
- f52:	77 1f       	adc	r23, r23
- f54:	88 1f       	adc	r24, r24
- f56:	99 1f       	adc	r25, r25
- f58:	1a 94       	dec	r1
- f5a:	69 f7       	brne	.-38     	; 0xf36 <__udivmodsi4_loop>
- f5c:	60 95       	com	r22
- f5e:	70 95       	com	r23
- f60:	80 95       	com	r24
- f62:	90 95       	com	r25
- f64:	9b 01       	movw	r18, r22
- f66:	ac 01       	movw	r20, r24
- f68:	bd 01       	movw	r22, r26
- f6a:	cf 01       	movw	r24, r30
- f6c:	08 95       	ret
-
-00000f6e <__udivmodhi4>:
- f6e:	aa 1b       	sub	r26, r26
- f70:	bb 1b       	sub	r27, r27
- f72:	51 e1       	ldi	r21, 0x11	; 17
- f74:	07 c0       	rjmp	.+14     	; 0xf84 <__udivmodhi4_ep>
-
-00000f76 <__udivmodhi4_loop>:
- f76:	aa 1f       	adc	r26, r26
- f78:	bb 1f       	adc	r27, r27
- f7a:	a6 17       	cp	r26, r22
- f7c:	b7 07       	cpc	r27, r23
- f7e:	10 f0       	brcs	.+4      	; 0xf84 <__udivmodhi4_ep>
- f80:	a6 1b       	sub	r26, r22
- f82:	b7 0b       	sbc	r27, r23
-
-00000f84 <__udivmodhi4_ep>:
- f84:	88 1f       	adc	r24, r24
- f86:	99 1f       	adc	r25, r25
- f88:	5a 95       	dec	r21
- f8a:	a9 f7       	brne	.-22     	; 0xf76 <__udivmodhi4_loop>
- f8c:	80 95       	com	r24
- f8e:	90 95       	com	r25
- f90:	bc 01       	movw	r22, r24
- f92:	cd 01       	movw	r24, r26
- f94:	08 95       	ret
-
-00000f96 <_exit>:
- f96:	ff cf       	rjmp	.-2      	; 0xf96 <_exit>
+00000e68 <_exit>:
+ e68:	ff cf       	rjmp	.-2      	; 0xe68 <_exit>
