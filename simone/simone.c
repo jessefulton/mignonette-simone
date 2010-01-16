@@ -77,11 +77,18 @@ N_END
 };
 
 
-static byte DIRECTION_A_NOISE[] = {N_C4, N_16TH, N_END};
-static byte DIRECTION_B_NOISE[] = {N_E4, N_16TH, N_END};
-static byte DIRECTION_C_NOISE[] = {N_G4, N_16TH, N_END};
-static byte DIRECTION_D_NOISE[] = {N_A4, N_16TH, N_END};
+static byte DIRECTION_A_NOISE[] = {N_F4, N_16TH, N_END};
+static byte DIRECTION_B_NOISE[] = {N_D4, N_16TH, N_END};
+static byte DIRECTION_C_NOISE[] = {N_E4, N_16TH, N_END};
+static byte DIRECTION_D_NOISE[] = {N_G4, N_16TH, N_END};
 //static byte BUTTON_NOISE[] = {N_C5, N_16TH, N_END};
+static byte CORRECT_NOISE[] = {N_C5, N_16TH, N_D5, N_16TH, N_E5, N_16TH, N_END};
+static byte WIN_NOISE[] = {
+N_C5, N_16TH, N_D5, N_16TH, N_E5, N_16TH, 
+N_C5, N_16TH, N_D5, N_16TH, N_E5, N_16TH, 
+N_C5, N_16TH, N_D5, N_16TH, N_E5, N_16TH, 
+N_END};
+
 
 /* colors */
 #define DIRECTION_A 0
@@ -97,7 +104,7 @@ static byte directions[4] = {
 	DIRECTION_D
 };
 
-static byte arrows[100] = {DIRECTION_B};
+static byte arrows[100];
 //static byte[100] colors;
 //static byte[100] sounds;
 
@@ -149,6 +156,33 @@ delay_sec(uint8_t sec)
 
 #define XMAX (XSCREEN-1)
 #define YMAX (YSCREEN-1)
+
+
+
+
+// Random number generator by Jegge (Tri2s)
+//
+// generates a pseudo random number from 0 to max 
+//
+
+// A 32-bit version
+
+// An 8 bit version
+
+static uint8_t RandomSeedA = 0x11;
+static uint8_t RandomSeedB = 0x0D;
+
+uint8_t next_random (uint8_t max) {
+	RandomSeedA = 0x7F * (RandomSeedA & 0x0F) + (RandomSeedA >> 4);
+	RandomSeedB = 0x3C * (RandomSeedB & 0x0F) + (RandomSeedB >> 4);
+ 	return ((RandomSeedA << 4) + RandomSeedB) % max;
+}
+
+void init_random (void) {
+	uint8_t *addr = 0;
+	for (addr = 0; addr < (uint8_t*)0xFFFF; addr++) 
+		RandomSeedB += (*addr);	
+}
 
 
 void draw_arrow(byte dir, byte clr) {
@@ -406,12 +440,14 @@ void gameover_screen(int level) {
 int
 main(void)
 {
+	init_random();
+	avrinit();
 	int cnt;
 	byte btnDown = 0;
 	byte level = 1;
 
+	arrows[0] = directions[next_random(4)];
 
-    avrinit();
 
 	initswapbuffers();
 	swapinterval(10);		// note: display refresh is 100hz (lower number speeds up game)
@@ -508,8 +544,15 @@ nextlevel:
 
 		
 			if (cnt == level) {
+				if (level == 99) {
+					goto gamewin;
+				}
+				cleardisplay();
+				delay_ms(200);
+				playsong(CORRECT_NOISE);
 				level++;
-				arrows[cnt] = directions[rand() / (RAND_MAX / 4 + 1) ];
+				arrows[cnt] = directions[next_random(4)];
+				delay_ms(200);
 				delay_ms(200);
 				goto nextlevel;
 			}
@@ -525,9 +568,18 @@ nextlevel:
 
     }
 
+gamewin:
+	cleardisplay();
+	//do something;
+	playsong(WIN_NOISE);
+	gameover_screen(level);
+	return (0);
+
 
 gameover:
 	cleardisplay();
+	delay_ms(200);
+	delay_ms(200);
 	playsong(TapsSong);
 	gameover_screen(level);
 	return (0);
